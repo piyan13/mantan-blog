@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T13:20:04+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T23:17:58+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/Codemagic.jpg&quot; /&gt;
 &lt;figcaption&gt;credit: nevercode&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -31,7 +31,7 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 
 &lt;h2 id=&quot;setting-repository-project&quot;&gt;Setting Repository Project&lt;/h2&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;setelah login dengan git version control dimana codemagic mengakomodir github, gitlab dan bitbucket secara otomatis semua repository kita di load dihalaman codemagic.&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/home.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -39,42 +39,42 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 
 &lt;h2 id=&quot;setup-triggers-branch&quot;&gt;Setup Triggers Branch&lt;/h2&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;build triggers disini adalah branch repository project yang di jadikan pemicu untuk codemagic melakukan build normalnya adalah branch master tapi tergantung kita jugak.&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/build_triggers.png&quot; /&gt;
 &lt;figcaption&gt;build triggers&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;disana ada pilihan pattern yang bisa di gunakan misal * menunjuk ke semua branch menjadi trigger untuk keterangan lengkapnya bisa klik show pattern examples jugak ada opsi dibawahnya untuk automatic triggering buildnya otomatis setiap waktu ada push ke branch atau setiap ada pull request ke branch.&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/build_master.png&quot; /&gt;
 &lt;figcaption&gt;show pattern&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/buil_everypush.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;test&quot;&gt;Test&lt;/h2&gt;
 &lt;p&gt;test disini adalah mengarah ke package test di project flutter karena di project saya tidak memakai unit test jadi disini tidak saya centang untuk enable flutter test dan stop build if test fail yang berarti flow test ini saya lewati&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/test.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;build&quot;&gt;Build&lt;/h2&gt;
 &lt;p&gt;di flow build ini kita bisa memilih bakal di build versi flutter berapa repository kita :&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/flowbuild_version.png&quot; /&gt;
 &lt;figcaption&gt;pilihan build flutter version&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;sesuai goal dari riset saya yang mau jadikan dua mobile platform sekaligus yaitu ios dan android maka dibawah ini adalah setup flow build saya&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/build_an_ios.gif&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;publish&quot;&gt;Publish&lt;/h2&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/flowPublish.png&quot; /&gt;
 &lt;figcaption&gt;tampilan flow publish&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -83,37 +83,37 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 &lt;h3 id=&quot;settingan-flow-publish-untuk-ci&quot;&gt;settingan flow publish untuk CI&lt;/h3&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;1.android code signing untuk menghasilkan apk.release apa saja yang diperlukan kunjungi &lt;a href=&quot;https://developer.android.com/studio/publish/app-signing?hl=id&quot;&gt;link ini&lt;/a&gt;&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/android_code_signing.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;2.ios code signing kalau ingin menghasilkan file .ipa disana ada pilihan automatic dan manual, saya sarankan untuk manual karena automatic percobaan saya beberapa kali masih menemui error. di manual cukup isi dengan code signing certificate dalam format .p12 dan isi provsioning profiles (disarankan yang distribution) dengan format .mobileprovision, kalau belom tahu cara untuk mendapatkan certificate .p12 bisa kunjungi &lt;a href=&quot;https://support.magplus.com/hc/en-us/articles/203808748-iOS-Creating-a-Distribution-Certificate-and-p12-File&quot;&gt;link ini&lt;/a&gt;, jika ios code signing ini tidak di isi maka artifactnya dalam bentum runner.&lt;/p&gt;
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/ios_signing.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;3.setup email yang akan dijadikan archive artifact dan jugak untuk notifikasi baik ketika build failed ataupun sukses, ada opsi jugak untuk slack selain email&lt;/p&gt;
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/flowPublish_email.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h3 id=&quot;test-ci-continous-integration&quot;&gt;Test CI (Continous Integration)&lt;/h3&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/startNewBuild.png&quot; /&gt;
 &lt;figcaption&gt;start new build&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;pilih start new build pojok kanan atas&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/testCi_succes.gif&quot; /&gt;
 &lt;figcaption&gt;tampilan ketika berhasil test CI&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;jika berhasil check email/slack yang sudah di setup seperti dibawah ini:&lt;/p&gt;
 
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/email_ios_android.gif&quot; /&gt;
 &lt;figcaption&gt;tampilan email&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -125,14 +125,14 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 &lt;h4 id=&quot;google-play&quot;&gt;google play&lt;/h4&gt;
 &lt;p&gt;yang dibutuhkan untuk menyinkronkan codemagic ke google play adalah credential api google play file format dalam bentuk .json bagaimana cara untuk mendapatkan file ini bisa di sima &lt;a href=&quot;https://support.appinstitute.com/hc/en-us/articles/115002827469-How-to-Get-Your-Google-Play-JSON-Key&quot;&gt;artikel ini&lt;/a&gt;,
 setelah itu centang publish even if test fail.&lt;/p&gt;
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/googleplay.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h4 id=&quot;apple-store-connect&quot;&gt;apple store connect&lt;/h4&gt;
 &lt;p&gt;isi dengan apple id yang sudah terdaftar di apple development untuk password saya sarankan memakai application-spesific password bagaimana cara membuatnya? kunjungi appleid.apple.com –&amp;gt; security –&amp;gt; authentiiasi two factor . sertakan app id lalu uncentang publish even if test fail&lt;/p&gt;
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/iosstore_connect.png&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -140,26 +140,26 @@ setelah itu centang publish even if test fail.&lt;/p&gt;
 &lt;h2 id=&quot;test-cicd&quot;&gt;Test CI/CD&lt;/h2&gt;
 &lt;p&gt;bisa kembali ke ide repository local untuk push ke git atau tombol start new build di pojok kanan atas di codemagic&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/testCD_prosess.gif&quot; /&gt;
 &lt;figcaption&gt;proses build &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;kalau sudah sukses akan seperti dibawah ini&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/succes_CD.gif&quot; /&gt;
 &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;untuk memastikan bisa di check di google play console dan ios store&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/succes_andro_delivery.gif&quot; /&gt;
 &lt;figcaption&gt;tampilan di google play&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/succes_ios_delivery.gif&quot; /&gt;
 &lt;figcaption&gt;tampilan di apple store&lt;/figcaption&gt;
 &lt;/figure&gt;
