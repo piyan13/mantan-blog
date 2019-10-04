@@ -1,0 +1,8 @@
+I"4<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
+
+  </nav>
+</aside>
+<p style="text-align: justify;">Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single  class Activity dan single layout yaitu <code class="highlighter-rouge">stopWatchActivity</code> dan <code class="highlighter-rouge">activity_stop_watch.xml</code>.</p>
+:ET

@@ -1,0 +1,40 @@
+I"‹<figure style="width: 400px" class="align-center">
+<img src="/images/hello_world_01.jpg" />
+<figcaption></figcaption>
+</figure>
+<p>hello 2015 heuheuheu waktunya turun gunung beroooo vakum coret blog dari 2012 dimulai dari bercandaan tuhan dengan syntak :</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/eroer.png" />
+<figcaption></figcaption>
+</figure>
+<p style="text-align: justify;">dpkg:unrecoverable fatal error dan seterusnya kedengerannya serem gak?
+setelah cari sana sini ternyata itu bug yang sudah ada sejak beberapa varian
+turunan keluarga besar debian. 
+itu terjadi karena ada corupt file di <code class="highlighter-rouge">/var/lib/dpkg/info/</code> berulang ulang karena beberapa tidak memiliki final new line.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">os</span>  
+  
+<span class="n">dpkg_path</span> <span class="o">=</span> <span class="s">'/var/lib/dpkg/info/'</span>  
+<span class="n">paths</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">dpkg_path</span><span class="p">)</span>  
+<span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>  
+    <span class="n">path</span> <span class="o">=</span> <span class="n">dpkg_path</span> <span class="o">+</span> <span class="n">path</span>  
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s">'a+'</span><span class="p">)</span>  
+    <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:]</span> <span class="o">!=</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">:</span>  
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>  
+        <span class="k">print</span> <span class="s">'added newline character to:'</span><span class="p">,</span> <span class="n">path</span>  
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>     
+</code></pre></div></div>
+
+<p>baris code python diatas adalah jawabannya berooo copy paste code diatas ke 
+knote,nano,vi dll trus save dengan apapun misal kalau aku dengan <code class="highlighter-rouge">mbuh.py</code>
+jangan lupa waktu nge run pake sebagai root misal :~&gt; sudo python mbuh.py</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/eroer1.png" />
+<figcaption></figcaption>
+</figure>
+
+<p>beres sudah masalah beroo ayoo lekas update dan upgrade atau install sesuatu yang tadi eroor kayak aku yg gagal install git sekarang sudah lancarâ€¦.. 
+thanks to pokerbirch for python scripth.. hapy coding everyone</p>
+:ET

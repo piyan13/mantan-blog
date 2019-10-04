@@ -1,0 +1,816 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.6 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Membangkitkan sang legenda dengan Arch linux social overdrive ./SO</title>
+<meta name="description" content="legenda acer aspire 5315Acer aspire 5315 adalah alat tempur yang melegenda bagi saya dengan sejarah yang cukup panjang menemani belajar dikala susah maupun senang saat di perguruan tinggi ,terhitung dari tahun 2008an hingga awal 2014 sang legenda resmi menjadi hiasan di meja gudang penuh amunisi dikarenakan salah diagnosa penyakitnya. Alhamdulilah awal bulan mei bisa ketemu ahli perangkat keras dokter spesialis muhammad ngok sekarang bukak klinik di ketintang barat memberi wacana kalau mesin aspire 5315 saya normal hanya saja lcdnya yg bermasalah jadi kepikiran untuk mempersiapkannya untuk menambah amunisi developing saya. alkisah dari dulu laptop ini sangat pemilih dalam hal operating system hanya bisa berjalan sempurna di keluarga debian seperti ubuntu dan linuxmint ada saja kendala kalau di install selain turunan debian mulai kernel panic hingga freezy itu berlaku untuk varian distro linux lama dan baru akhirnya nekat install distro arch linux karena paketnya kita build terpisah sesuai kebutuhan, seperti apa perjalanannya mari kita ulas satu persatu">
+
+
+  <meta name="author" content="Glamvian">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="./SO">
+<meta property="og:title" content="Membangkitkan sang legenda dengan Arch linux">
+<meta property="og:url" content="http://localhost:4000/membangkitkan-sang-legenda-dengan-archlinux/">
+
+
+  <meta property="og:description" content="legenda acer aspire 5315Acer aspire 5315 adalah alat tempur yang melegenda bagi saya dengan sejarah yang cukup panjang menemani belajar dikala susah maupun senang saat di perguruan tinggi ,terhitung dari tahun 2008an hingga awal 2014 sang legenda resmi menjadi hiasan di meja gudang penuh amunisi dikarenakan salah diagnosa penyakitnya. Alhamdulilah awal bulan mei bisa ketemu ahli perangkat keras dokter spesialis muhammad ngok sekarang bukak klinik di ketintang barat memberi wacana kalau mesin aspire 5315 saya normal hanya saja lcdnya yg bermasalah jadi kepikiran untuk mempersiapkannya untuk menambah amunisi developing saya. alkisah dari dulu laptop ini sangat pemilih dalam hal operating system hanya bisa berjalan sempurna di keluarga debian seperti ubuntu dan linuxmint ada saja kendala kalau di install selain turunan debian mulai kernel panic hingga freezy itu berlaku untuk varian distro linux lama dan baru akhirnya nekat install distro arch linux karena paketnya kita build terpisah sesuai kebutuhan, seperti apa perjalanannya mari kita ulas satu persatu">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2016-05-10T00:00:00+07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/membangkitkan-sang-legenda-dengan-archlinux/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Glamvian Hermawan",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+  <meta name="google-site-verification" content="Tv3QETuW1AWzu2iYIj0U51MMTY9kpTw12AoBm1aQZuw" />
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="./SO Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/rocket.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          ./SO
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/year-archive/" >Archive</a>
+            </li><li class="masthead__menu-item">
+              <a href="/About/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/Tags/" >Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/images/heu.jpg" alt="Glamvian" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Glamvian</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>between the art of code and 6 strings</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Surabaya Barat</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="http://www.glamvian.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+          
+        
+          
+            <li><a href="https://github.com/glamvian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://instagram.com/glmvn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/glamvian-hermawan-36a522172/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
+          
+        
+          
+            <li><a href="https://id.pinterest.com/glmvn12/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:glmvn.composer@gmail.com">
+            <meta itemprop="email" content="glmvn.composer@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Membangkitkan sang legenda dengan Arch linux">
+    <meta itemprop="description" content="legenda acer aspire 5315Acer aspire 5315 adalah alat tempur yang melegenda bagi saya dengan sejarah yang cukup panjang menemani belajar dikala susah maupun senang saat di perguruan tinggi ,terhitung dari tahun 2008an hingga awal 2014 sang legenda resmi menjadi hiasan di meja gudang penuh amunisi dikarenakan salah diagnosa penyakitnya. Alhamdulilah awal bulan mei bisa ketemu ahli perangkat keras dokter spesialis muhammad ngok sekarang bukak klinik di ketintang barat memberi wacana kalau mesin aspire 5315 saya normal hanya saja lcdnya yg bermasalah jadi kepikiran untuk mempersiapkannya untuk menambah amunisi developing saya. alkisah dari dulu laptop ini sangat pemilih dalam hal operating system hanya bisa berjalan sempurna di keluarga debian seperti ubuntu dan linuxmint ada saja kendala kalau di install selain turunan debian mulai kernel panic hingga freezy itu berlaku untuk varian distro linux lama dan baru akhirnya nekat install distro arch linux karena paketnya kita build terpisah sesuai kebutuhan, seperti apa perjalanannya mari kita ulas satu persatu">
+    <meta itemprop="datePublished" content="May 10, 2016">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Membangkitkan sang legenda dengan Arch linux
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <figure style="width: 200px" class="align-center">
+<img src="/images/aspire.png" />
+<figcaption>legenda acer aspire 5315</figcaption>
+</figure>
+<p style="text-align: justify;">Acer aspire 5315 adalah alat tempur yang melegenda bagi saya dengan sejarah yang cukup panjang menemani belajar dikala susah maupun senang saat di perguruan tinggi ,terhitung dari tahun 2008an hingga awal 2014 sang legenda resmi menjadi hiasan di meja gudang penuh amunisi dikarenakan salah diagnosa penyakitnya. Alhamdulilah awal bulan mei bisa ketemu ahli perangkat keras dokter spesialis muhammad ngok sekarang bukak klinik di ketintang barat memberi wacana kalau mesin aspire 5315 saya normal hanya saja lcdnya yg bermasalah jadi kepikiran untuk mempersiapkannya untuk menambah amunisi developing saya. alkisah dari dulu laptop ini sangat pemilih dalam hal operating system hanya bisa berjalan sempurna di keluarga debian seperti ubuntu dan linuxmint ada saja kendala kalau di install selain turunan debian mulai kernel panic hingga freezy itu berlaku untuk varian distro linux lama dan baru akhirnya nekat install distro arch linux karena paketnya kita build terpisah sesuai kebutuhan, seperti apa perjalanannya mari kita ulas satu persatu</p>
+
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#mode-partisi" id="markdown-toc-mode-partisi">Mode Partisi</a></li>
+  <li><a href="#format-filesystem-dan-swap" id="markdown-toc-format-filesystem-dan-swap">Format filesystem dan Swap</a></li>
+  <li><a href="#waktunya-download-dan-install-package-base" id="markdown-toc-waktunya-download-dan-install-package-base">Waktunya download dan install package base</a></li>
+  <li><a href="#membuat-password-root-dan-user" id="markdown-toc-membuat-password-root-dan-user">Membuat password root dan user</a></li>
+  <li><a href="#konfigurasi-lokasi-bahasa-dan-zona-waktu" id="markdown-toc-konfigurasi-lokasi-bahasa-dan-zona-waktu">konfigurasi lokasi bahasa dan zona waktu</a></li>
+  <li><a href="#install-bootloader-dan-beres-beres" id="markdown-toc-install-bootloader-dan-beres-beres">Install Bootloader dan beres beres</a></li>
+</ul>
+
+  </nav>
+</aside>
+
+<p>salah satu hal yang menarik dari menginstall operating system linux adalah
+sisi dokumentasinya yang sangat lengkap keuntungan opensource dengan komunitas terbesar jadi bahan untuk bacaan atau referensi di kala terjadi error gak usah panic tinggal check di forumnya atau wikipedianya karena error itulah pelajaran baru akan dimulai pintu pengetahuan sudah menjelang di pelupuk mata kali ini referensi lengkapnya ada di <a href="https://wiki.archlinux.org/" style="text-align: justify;">arch wiki</a></p>
+
+<h2 id="mode-partisi">Mode Partisi</h2>
+
+<figure style="width: 500px" class="align-center">
+<img src="/images/booting.gif" />
+<figcaption>booting liveusb</figcaption>
+</figure>
+<p class="notice--info"><strong>Note:</strong> untuk persiapan booting mode liveusb dan mentahan .iso arch bisa kunjungi <a href="https://www.archlinux.org/download/">download</a></p>
+<p>setelah booting dengan liveusb barulah install mode command line dimulai dengan
+partisi menggunakan applikasi <code class="highlighter-rouge">cfdisk</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># cfdisk</span>
+</code></pre></div></div>
+<figure style="width: 400px" class="align-center">
+<img src="/images/cfdisk.png" />
+<figcaption>credit google</figcaption>
+</figure>
+
+<p>saya cuman butuh 2 partisi yaitu partisi linux filesystem dan swap tinggal sesuain sama kebutuhan saja, kalau hardisknya sudah ada partisinya dan ragu bagian mana yang akan digunakan format atau delete bisa menggunakan <code class="highlighter-rouge">cfdisk -l</code> untuk melihat ada berapa partisi di hardisk</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># fdisk -l</span>
+</code></pre></div></div>
+
+<h2 id="format-filesystem-dan-swap">Format filesystem dan Swap</h2>
+
+<p>partisi telah siap dan saatnya untuk format filesystem saya memimilih ext4 lalu  mount partisi root pada directory /mnt</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mkfs.ext4 /dev/sda1</span>
+ <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mount /dev/sda1 /mnt</span>
+</code></pre></div></div>
+<p class="notice--info"><strong>Note:</strong> ada beberapa type dari filesystem untuk referensi lebih lanjut bisa baca baca <a href="https://wiki.archlinux.org/index.php/file_systems">arch wiki file systems</a>
+atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi artikel ini <a href="http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4/">theegeekstuff</a></p>
+
+<p>filesystem telah siap tinggal kita format partisi swap , apa itu swap ? silahkan ke <a href="https://wiki.archlinux.org/index.php/Swap">arch wiki swap</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mkswap /dev/sda2</span>
+ <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># swapon /dev/sda2</span>
+</code></pre></div></div>
+<p class="notice--warning"><strong>peringatan:</strong> pastikan mengingat /dev/sda dari filesystem dan swap yang sudah di alokasikan di mode partisi jangan sampai ketuker antara swap dan filesystem</p>
+
+<h2 id="waktunya-download-dan-install-package-base">Waktunya download dan install package base</h2>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/pacstrap.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># pacstrap -i /mnt base</span>
+</code></pre></div></div>
+<p class="notice--info"><strong>Note:</strong> untuk terlebih dahulu memastikan ada koneksi internet karena saya memakai jaringan wifi jadi konektivitasnya di jembatani oleh <code class="highlighter-rouge">wpa_supplicant</code> dengan <code class="highlighter-rouge">wifi-menu</code> silahkan check <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Getting_some_useful_information">arch wiki internet</a></p>
+
+<p class="notice--danger"><strong>Tips:</strong> jangan lupa untuk menginstall app dan library konektivias internet untuk selanjutnya digunakan pada saat setelah installasi selesai misal <code class="highlighter-rouge">iw</code>,<code class="highlighter-rouge">dialog</code>,<code class="highlighter-rouge">wpa_supplicant</code></p>
+
+<p>setelah terinstall dengan sempurna paket base di /mnt selanjutnya adalah configurasi fstab tugasnya file ini bisa dibaca di <a href="https://wiki.archlinux.org/index.php/Fstab">arch wiki fstab</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/fstab.gif" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="membuat-password-root-dan-user">Membuat password root dan user</h2>
+
+<p>akun root atau superuser digunakan system adminitration misal untuk melakukan kegiatan install dan akses folder folder yang ada di system, maka selain kegiatan sifatnya biasa di sarankan untuk membuat akun lagi selain root . karena arch mode liveusb menggunakan auto login maka untuk kepentingan keamanan maka kita harus memasukkan password root</p>
+
+<figure style="width: 400px" class="align-center">
+<img src="/images/chroot.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># arch-chroot /mnt /bin/bash</span>
+</code></pre></div></div>
+
+<p>setelah masuk ke mode root langsung deh <code class="highlighter-rouge">passwd</code></p>
+
+<figure style="width: 400px" class="align-center">
+<img src="/images/passwd.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>oke beres password superuser root saatnya membuat user lain untuk tugas tugas sederhana dan untuk keamanan jugak, sebelum itu install dulu paket sudo fungsinya untuk memberikan beberapa ijin akses ke system akun user</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/sudopac.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S sudo bash-completion</span>
+</code></pre></div></div>
+<p>setelah terinstall baru kita menambah user dan memberikannya password</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1"># useradd -m -g users -G wheel,storage,power -s /bin/bash &lt;namauser&gt;</span>
+ <span class="n">passwd</span> <span class="o">&lt;</span><span class="n">namauser</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/useradd.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>nah setelah itu baru kita konfigurasi user yang baru ditambahkan untuk berada dalam grup wheel agar bisa menjalankan tugas tugas yang membutuhkan akses ke system dengan sudo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#EDITOR=nano visudo</span>
+</code></pre></div></div>
+<p>setelah masuk ke teks editor nano hapus tanda # <code class="highlighter-rouge">%whell ALL=(ALL) ALL</code> seperti pada gambar dibawah ini</p>
+
+<figure style="width: 500px" class="align-center">
+<img src="/images/sudoers.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>beres dah masalah useradd langsung memasukkan nama hostname komputer berguna saat koneksi antar komputer</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1"># echo nama komputer &gt; /etc/hostname</span>
+</code></pre></div></div>
+<p class="notice--danger"><strong>peringatan:</strong> Hayo looh ingat ingat lagi password root dan user jangan sampe kelupaan</p>
+
+<h2 id="konfigurasi-lokasi-bahasa-dan-zona-waktu">konfigurasi lokasi bahasa dan zona waktu</h2>
+
+<p>saya menggunakan bahasa inggris saja karena sudah terbiasa bor</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#nano /etc/locale.gen</span>
+</code></pre></div></div>
+<p>hapus tanda # di lokasi dan bahasa yang dipilih setelah itu klik <code class="highlighter-rouge">locale-gen</code> untuk mengenerate</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/locale.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>selanjutanya menentukan zona waktu</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ls /usr/share/zoneinfo/</span>
+</code></pre></div></div>
+<p>maka akan muncul gambar dibawah ini karena saya menggunakan jakarta dia berada di directory Asia</p>
+<figure style="width: 600px" class="align-center">
+<img src="/images/zoneinfo.png" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ln -s /usr/share/zoneinfo/Asia/Jakarta</span>
+</code></pre></div></div>
+<p>okey beres zona waktu , bahasa dan lokasi sudah terkonfigurasi dengan benar</p>
+
+<h2 id="install-bootloader-dan-beres-beres">Install Bootloader dan beres beres</h2>
+
+<p>kegiatan kali ini diawali dengan bash script mkinitcpio yang digunakan untuk membuat initial ramdisk environment <a href="https://wiki.archlinux.org/index.php/Mkinitcpio">arch wiki mkinitcpio</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#mkinitcpio -p linux</span>
+</code></pre></div></div>
+<p>setelah itu download dan install grub</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S grub_bios</span>
+ <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub install /dev/sda</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/grubpac.gif" />
+<figcaption></figcaption>
+</figure>
+<p>konfigurasi boot di grub</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub-mkconfig -o /boot/grub/grub.cfg</span>
+</code></pre></div></div>
+
+<p>fiuuuuuh akhirnya saat saat terakhir telah tiba dalam daya dan upaya membangkitkan sang legenda 5315 tinggal unmount dan reboot jurus pamungkasnya
+check this out bor</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/fiuh.gif" />
+<figcaption>finally</figcaption>
+</figure>
+
+<p>Alhamdulilah sang legenda kini menampaki ruang baru dan menjadi alat tempur andalan saya lagi ini bener bener masih permulaan, ya awal yang baru sejarah baru buat aspire karena ternyata tidak hanya distro debian tapi arch jugak bisa keep badass lah pokoke</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2016-05-10T00:00:00+07:00">May 10, 2016</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Membangkitkan+sang+legenda+dengan+Arch+linux%20http%3A%2F%2Flocalhost%3A4000%2Fmembangkitkan-sang-legenda-dengan-archlinux%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmembangkitkan-sang-legenda-dengan-archlinux%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmembangkitkan-sang-legenda-dengan-archlinux%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/erorr-android-studio/" class="pagination--pager" title="Erorr Android Studio 2.0 di linux 64bit
+">Previous</a>
+    
+    
+      <a href="/membongkar-source-code-PrayTime/" class="pagination--pager" title="Membongkar source code PrayTime
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/images/glmvn1.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/codemagic-memang-ajaib/" rel="permalink">CodeMagic memang ajaib
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+credit: nevercode
+
+
+
+     Contents
+
+  
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/images/glmvn1.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Install-ReactNative/" rel="permalink">Install ReactNative dengan banyak ERORR
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+credit: codeburst
+
+
+
+     Contents
+
+  
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/images/glmvn1.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/kangen-Flazx-dan-learnr-pro/" rel="permalink">Kangen Flazx dan learnr.pro Terobati
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini s...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/images/glmvn1.jpg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/Bedah-Arsitektur-MVP/" rel="permalink">Bedah MVP pattern di Android
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">
+
+credit: androidpub
+
+
+
+     Contents
+
+  
+
+Akhirnya tiba di tahun 2018 jugak, berarti  blog minimalis ini menginjak tahun ke-2 masih kurang produktif dalam m...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/glamvian" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://gitlab.com/glamvian.hermawan" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-gitlab" aria-hidden="true"></i> GitLab</a></li>
+        
+      
+        
+          <li><a href="https://bitbucket.org/%7B2f30d112-ad26-4e92-8202-ac986a9f50de%7D/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/glmvn" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Glamvian Hermawan. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

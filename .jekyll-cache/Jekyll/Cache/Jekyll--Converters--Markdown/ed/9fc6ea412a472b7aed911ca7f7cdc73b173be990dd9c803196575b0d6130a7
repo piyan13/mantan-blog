@@ -1,0 +1,26 @@
+I"æ	<figure style="width: 400px" class="align-center">
+<img src="/images/mvp.png" />
+<figcaption>credit: androidpub</figcaption>
+</figure>
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#jadi-apa-itu-mvp" id="markdown-toc-jadi-apa-itu-mvp">jadi apa itu mvp?</a></li>
+  <li><a href="#kenapa-memakai-mvp" id="markdown-toc-kenapa-memakai-mvp">kenapa memakai mvp?</a></li>
+  <li><a href="#ringkasan" id="markdown-toc-ringkasan">ringkasan</a></li>
+</ul>
+
+  </nav>
+</aside>
+<p style="text-align: justify;">Akhirnya tiba di tahun 2018 jugak, berarti  blog minimalis ini menginjak tahun ke-2 masih kurang produktif dalam menulis kebanyakan membaca.. semoga awal tahun ini lebih produktif lagi dalam tulis menulis dan bongkar membongkar tiba-tiba saja kepikiran untuk mempelajari Arsitektur android lebih jauh biar gak makin boring terinspirasi dari tulisan tulisan para developer pro di belahan dunia sana,karena begitu fleksibel dan kebebasan dalam dalam menentukan arsitektur sebuah app ini pada akhirnya memunculkan masalah masalah yang umum seperti class besar, skema penamaan yg tidak konsisten, itu membuat pengujian, pemeliharaan dan perluasan aplikasi menjadi sulit.</p>
+
+<h2 id="jadi-apa-itu-mvp">jadi apa itu mvp?</h2>
+<p style="text-align: justify;">Pengertian Model View Presenter bisa liat di <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter">Wikipedia-MVP</a> simplenya adalah memisahkan logic dan view. biasanya logic atau logic business ada di presenter , view bertugas menangani kerja UI, mengkonversi perintah presenter untuk UI, lalu mendengarkan aksi dari user yang di teruskan ke UI.</p>
+
+<h2 id="kenapa-memakai-mvp">kenapa memakai mvp?</h2>
+<p style="text-align: justify;">untuk alesan testing dan pemeliharaan lah arsitektur mvp dipakai karena faktanya android activities digabungkan erat antara mekanisme UI dan akses data contohnya adalah CursorAdapter. dengan memisahakan 3layer secara independent itu berarti jugak kita bisa test mereka secara mandiri</p>
+
+<h2 id="ringkasan">ringkasan</h2>
+<p style="text-align: justify;">perbedaan pola MVC dan MVP sangat tipis dimana untuk disebut MVC ketika activity sebagai controller. MVP sangat bervareatif penggunaannya sesuai dengan masalah apa yang akan di selesaikan. dan untuk app yang berskala kecil dan tidak akan berkembang di masa depan, pendekatan pola MVP ini tidak akan banyak membantu.</p>
+:ET

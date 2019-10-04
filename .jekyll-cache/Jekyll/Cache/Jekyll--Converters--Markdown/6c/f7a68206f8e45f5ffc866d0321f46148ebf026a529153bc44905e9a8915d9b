@@ -1,0 +1,197 @@
+I"9<figure style="width: 200px" class="align-center">
+<img src="/images/aspire.png" />
+<figcaption>legenda acer aspire 5315</figcaption>
+</figure>
+<p style="text-align: justify;">Acer aspire 5315 adalah alat tempur yang melegenda bagi saya dengan sejarah yang cukup panjang menemani belajar dikala susah maupun senang saat di perguruan tinggi ,terhitung dari tahun 2008an hingga awal 2014 sang legenda resmi menjadi hiasan di meja gudang penuh amunisi dikarenakan salah diagnosa penyakitnya. Alhamdulilah awal bulan mei bisa ketemu ahli perangkat keras dokter spesialis muhammad ngok sekarang bukak klinik di ketintang barat memberi wacana kalau mesin aspire 5315 saya normal hanya saja lcdnya yg bermasalah jadi kepikiran untuk mempersiapkannya untuk menambah amunisi developing saya. alkisah dari dulu laptop ini sangat pemilih dalam hal operating system hanya bisa berjalan sempurna di keluarga debian seperti ubuntu dan linuxmint ada saja kendala kalau di install selain turunan debian mulai kernel panic hingga freezy itu berlaku untuk varian distro linux lama dan baru akhirnya nekat install distro arch linux karena paketnya kita build terpisah sesuai kebutuhan, seperti apa perjalanannya mari kita ulas satu persatu</p>
+
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#mode-partisi" id="markdown-toc-mode-partisi">Mode Partisi</a></li>
+  <li><a href="#format-filesystem-dan-swap" id="markdown-toc-format-filesystem-dan-swap">Format filesystem dan Swap</a></li>
+  <li><a href="#waktunya-download-dan-install-package-base" id="markdown-toc-waktunya-download-dan-install-package-base">Waktunya download dan install package base</a></li>
+  <li><a href="#membuat-password-root-dan-user" id="markdown-toc-membuat-password-root-dan-user">Membuat password root dan user</a></li>
+  <li><a href="#konfigurasi-lokasi-bahasa-dan-zona-waktu" id="markdown-toc-konfigurasi-lokasi-bahasa-dan-zona-waktu">konfigurasi lokasi bahasa dan zona waktu</a></li>
+  <li><a href="#install-bootloader-dan-beres-beres" id="markdown-toc-install-bootloader-dan-beres-beres">Install Bootloader dan beres beres</a></li>
+</ul>
+
+  </nav>
+</aside>
+
+<p>salah satu hal yang menarik dari menginstall operating system linux adalah
+sisi dokumentasinya yang sangat lengkap keuntungan opensource dengan komunitas terbesar jadi bahan untuk bacaan atau referensi di kala terjadi error gak usah panic tinggal check di forumnya atau wikipedianya karena error itulah pelajaran baru akan dimulai pintu pengetahuan sudah menjelang di pelupuk mata kali ini referensi lengkapnya ada di <a href="https://wiki.archlinux.org/" style="text-align: justify;">arch wiki</a></p>
+
+<h2 id="mode-partisi">Mode Partisi</h2>
+
+<figure style="width: 500px" class="align-center">
+<img src="/images/booting.gif" />
+<figcaption>booting liveusb</figcaption>
+</figure>
+<p class="notice--info"><strong>Note:</strong> untuk persiapan booting mode liveusb dan mentahan .iso arch bisa kunjungi <a href="https://www.archlinux.org/download/">download</a></p>
+<p>setelah booting dengan liveusb barulah install mode command line dimulai dengan
+partisi menggunakan applikasi <code class="highlighter-rouge">cfdisk</code></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># cfdisk</span>
+</code></pre></div></div>
+<figure style="width: 400px" class="align-center">
+<img src="/images/cfdisk.png" />
+<figcaption>credit google</figcaption>
+</figure>
+
+<p>saya cuman butuh 2 partisi yaitu partisi linux filesystem dan swap tinggal sesuain sama kebutuhan saja, kalau hardisknya sudah ada partisinya dan ragu bagian mana yang akan digunakan format atau delete bisa menggunakan <code class="highlighter-rouge">cfdisk -l</code> untuk melihat ada berapa partisi di hardisk</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># fdisk -l</span>
+</code></pre></div></div>
+
+<h2 id="format-filesystem-dan-swap">Format filesystem dan Swap</h2>
+
+<p>partisi telah siap dan saatnya untuk format filesystem saya memimilih ext4 lalu  mount partisi root pada directory /mnt</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mkfs.ext4 /dev/sda1</span>
+ <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mount /dev/sda1 /mnt</span>
+</code></pre></div></div>
+<p class="notice--info"><strong>Note:</strong> ada beberapa type dari filesystem untuk referensi lebih lanjut bisa baca baca <a href="https://wiki.archlinux.org/index.php/file_systems">arch wiki file systems</a>
+atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi artikel ini <a href="http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4/">theegeekstuff</a></p>
+
+<p>filesystem telah siap tinggal kita format partisi swap , apa itu swap ? silahkan ke <a href="https://wiki.archlinux.org/index.php/Swap">arch wiki swap</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># mkswap /dev/sda2</span>
+ <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># swapon /dev/sda2</span>
+</code></pre></div></div>
+<p class="notice--warning"><strong>peringatan:</strong> pastikan mengingat /dev/sda dari filesystem dan swap yang sudah di alokasikan di mode partisi jangan sampai ketuker antara swap dan filesystem</p>
+
+<h2 id="waktunya-download-dan-install-package-base">Waktunya download dan install package base</h2>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/pacstrap.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># pacstrap -i /mnt base</span>
+</code></pre></div></div>
+<p class="notice--info"><strong>Note:</strong> untuk terlebih dahulu memastikan ada koneksi internet karena saya memakai jaringan wifi jadi konektivitasnya di jembatani oleh <code class="highlighter-rouge">wpa_supplicant</code> dengan <code class="highlighter-rouge">wifi-menu</code> silahkan check <a href="https://wiki.archlinux.org/index.php/Wireless_network_configuration#Getting_some_useful_information">arch wiki internet</a></p>
+
+<p class="notice--danger"><strong>Tips:</strong> jangan lupa untuk menginstall app dan library konektivias internet untuk selanjutnya digunakan pada saat setelah installasi selesai misal <code class="highlighter-rouge">iw</code>,<code class="highlighter-rouge">dialog</code>,<code class="highlighter-rouge">wpa_supplicant</code></p>
+
+<p>setelah terinstall dengan sempurna paket base di /mnt selanjutnya adalah configurasi fstab tugasnya file ini bisa dibaca di <a href="https://wiki.archlinux.org/index.php/Fstab">arch wiki fstab</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/fstab.gif" />
+<figcaption></figcaption>
+</figure>
+
+<h2 id="membuat-password-root-dan-user">Membuat password root dan user</h2>
+
+<p>akun root atau superuser digunakan system adminitration misal untuk melakukan kegiatan install dan akses folder folder yang ada di system, maka selain kegiatan sifatnya biasa di sarankan untuk membuat akun lagi selain root . karena arch mode liveusb menggunakan auto login maka untuk kepentingan keamanan maka kita harus memasukkan password root</p>
+
+<figure style="width: 400px" class="align-center">
+<img src="/images/chroot.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># arch-chroot /mnt /bin/bash</span>
+</code></pre></div></div>
+
+<p>setelah masuk ke mode root langsung deh <code class="highlighter-rouge">passwd</code></p>
+
+<figure style="width: 400px" class="align-center">
+<img src="/images/passwd.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>oke beres password superuser root saatnya membuat user lain untuk tugas tugas sederhana dan untuk keamanan jugak, sebelum itu install dulu paket sudo fungsinya untuk memberikan beberapa ijin akses ke system akun user</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/sudopac.gif" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S sudo bash-completion</span>
+</code></pre></div></div>
+<p>setelah terinstall baru kita menambah user dan memberikannya password</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1"># useradd -m -g users -G wheel,storage,power -s /bin/bash &lt;namauser&gt;</span>
+ <span class="n">passwd</span> <span class="o">&lt;</span><span class="n">namauser</span><span class="o">&gt;</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/useradd.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>nah setelah itu baru kita konfigurasi user yang baru ditambahkan untuk berada dalam grup wheel agar bisa menjalankan tugas tugas yang membutuhkan akses ke system dengan sudo</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#EDITOR=nano visudo</span>
+</code></pre></div></div>
+<p>setelah masuk ke teks editor nano hapus tanda # <code class="highlighter-rouge">%whell ALL=(ALL) ALL</code> seperti pada gambar dibawah ini</p>
+
+<figure style="width: 500px" class="align-center">
+<img src="/images/sudoers.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>beres dah masalah useradd langsung memasukkan nama hostname komputer berguna saat koneksi antar komputer</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1"># echo nama komputer &gt; /etc/hostname</span>
+</code></pre></div></div>
+<p class="notice--danger"><strong>peringatan:</strong> Hayo looh ingat ingat lagi password root dan user jangan sampe kelupaan</p>
+
+<h2 id="konfigurasi-lokasi-bahasa-dan-zona-waktu">konfigurasi lokasi bahasa dan zona waktu</h2>
+
+<p>saya menggunakan bahasa inggris saja karena sudah terbiasa bor</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#nano /etc/locale.gen</span>
+</code></pre></div></div>
+<p>hapus tanda # di lokasi dan bahasa yang dipilih setelah itu klik <code class="highlighter-rouge">locale-gen</code> untuk mengenerate</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/locale.gif" />
+<figcaption></figcaption>
+</figure>
+
+<p>selanjutanya menentukan zona waktu</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ls /usr/share/zoneinfo/</span>
+</code></pre></div></div>
+<p>maka akan muncul gambar dibawah ini karena saya menggunakan jakarta dia berada di directory Asia</p>
+<figure style="width: 600px" class="align-center">
+<img src="/images/zoneinfo.png" />
+<figcaption></figcaption>
+</figure>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ln -s /usr/share/zoneinfo/Asia/Jakarta</span>
+</code></pre></div></div>
+<p>okey beres zona waktu , bahasa dan lokasi sudah terkonfigurasi dengan benar</p>
+
+<h2 id="install-bootloader-dan-beres-beres">Install Bootloader dan beres beres</h2>
+
+<p>kegiatan kali ini diawali dengan bash script mkinitcpio yang digunakan untuk membuat initial ramdisk environment <a href="https://wiki.archlinux.org/index.php/Mkinitcpio">arch wiki mkinitcpio</a></p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#mkinitcpio -p linux</span>
+</code></pre></div></div>
+<p>setelah itu download dan install grub</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S grub_bios</span>
+ <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub install /dev/sda</span>
+</code></pre></div></div>
+<figure style="width: 600px" class="align-center">
+<img src="/images/grubpac.gif" />
+<figcaption></figcaption>
+</figure>
+<p>konfigurasi boot di grub</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub-mkconfig -o /boot/grub/grub.cfg</span>
+</code></pre></div></div>
+
+<p>fiuuuuuh akhirnya saat saat terakhir telah tiba dalam daya dan upaya membangkitkan sang legenda 5315 tinggal unmount dan reboot jurus pamungkasnya
+check this out bor</p>
+
+<figure style="width: 600px" class="align-center">
+<img src="/images/fiuh.gif" />
+<figcaption>finally</figcaption>
+</figure>
+
+<p>Alhamdulilah sang legenda kini menampaki ruang baru dan menjadi alat tempur andalan saya lagi ini bener bener masih permulaan, ya awal yang baru sejarah baru buat aspire karena ternyata tidak hanya distro debian tapi arch jugak bisa keep badass lah pokoke</p>
+:ET

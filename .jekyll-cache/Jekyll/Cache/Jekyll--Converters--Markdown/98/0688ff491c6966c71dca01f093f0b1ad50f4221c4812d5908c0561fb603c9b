@@ -1,0 +1,7 @@
+I" <figure style="width: 200px" class="align-center">
+<img src="/images/analog.JPG" />
+<figcaption>waktu sholat</figcaption>
+</figure>
+<p style="text-align: justify;">Karena cukup penasaran dengan algoritma perhitungan waktu sholat dan kebutuhan jugak sih karena terkadang pekerjaan yang saya jalani berada pada posisi tidak dapat mendengar bunyi 
+suara adzan bahkan posisi di tempat penduduknya mayoritas non muslim,terbesit keinginan untuk mencari algoritma dari perhitungan sholat dan menemukan beberapa referensi di website <a href="http://praytimes.org/">praytime.org</a> disana di terangkan bagaimana cara menghitung waktu sholat secara detail yang bersumber dari hadist dan al-quran tidak hanya alur perhitungan manualnya disana jugak sudah ada contoh <a href="http://praytimes.org/wiki/Code">source code</a> yang di tulis dalam bahasa <code class="highlighter-rouge">javascript</code> dan di digubah dalam beberapa bahasa pemrogaman terutama <code class="highlighter-rouge">java</code> setelah saya download langsung saya coba compile di terminal</p>
+:ET

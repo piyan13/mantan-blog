@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-04T12:44:55+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/Codemagic.jpg&quot; /&gt;
+&lt;figcaption&gt;credit: nevercode&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-repository-project&quot; id=&quot;markdown-toc-setting-repository-project&quot;&gt;Setting Repository Project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setup-triggers-branch&quot; id=&quot;markdown-toc-setup-triggers-branch&quot;&gt;Setup Triggers Branch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#test&quot; id=&quot;markdown-toc-test&quot;&gt;Test&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#build&quot; id=&quot;markdown-toc-build&quot;&gt;Build&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#publish&quot; id=&quot;markdown-toc-publish&quot;&gt;Publish&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#settingan-flow-publish-untuk-ci&quot; id=&quot;markdown-toc-settingan-flow-publish-untuk-ci&quot;&gt;settingan flow publish untuk CI&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#test-ci-continous-integration&quot; id=&quot;markdown-toc-test-ci-continous-integration&quot;&gt;Test CI (Continous Integration)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#settingan-flow-publish-untuk-cd&quot; id=&quot;markdown-toc-settingan-flow-publish-untuk-cd&quot;&gt;settingan flow publish untuk CD&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#google-play&quot; id=&quot;markdown-toc-google-play&quot;&gt;google play&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#apple-store-connect&quot; id=&quot;markdown-toc-apple-store-connect&quot;&gt;apple store connect&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#test-cicd&quot; id=&quot;markdown-toc-test-cicd&quot;&gt;Test CI/CD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Akhirnya menulis lagi! kali ini aku ingin menulis tentang CI/CD (continous integration dan develivery) risetnya demi kebutuhan di kerjaan, tujuannya adalah efisiensi waktu development product product forca mobile , kebetulan di team RnD forcaErp pt sisi (sinergi informatika semen indonesia) mobile developer belom menerapkan tools CI/CD berbeda dengan ForcaErp devnya yang sudah memakai jenkins. monggo check &lt;a href=&quot;http://forca.id/&quot;&gt;erpForca&lt;/a&gt; , riset kali ini menggunakan tools &lt;a href=&quot;https://codemagic.io/&quot;&gt;CodeMagic&lt;/a&gt; tools yang benar benar fokus CI/CD untuk &lt;a href=&quot;https://flutter.dev/&quot;&gt;Flutter&lt;/a&gt;.
+Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan akhir delivery google play console android dan app store untuk ios.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-repository-project&quot;&gt;Setting Repository Project&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;setelah login dengan git version control dimana codemagic mengakomodir github, gitlab dan bitbucket secara otomatis semua repository kita di load dihalaman codemagic.&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/home.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;pilih setting project yang akan kita setup untuk CI/CD di codemagic.&lt;/p&gt;
+
+&lt;h2 id=&quot;setup-triggers-branch&quot;&gt;Setup Triggers Branch&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;build triggers disini adalah branch repository project yang di jadikan pemicu untuk codemagic melakukan build normalnya adalah branch master tapi tergantung kita jugak.&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/build_triggers.png&quot; /&gt;
+&lt;figcaption&gt;build triggers&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;disana ada pilihan pattern yang bisa di gunakan misal * menunjuk ke semua branch menjadi trigger untuk keterangan lengkapnya bisa klik show pattern examples jugak ada opsi dibawahnya untuk automatic triggering buildnya otomatis setiap waktu ada push ke branch atau setiap ada pull request ke branch.&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/build_master.png&quot; /&gt;
+&lt;figcaption&gt;show pattern&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/buil_everypush.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;test&quot;&gt;Test&lt;/h2&gt;
+&lt;p&gt;test disini adalah mengarah ke package test di project flutter karena di project saya tidak memakai unit test jadi disini tidak saya centang untuk enable flutter test dan stop build if test fail yang berarti flow test ini saya lewati&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/test.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;build&quot;&gt;Build&lt;/h2&gt;
+&lt;p&gt;di flow build ini kita bisa memilih bakal di build versi flutter berapa repository kita :&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/flowbuild_version.png&quot; /&gt;
+&lt;figcaption&gt;pilihan build flutter version&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;sesuai goal dari riset saya yang mau jadikan dua mobile platform sekaligus yaitu ios dan android maka dibawah ini adalah setup flow build saya&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/build_an_ios.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;publish&quot;&gt;Publish&lt;/h2&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/flowPublish.png&quot; /&gt;
+&lt;figcaption&gt;tampilan flow publish&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;di dalam flow publish ini  ada beberapa setting yang harus di setup saran saya adalah pastikan dulu apakah CI bekerja dengan lancar setelah itu baru setting untuk CD, setting apa saja yang untuk CI ?:&lt;/p&gt;
+
+&lt;h3 id=&quot;settingan-flow-publish-untuk-ci&quot;&gt;settingan flow publish untuk CI&lt;/h3&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;1.android code signing untuk menghasilkan apk.release apa saja yang diperlukan kunjungi &lt;a href=&quot;https://developer.android.com/studio/publish/app-signing?hl=id&quot;&gt;link ini&lt;/a&gt;&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/android_code_signing.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;2.ios code signing kalau ingin menghasilkan file .ipa disana ada pilihan automatic dan manual, saya sarankan untuk manual karena automatic percobaan saya beberapa kali masih menemui error. di manual cukup isi dengan code signing certificate dalam format .p12 dan isi provsioning profiles (disarankan yang distribution) dengan format .mobileprovision, kalau belom tahu cara untuk mendapatkan certificate .p12 bisa kunjungi &lt;a href=&quot;https://support.magplus.com/hc/en-us/articles/203808748-iOS-Creating-a-Distribution-Certificate-and-p12-File&quot;&gt;link ini&lt;/a&gt;, jika ios code signing ini tidak di isi maka artifactnya dalam bentum runner.&lt;/p&gt;
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/ios_signing.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;3.setup email yang akan dijadikan archive artifact dan jugak untuk notifikasi baik ketika build failed ataupun sukses, ada opsi jugak untuk slack selain email&lt;/p&gt;
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/flowPublish_email.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;test-ci-continous-integration&quot;&gt;Test CI (Continous Integration)&lt;/h3&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/startNewBuild.png&quot; /&gt;
+&lt;figcaption&gt;start new build&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;pilih start new build pojok kanan atas&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/testCi_succes.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan ketika berhasil test CI&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;jika berhasil check email/slack yang sudah di setup seperti dibawah ini:&lt;/p&gt;
+
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/email_ios_android.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan email&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;setelah memastikan CI berjalan dengan semestinya selanjutnya adalah setup CD&lt;/p&gt;
+
+&lt;h3 id=&quot;settingan-flow-publish-untuk-cd&quot;&gt;settingan flow publish untuk CD&lt;/h3&gt;
+&lt;p&gt;ketika settingan CI kita sudah tidak menemui kendala berikutnya tinggal setup flow publish google play untuk android dan apple store connect untuk ios yang mana tujuannya adalah automate delivery ketika build sukses.&lt;/p&gt;
+
+&lt;h4 id=&quot;google-play&quot;&gt;google play&lt;/h4&gt;
+&lt;p&gt;yang dibutuhkan untuk menyinkronkan codemagic ke google play adalah credential api google play file format dalam bentuk .json bagaimana cara untuk mendapatkan file ini bisa di sima &lt;a href=&quot;https://support.appinstitute.com/hc/en-us/articles/115002827469-How-to-Get-Your-Google-Play-JSON-Key&quot;&gt;artikel ini&lt;/a&gt;,
+setelah itu centang publish even if test fail.&lt;/p&gt;
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/googleplay.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;apple-store-connect&quot;&gt;apple store connect&lt;/h4&gt;
+&lt;p&gt;isi dengan apple id yang sudah terdaftar di apple development untuk password saya sarankan memakai application-spesific password bagaimana cara membuatnya? kunjungi appleid.apple.com –&amp;gt; security –&amp;gt; authentiiasi two factor . sertakan app id lalu uncentang publish even if test fail&lt;/p&gt;
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/iosstore_connect.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;test-cicd&quot;&gt;Test CI/CD&lt;/h2&gt;
+&lt;p&gt;bisa kembali ke ide repository local untuk push ke git atau tombol start new build di pojok kanan atas di codemagic&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/testCD_prosess.gif&quot; /&gt;
+&lt;figcaption&gt;proses build &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;kalau sudah sukses akan seperti dibawah ini&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/succes_CD.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;untuk memastikan bisa di check di google play console dan ios store&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/succes_andro_delivery.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan di google play&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/succes_ios_delivery.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan di apple store&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;seperti itulah setup codemagic yang telah saya riset masih banyak keluwesan yang ada di codemagic yang belom aku explore, mungkin tulisan berikutnya akan lebih dalem lagi semoga tentang codemagic, disini saya belom sempet membandingkan dengan tool sejenis apakah perfomance, security dll. mungkin di kemudian hari bakal bisa kasih testi kalau sudah cobain tool selain codemagic, okey terimakasih semoga bermanfaat.&lt;/p&gt;
+
+&lt;p&gt;referensi :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment&quot;&gt;continous integration vs delivery vs deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@nirespire/what-is-cicd-concepts-in-continuous-integration-and-deployment-4fe3f6625007&quot;&gt;what is cicd concept in continous integration and deployment&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=GsQ5MHHVNqQ&quot;&gt;Flutter: CI CD With Codemagic Automate Your Workflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: nevercode Contents</summary></entry><entry><title type="html">Install ReactNative dengan banyak ERORR</title><link href="http://localhost:4000/Install-ReactNative/" rel="alternate" type="text/html" title="Install ReactNative dengan banyak ERORR" /><published>2018-05-28T00:00:00+07:00</published><updated>2018-05-28T00:00:00+07:00</updated><id>http://localhost:4000/Install-ReactNative</id><content type="html" xml:base="http://localhost:4000/Install-ReactNative/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react6.png&quot; /&gt;
+&lt;figcaption&gt;credit: codeburst&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-wathcman&quot; id=&quot;markdown-toc-install-wathcman&quot;&gt;install wathcman&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-libtool&quot; id=&quot;markdown-toc-install-libtool&quot;&gt;install libtool&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-libssl&quot; id=&quot;markdown-toc-install-libssl&quot;&gt;install libssl&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#install-python-dev&quot; id=&quot;markdown-toc-install-python-dev&quot;&gt;install python-dev&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-flow&quot; id=&quot;markdown-toc-install-flow&quot;&gt;install flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#install-react-native-cli&quot; id=&quot;markdown-toc-install-react-native-cli&quot;&gt;install react native cli&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Bulan puasa tahun ini di awali dengan suka cita diberi kesempatan kembali untuk berkreasi di dunia progamming baru beberapa hari dan terkesan sangat cepat updatenya mulai takjub dengan Contraints layout, project kompleks dengan usia 2tahun dan si boss yang lagi seru serunya dengan ReactNative beberapa minggu sebelumnya tanpa sengaja saya install flutter walaupun belum sempet cobak cobak kecepatan build antara ReactNative dan fluuter kalau diliat dari video video yutub sama sama cepatnya kali ini karena di sela sela beradaptasi dengan pekerjaan baru yang gak baru baru banget sudah idola sejak masih duduk di bangku perkuliahan saya install ReactNative di mesin linux andalan saya terkejutnya banyak menemui ERORR, apa saja erorrnya mari kita uraikan sebelumnya saya telah install android studio tentunya java dan nodeJs( lupa install ini buat apa sebelumnya ) untuk kali jelas buat mesin utama ReactNative, saya secara langsung mengikuti panduan langkah demi langkah install ReactNative dari &lt;a href=&quot;https://www.moveoapps.com/blog/how-to-install-react-native-on-ubuntu-17-10/&quot;&gt;blog ini&lt;/a&gt; mulailah menemui error ketika install watchman dimana watchman diperlukan untuk melihat file system&lt;/p&gt;
+
+&lt;h2 id=&quot;install-wathcman&quot;&gt;install wathcman&lt;/h2&gt;
+&lt;p&gt;peringatan awal ketika melalui langkah autogen.sh&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ~/watchman $ ./autogen.sh
+ your system lacks libtoolize
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;install-libtool&quot;&gt;install libtool&lt;/h3&gt;
+&lt;p&gt;yang berarti harus install dulu &lt;code class=&quot;highlighter-rouge&quot;&gt;libtool&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install libtool
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react1.png&quot; /&gt;
+&lt;figcaption&gt;./autogen.sh&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;kiraen output begitu pertanda semua ok maka saya teruskan dengan langkah selanjutnya yaitu &lt;code class=&quot;highlighter-rouge&quot;&gt;$./configure&lt;/code&gt; karena dengan tidak adanya pesan peringatan yang berarti saya lanjutkan dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;$ make&lt;/code&gt; langsung keluar pesan error&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ContentHash.cpp:13:25: fatal error: openssl/sha.h: No such file or directory
+compilation terminated.
+Makefile:3143: recipe for target 'watchman-ContentHash.o' failed
+make[1]: *** [watchman-ContentHash.o] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;install-libssl&quot;&gt;install libssl&lt;/h3&gt;
+&lt;p&gt;itu yang berarti tidak ditemukannya library ssl langsung saja install &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo apt-get install libssl-dev&lt;/code&gt; dan dicoba &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt; ulang dan muncul pesan error baru&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;watchman-ContentHash.o: In function `watchman::ContentHashCache::computeHashImmediate(watchman::ContentHashCacheKey const&amp;amp;) const':
+/home/glmvn/react_native/watchman/ContentHash.cpp:65: undefined reference to `SHA1_Init'
+/home/glmvn/react_native/watchman/ContentHash.cpp:78: undefined reference to `SHA1_Update'
+/home/glmvn/react_native/watchman/ContentHash.cpp:81: undefined reference to `SHA1_Final'
+collect2: error: ld returned 1 exit status
+Makefile:1566: recipe for target 'watchman' failed
+make[1]: *** [watchman] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;setelah mencari clue di github tempat repository watchman berada saya menemukan jawaban &lt;a href=&quot;https://github.com/facebook/watchman/issues/514&quot;&gt;setelah install libssl untuk melakukan ./autogen.sh dan ./configure ulang sebelum make&lt;/a&gt; setelah saya ikuti emang bener siih tapi muncul pesan erorr baru&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd python &amp;amp;&amp;amp; /usr/bin/python ./setup.py clean build_py -c -d . build_ext -i
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'zip_safe'
+  warnings.warn(msg)
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'test_suite'
+  warnings.warn(msg)
+running clean
+running build_py
+byte-compiling ./pywatchman/compat.py to compat.pyc
+byte-compiling ./pywatchman/capabilities.py to capabilities.pyc
+byte-compiling ./pywatchman/__init__.py to __init__.pyc
+byte-compiling ./pywatchman/encoding.py to encoding.pyc
+byte-compiling ./pywatchman/load.py to load.pyc
+byte-compiling ./pywatchman/pybser.py to pybser.pyc
+running build_ext
+building 'pywatchman.bser' extension
+creating build
+creating build/temp.linux-x86_64-2.7
+creating build/temp.linux-x86_64-2.7/pywatchman
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c pywatchman/bser.c -o build/temp.linux-x86_64-2.7/pywatchman/bser.o
+pywatchman/bser.c:31:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+Makefile:5060: recipe for target 'py-build' failed
+make[1]: *** [py-build] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;install-python-dev&quot;&gt;install python-dev&lt;/h3&gt;
+&lt;p&gt;ternyata package build pythonnya belom ada langsung saja saya install &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo apt-get install python-dev&lt;/code&gt; terus ulangi lagi ./autogen.sh , ./configure dan akhirnya&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd python &amp;amp;&amp;amp; /usr/bin/python ./setup.py clean build_py -c -d . build_ext -i
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'zip_safe'
+  warnings.warn(msg)
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'test_suite'
+  warnings.warn(msg)
+running clean
+removing 'build/temp.linux-x86_64-2.7' (and everything under it)
+removing 'build'
+running build_py
+running build_ext
+building 'pywatchman.bser' extension
+creating build
+creating build/temp.linux-x86_64-2.7
+creating build/temp.linux-x86_64-2.7/pywatchman
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c pywatchman/bser.c -o build/temp.linux-x86_64-2.7/pywatchman/bser.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-x86_64-2.7/pywatchman/bser.o -o /home/glmvn/react_native/watchman/python/pywatchman/bser.so
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;tidak aku temukan pesan erorr yang berarti maka langsung tanpa basa basi &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo make install&lt;/code&gt;&lt;/p&gt;
+
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react2.png&quot; /&gt;
+&lt;figcaption&gt; versi watchman&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;install-flow&quot;&gt;install flow&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;beres jugak install watchman lanjut boor heuheuheu lanjutnya adalah install flow cukup download di 
+&lt;a href=&quot;https://github.com/facebook/flow/releases/download/v0.62.0/flow-linux64-v0.62.0.zip&quot;&gt;github flow&lt;/a&gt; setelah di unzip move ke &lt;code class=&quot;highlighter-rouge&quot;&gt;usr/local/bin/flow&lt;/code&gt; baru setelah flow tiada halangan yang berarti dilanjutkan dengan install ReactNative&lt;/p&gt;
+&lt;h2 id=&quot;install-react-native-cli&quot;&gt;install react native cli&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$npm install -g react-native-cli
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;waktunya testing dengan membuat project baru &lt;code class=&quot;highlighter-rouge&quot;&gt;$reactreact-native init TestingApp&lt;/code&gt; langsung deh colok device android dan pastikannya dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;lsusb&lt;/code&gt; setelah pasti terbaca pastikan konek ke adb dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;adb devices&lt;/code&gt;masuk ke folder testingApp dan cuss run &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native run-android&lt;/code&gt;&lt;/p&gt;
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react3.png&quot; /&gt;
+&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;saatnya buka file &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt; di IDE ATOM&lt;/p&gt;
+&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react4.gif&quot; /&gt;
+&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;kelebihan reactnative edit,save trus teka &lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt; di emulator ajaib&lt;/p&gt;
+
+&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/react5.gif&quot; /&gt;
+&lt;figcaption&gt;react build&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: codeburst Contents</summary></entry><entry><title type="html">Kangen Flazx dan learnr.pro Terobati</title><link href="http://localhost:4000/kangen-Flazx-dan-learnr-pro/" rel="alternate" type="text/html" title="Kangen Flazx dan learnr.pro Terobati" /><published>2018-03-27T00:00:00+07:00</published><updated>2018-03-27T00:00:00+07:00</updated><id>http://localhost:4000/kangen-Flazx-dan-learnr-pro</id><content type="html" xml:base="http://localhost:4000/kangen-Flazx-dan-learnr-pro/">&lt;p style=&quot;text-align: justify;&quot;&gt;Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro&lt;/p&gt;
+
+&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/flazx.jpg&quot; /&gt;
+&lt;figcaption&gt;penampakan Flazx&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;kenapa harus kangen akan situs seperti flazx karena di situ itulah banyak banget saya memperoleh bacaan bacaan bermutu tentunya gratis heuheuheu dengan begitu ilmunya jadi upgrade dan sialnya lagi saya sangat suka membaca pas lagi kangen cari cari lagi sering beberapa kali dulu awal 2009an situs flazx sering down under maintenance atau di serang sama administrator publisher buku beberapa judul bisa saya dapetin di kickastorrent terus akhir mati suri situs flazx untuk beberapa bulan.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/learnr.png&quot; /&gt;
+&lt;figcaption&gt;logo situs learnr.pro&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;setelah sekian lama saya mencari mencari dengan googling dan bertanya pada acitivis di forum forum ternyata flazx bertranpormasi menjadi situs learnr.pro saya pikir banyak banget musuh darsi situs itu untuk jaga jaga akhirnya saya banyak banget dunlut berbagai macam buku yang ada disana takut sewaktu waktu situ akan down lagi , kekhawatiran itu terbukti sekitar tahun 2016 saya akses situs itu sudah menjadi web parkir domain, kebanyakan di google searh dengan keyword learnr.pro flazx alternative tidak bisa memuaskan saya karena kebanyakan situs yang dimaksut berisi kontent kontent jadul yang kurang sekali mutunya&lt;/p&gt;
+
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/kumpulanbuku.png&quot; /&gt;
+&lt;figcaption&gt;my directory&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;dan hari ini saya sudah bisa menambah koleksi buku buku favorit untuk dibaca dan di praktekan bagi yang pengen tahu alamat situs flazx dan learnr.pro yang baru bisa email saya dan suatu hari saya jugak akan membeli buku buku tersebut heuheuheu insyallah kalau ada rezeki berlebih&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Books" /><summary type="html">Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro</summary></entry><entry><title type="html">Bedah MVP pattern di Android</title><link href="http://localhost:4000/Bedah-Arsitektur-MVP/" rel="alternate" type="text/html" title="Bedah MVP pattern di Android" /><published>2018-01-20T00:00:00+07:00</published><updated>2018-01-20T00:00:00+07:00</updated><id>http://localhost:4000/Bedah-Arsitektur-MVP</id><content type="html" xml:base="http://localhost:4000/Bedah-Arsitektur-MVP/">&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/mvp.png&quot; /&gt;
+&lt;figcaption&gt;credit: androidpub&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#jadi-apa-itu-mvp&quot; id=&quot;markdown-toc-jadi-apa-itu-mvp&quot;&gt;jadi apa itu mvp?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#kenapa-memakai-mvp&quot; id=&quot;markdown-toc-kenapa-memakai-mvp&quot;&gt;kenapa memakai mvp?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ringkasan&quot; id=&quot;markdown-toc-ringkasan&quot;&gt;ringkasan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Akhirnya tiba di tahun 2018 jugak, berarti  blog minimalis ini menginjak tahun ke-2 masih kurang produktif dalam menulis kebanyakan membaca.. semoga awal tahun ini lebih produktif lagi dalam tulis menulis dan bongkar membongkar tiba-tiba saja kepikiran untuk mempelajari Arsitektur android lebih jauh biar gak makin boring terinspirasi dari tulisan tulisan para developer pro di belahan dunia sana,karena begitu fleksibel dan kebebasan dalam dalam menentukan arsitektur sebuah app ini pada akhirnya memunculkan masalah masalah yang umum seperti class besar, skema penamaan yg tidak konsisten, itu membuat pengujian, pemeliharaan dan perluasan aplikasi menjadi sulit.&lt;/p&gt;
+
+&lt;h2 id=&quot;jadi-apa-itu-mvp&quot;&gt;jadi apa itu mvp?&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Pengertian Model View Presenter bisa liat di &lt;a href=&quot;https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter&quot;&gt;Wikipedia-MVP&lt;/a&gt; simplenya adalah memisahkan logic dan view. biasanya logic atau logic business ada di presenter , view bertugas menangani kerja UI, mengkonversi perintah presenter untuk UI, lalu mendengarkan aksi dari user yang di teruskan ke UI.&lt;/p&gt;
+
+&lt;h2 id=&quot;kenapa-memakai-mvp&quot;&gt;kenapa memakai mvp?&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;untuk alesan testing dan pemeliharaan lah arsitektur mvp dipakai karena faktanya android activities digabungkan erat antara mekanisme UI dan akses data contohnya adalah CursorAdapter. dengan memisahakan 3layer secara independent itu berarti jugak kita bisa test mereka secara mandiri&lt;/p&gt;
+
+&lt;h2 id=&quot;ringkasan&quot;&gt;ringkasan&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;perbedaan pola MVC dan MVP sangat tipis dimana untuk disebut MVC ketika activity sebagai controller. MVP sangat bervareatif penggunaannya sesuai dengan masalah apa yang akan di selesaikan. dan untuk app yang berskala kecil dan tidak akan berkembang di masa depan, pendekatan pola MVP ini tidak akan banyak membantu.&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: androidpub Contents Akhirnya tiba di tahun 2018 jugak, berarti blog minimalis ini menginjak tahun ke-2 masih kurang produktif dalam menulis kebanyakan membaca.. semoga awal tahun ini lebih produktif lagi dalam tulis menulis dan bongkar membongkar tiba-tiba saja kepikiran untuk mempelajari Arsitektur android lebih jauh biar gak makin boring terinspirasi dari tulisan tulisan para developer pro di belahan dunia sana,karena begitu fleksibel dan kebebasan dalam dalam menentukan arsitektur sebuah app ini pada akhirnya memunculkan masalah masalah yang umum seperti class besar, skema penamaan yg tidak konsisten, itu membuat pengujian, pemeliharaan dan perluasan aplikasi menjadi sulit.</summary></entry><entry><title type="html">AsyncTask 🆚 AsyncTaskLoader</title><link href="http://localhost:4000/AsycnTask-AsycnTaskLoader/" rel="alternate" type="text/html" title="AsyncTask 🆚 AsyncTaskLoader" /><published>2017-05-28T00:00:00+07:00</published><updated>2017-05-28T00:00:00+07:00</updated><id>http://localhost:4000/AsycnTask-%F0%9F%86%9A-AsycnTaskLoader</id><content type="html" xml:base="http://localhost:4000/AsycnTask-AsycnTaskLoader/">&lt;p style=&quot;text-align: justify;&quot;&gt;selamat datang di bulan ramadhan akhirnya satu tahun mengudara blog minimalis ini.Beberapa hari ini saya terlibat praktek terlalu dalam dengan LifeCycle android termasuk mengenai dasar Thread seperti diketahui android support multitasking dimana setiap aplikasi android dibagi menjadi multiple thread semuanya dapat berjalan bersamaan dalam satu kali eksekusi,eksekusi multiple thread ini di jadwalkan oleh operating system untuk berjalan di core CPU yang berbeda, untuk mempermudah developer android apps di android memiliki satu thread user interface yang mana bertanggung jawab untuk getting event dari berbagai macam sensor dan selanjutnya mengatur frame untuk menggambarnya agar berjalan pada 60 frame per detik karena itulah belajar thread LifeCycle ini sangat fundamental sekali dalam kasus yang saya temui sebisa mungkin meminimkan proses di thread utama karena akan membuat aplikasi menjadi force close.&lt;/p&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#asynctask&quot; id=&quot;markdown-toc-asynctask&quot;&gt;AsyncTask&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#asynctaskloader&quot; id=&quot;markdown-toc-asynctaskloader&quot;&gt;AsyncTaskLoader&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/Fetchweater.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;asynctask&quot;&gt;AsyncTask&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Dan class AsyncTask adalah jawaban bagaimana cara meminimalisir proses Thread utama terlebih di aplikasi yang saya bangun memuat atau mengambil data dari internet, dengan method doInBackground() proses pengambilan data Json dari server tidak membuat lama Thread utama memproses yang berakibat di destroynya activiy secara default sesuai LifeCycle android setelah 5 detik mengabaikan input pengguna android akan menganjurkan pengguna untuk menutup aplikasi.&lt;/p&gt;
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/explainAsynctask.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;AsyncTask adalah generic class berarti membutuhkan type berparameter di constructornya, setiap generic parameter adalah untuk menemukan argument variable java secara teknis di passing sebagai array karena mempunya 3 titik, ada tiga type generic AsyncTask :&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;params&lt;/code&gt;, type yang dikirim ke task setelah eksekusi&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;progress&lt;/code&gt;,type yang di publikasikan untuk memperbarui progress digunakan di komputasi Background&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;result&lt;/code&gt;, adalah hasil dari komputasi di Background&lt;/p&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; tidak semua type slalu digunakan untuk menandai yang tidak digunakan cukup gunakan type &lt;code class=&quot;highlighter-rouge&quot;&gt;Void&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyTask&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AsyncTask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Void&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;{...}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;untuk menjalankan AsyncTask cukup dengan memanggil &lt;code class=&quot;highlighter-rouge&quot;&gt;execute&lt;/code&gt; dengan parameter selanjutnya AsyncTask menjalankan beberapa langkah:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; memanggil &lt;code class=&quot;highlighter-rouge&quot;&gt;onPreExecute&lt;/code&gt; di thread UI jadi kita dapat menginisialisasi apapun yang inginkan di thread ui sebelum task background dimulai&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;2.&lt;/strong&gt; kemudian akan memanggil &lt;code class=&quot;highlighter-rouge&quot;&gt;doInBackground&lt;/code&gt; di thread lain tempat tas yang berjalan lama di eksekusi ini satu satunya method yanag harus di override untuk menggunakan class dan cara memanggilnya menggunakan parameter yang kita passing ke &lt;code class=&quot;highlighter-rouge&quot;&gt;execute&lt;/code&gt; jika kita ingin memperbarui ui dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;progress&lt;/code&gt; dari task yang di eksekusi dalam waktu yang lama kita akan memanggil &lt;code class=&quot;highlighter-rouge&quot;&gt;publishProgrees&lt;/code&gt; dengan parameter ini akan menyebabkan &lt;code class=&quot;highlighter-rouge&quot;&gt;onProgressUpdate&lt;/code&gt; di panggil di thread ui&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; dan terakhir return hasil task yang dijalankan di &lt;code class=&quot;highlighter-rouge&quot;&gt;doInBackground&lt;/code&gt; dan menyebabkan method &lt;code class=&quot;highlighter-rouge&quot;&gt;onPostExecute&lt;/code&gt; di panggil di thread ui dengan hasil yang telah di return dari doInBackground&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;okey untuk membuat asynchronous dari thread background dan thread user interface memang berhasil dan membuat thread utama tidak sampai force close jugak awal yang baik untuk coding dengan thread yang banyak akan tetapi masalah baru muncul ketika device di putar atau di rotate diwaktu transaksi jaringan sedang berlangsung dalam hal ini parse json dari server maka activity dimulai ulang, activity yang baru akan membuat asynctask lain untuk melakukan task dibackground dan akan ada penggunaan jaringan tambahan karena kedua thread berjalan secara paralel juga memerlukan waktu yang lebih lama lagi untuk user agar bisa melihat hasil pemuatan parahnya lagi akan menambah tekanan di memory itulah kenapa AsyncTask tidak slalu benar dalam semua kondisi&lt;/p&gt;
+
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/asyncproblem.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id=&quot;asynctaskloader&quot;&gt;AsyncTaskLoader&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Untuk permasalahan diatas terjawab dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;Loader&lt;/code&gt; yang menyediakan Framework untuk asynchronous loading data didaftarkan oleh id dengan komponen yang disebut &lt;code class=&quot;highlighter-rouge&quot;&gt;LoadManager&lt;/code&gt; yang memungkinkan mereka hidup diluar LifeCycle activity yang terkait mencegah pemuatan duplikat yang terjadi secara paralel jika ingin load data di thread background kita dapat mengimplentasikan Loader yang disebut &lt;code class=&quot;highlighter-rouge&quot;&gt;AsyncTaskLoader&lt;/code&gt;yang jugak mengimplementasikan fungsi yang sama dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;AsyncTask&lt;/code&gt; tapi dengan siklus yang berbeda.&lt;/p&gt;
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/asyncloader.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Loader&lt;/code&gt; terikat LifeCycle app secara otomatis menangani perubahan seperti rotasi, loader di desain untu memuat ulang jika user keluar dari activity kita dapat menghindari beban tambahan jika tida suka dengan mencache dan mengirimkan kembali hasil yang ada.&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">selamat datang di bulan ramadhan akhirnya satu tahun mengudara blog minimalis ini.Beberapa hari ini saya terlibat praktek terlalu dalam dengan LifeCycle android termasuk mengenai dasar Thread seperti diketahui android support multitasking dimana setiap aplikasi android dibagi menjadi multiple thread semuanya dapat berjalan bersamaan dalam satu kali eksekusi,eksekusi multiple thread ini di jadwalkan oleh operating system untuk berjalan di core CPU yang berbeda, untuk mempermudah developer android apps di android memiliki satu thread user interface yang mana bertanggung jawab untuk getting event dari berbagai macam sensor dan selanjutnya mengatur frame untuk menggambarnya agar berjalan pada 60 frame per detik karena itulah belajar thread LifeCycle ini sangat fundamental sekali dalam kasus yang saya temui sebisa mungkin meminimkan proses di thread utama karena akan membuat aplikasi menjadi force close. Contents AsyncTask AsyncTask Dan class AsyncTask adalah jawaban bagaimana cara meminimalisir proses Thread utama terlebih di aplikasi yang saya bangun memuat atau mengambil data dari internet, dengan method doInBackground() proses pengambilan data Json dari server tidak membuat lama Thread utama memproses yang berakibat di destroynya activiy secara default sesuai LifeCycle android setelah 5 detik mengabaikan input pengguna android akan menganjurkan pengguna untuk menutup aplikasi. AsyncTask adalah generic class berarti membutuhkan type berparameter di constructornya, setiap generic parameter adalah untuk menemukan argument variable java secara teknis di passing sebagai array karena mempunya 3 titik, ada tiga type generic AsyncTask :</summary></entry><entry><title type="html">Termenung dalam godaan Rolling-release dan menyerah di zona ‘stable’ untuk produktifitas</title><link href="http://localhost:4000/Termenung-dalam-godaan-rolling-release-dan-menyerah-dizona-stable-untuk-produktifitas/" rel="alternate" type="text/html" title="Termenung dalam godaan Rolling-release dan menyerah di zona 'stable' untuk produktifitas " /><published>2017-05-21T00:00:00+07:00</published><updated>2017-05-21T00:00:00+07:00</updated><id>http://localhost:4000/Termenung-dalam-godaan-rolling-release-dan-menyerah-dizona-stable-untuk-produktifitas</id><content type="html" xml:base="http://localhost:4000/Termenung-dalam-godaan-rolling-release-dan-menyerah-dizona-stable-untuk-produktifitas/">&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/tools.JPG&quot; /&gt;
+&lt;figcaption&gt;peralatan perang&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Semenjak memegang laptop thinkpad dan kembalinya laptop legenda mengudara membuat saya tergiur untuk banyak experiment menggali lagi ‘taste’ distro operating system linux diluar keluarga debian ini tanpa alesan ketika dulu cuman hardware acer yang hanya bisa maen ‘aman’ dikeluarga debian realitas setelah thinkpad semua distro bisa saya install tidak hanya sekedar mode liveusb walaupun ada beberapa sedikit ketakutan karena thinkpad ini makek amd besar kemungkinan kernel dan driver beberapa yang paling update belom bisa menjangkaunya ‘karena memang fakta umumnya hardware intel yang smooth’ tapi dari sana beberapa eroor masih bisa atasi alhamdulilah.&lt;/p&gt;
+&lt;figure style=&quot;width: 300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/kdenlive.png&quot; /&gt;
+&lt;figcaption&gt;kdenlive&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Dan di awal tahun ini saya mencoba menghibur diri membuat vlog tentang pekerjaan saya yang begitu menyesatkan berbekal kamera pinjaman gus hajir tujuan utama saya adalah dokumentasi suatu hari nanti ketika saya sudah benar benar independent dalam bekarya vlog tadi sebagai ajang mengenang berangkat darisana masuklah ke editing video dengan software &lt;a href=&quot;https://kdenlive.org/&quot;&gt;KdenLive&lt;/a&gt; seneng rasanya memadukan video dengan musik tapi waktu pakek distro &lt;a href=&quot;http://www.kubuntu.org/&quot;&gt;kubuntu&lt;/a&gt; driver manager yang disetting secara default membuat saya kurang puas dengan peforma kdenlive yang beberapa kali crash
+akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi yang memakan waktu jugak lagian si acer sudah terinstall archlinux thinkpad bukan untuk kegiatan oprek thinkpad untuk stable harian akhirnya menemukan alternatif lain turunan dari archlinux yaitu &lt;a href=&quot;https://manjaro.org/&quot;&gt;manjaro&lt;/a&gt; dan saya rasa distro ini ‘the next big thing’ benar saja ranking di situs &lt;a href=&quot;http://distrowatch.com/&quot;&gt;DistroWatch&lt;/a&gt; masuk kedalam 3 besar.&lt;/p&gt;
+&lt;figure style=&quot;width: 300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/watch.png&quot; /&gt;
+&lt;figcaption&gt;ranking distrowatch&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Dengan serta merta saya langsung install manjaro di thinkpad benar saja sangat powerfull fitur terupdate paling utama pemilihan driver bebas untuk ini kdenlive berjalan sangat hampir sempurna saya pakek sampai bulan mei ketika sudah tidak lagi maenan vlog dan editing video kdenlive saya kembali fokus mengejar ketertinggalan di coding android entah ada apa dibenak saya setelah update network applet kde manjaro saya tidak bisa membaca ssid wi-fi dan tidak jugak bisa wired seketika sedikit panik karena lagi panas panasnya coding android beberapa kali mancari clue di wikipedia dan beberapa komunitas tidak ditemukan jawaban yang memuaskan semua farian distro lain yang pakek dekstop kde saya coba via liveusb sama saja network applet gak bisa membaca ssid (dikemudian hari ternyata untuk manjaro terbaru/update harus manual install driver broadcom tidak seperti versi 16.04 yg sudah default) akhirnya saya install manjaro dengan dekstop gnome shell beberapa minggu work fine dan setelah saya update lagi lagi eroor dan stuck di playmouth setelah 3hari experiment sendiri karena di internet tidak menemukan clue akhirnya ketemu ini lebih ketidak sabaran saya untuk urai satu satu diakibatkan karena emang lagi fokusnya ke coding android tibalah bingung untuk tetap makek manjaro kde (sampai hari ini dekstop kde masih menjadi favorit saya karena sesuai selera dan kebutuhan) atau makek kubuntu (ubuntu with kde desktop) dan &lt;a href=&quot;https://www.linuxmint.com/&quot;&gt;linuxmint kde 18.1&lt;/a&gt; dengan pertimbangan sebagai berikut :&lt;/p&gt;
+
+&lt;h2 id=&quot;manjaro&quot;&gt;Manjaro&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Rolling release keunggulan bisa terdepan mencoba terbaru teknologi linux tapi jugak banyak bug dan eroor&lt;/li&gt;
+  &lt;li&gt;Rolling release berarti sekali install untuk selamanya dengan catatan ketika update bisa segera menemukan bug dan memperbaikinya&lt;/li&gt;
+  &lt;li&gt;untuk thinkpad amd belom ditemukan masalah driver yang berarti.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;kubuntu&quot;&gt;Kubuntu&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Driver defaultnya membuat kurang leluasa dalam mengekspresikan diri&lt;/li&gt;
+  &lt;li&gt;untuk support yang lama bisa memakai versi Long Time Support tapi update tidak radikal serperti manjaro yang rolling release menjadikan bakal ketinggalan teknologi terbaru dari linux&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;linuxmint-kde&quot;&gt;linuxMint Kde&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Drivernya bisa di configurasi sesuai selera daripada Kubuntu&lt;/li&gt;
+  &lt;li&gt;untuk support yang lama bisa memakai versi Long Time Support tapi update tidak radikal serperti manjaro yang rolling release menjadikan bakal ketinggalan teknologi terbaru dari linux&lt;/li&gt;
+  &lt;li&gt;ketakutan masalah security masih menghatui dimana perlu di ingat beberapa waktu yang lalu saya beralih ke kubuntu karena repository linuxmint di susupi oleh cracker&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Finally saya memilih Linuxmint sebenarnya masih tergiur dengan manjaro yang rolling release dikarenan saya butuh distro yang benar benar stable untuk harian dengan kecil kemungkinan eroor yang menyita waktu untuk memperbaikinya dan alasan produktifitas jugak LTS mint support sampek 2021 untuk explore dan oprek teknologi linux terbarukan bisa di dayakan laptop legenda acer yang makek hardware intel impas deh imbang heuheuheu rolling release (stable jugak)  buat opreker dan stable release untuk produktifitas&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">peralatan perang Semenjak memegang laptop thinkpad dan kembalinya laptop legenda mengudara membuat saya tergiur untuk banyak experiment menggali lagi ‘taste’ distro operating system linux diluar keluarga debian ini tanpa alesan ketika dulu cuman hardware acer yang hanya bisa maen ‘aman’ dikeluarga debian realitas setelah thinkpad semua distro bisa saya install tidak hanya sekedar mode liveusb walaupun ada beberapa sedikit ketakutan karena thinkpad ini makek amd besar kemungkinan kernel dan driver beberapa yang paling update belom bisa menjangkaunya ‘karena memang fakta umumnya hardware intel yang smooth’ tapi dari sana beberapa eroor masih bisa atasi alhamdulilah. kdenlive Dan di awal tahun ini saya mencoba menghibur diri membuat vlog tentang pekerjaan saya yang begitu menyesatkan berbekal kamera pinjaman gus hajir tujuan utama saya adalah dokumentasi suatu hari nanti ketika saya sudah benar benar independent dalam bekarya vlog tadi sebagai ajang mengenang berangkat darisana masuklah ke editing video dengan software KdenLive seneng rasanya memadukan video dengan musik tapi waktu pakek distro kubuntu driver manager yang disetting secara default membuat saya kurang puas dengan peforma kdenlive yang beberapa kali crash akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi yang memakan waktu jugak lagian si acer sudah terinstall archlinux thinkpad bukan untuk kegiatan oprek thinkpad untuk stable harian akhirnya menemukan alternatif lain turunan dari archlinux yaitu manjaro dan saya rasa distro ini ‘the next big thing’ benar saja ranking di situs DistroWatch masuk kedalam 3 besar. ranking distrowatch Dengan serta merta saya langsung install manjaro di thinkpad benar saja sangat powerfull fitur terupdate paling utama pemilihan driver bebas untuk ini kdenlive berjalan sangat hampir sempurna saya pakek sampai bulan mei ketika sudah tidak lagi maenan vlog dan editing video kdenlive saya kembali fokus mengejar ketertinggalan di coding android entah ada apa dibenak saya setelah update network applet kde manjaro saya tidak bisa membaca ssid wi-fi dan tidak jugak bisa wired seketika sedikit panik karena lagi panas panasnya coding android beberapa kali mancari clue di wikipedia dan beberapa komunitas tidak ditemukan jawaban yang memuaskan semua farian distro lain yang pakek dekstop kde saya coba via liveusb sama saja network applet gak bisa membaca ssid (dikemudian hari ternyata untuk manjaro terbaru/update harus manual install driver broadcom tidak seperti versi 16.04 yg sudah default) akhirnya saya install manjaro dengan dekstop gnome shell beberapa minggu work fine dan setelah saya update lagi lagi eroor dan stuck di playmouth setelah 3hari experiment sendiri karena di internet tidak menemukan clue akhirnya ketemu ini lebih ketidak sabaran saya untuk urai satu satu diakibatkan karena emang lagi fokusnya ke coding android tibalah bingung untuk tetap makek manjaro kde (sampai hari ini dekstop kde masih menjadi favorit saya karena sesuai selera dan kebutuhan) atau makek kubuntu (ubuntu with kde desktop) dan linuxmint kde 18.1 dengan pertimbangan sebagai berikut :</summary></entry><entry><title type="html">Lebih dalam tentang RecyclerView</title><link href="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/" rel="alternate" type="text/html" title="Lebih dalam tentang RecyclerView" /><published>2017-05-08T00:00:00+07:00</published><updated>2017-05-08T00:00:00+07:00</updated><id>http://localhost:4000/Lebih-dalam-tentang-RecyclerView</id><content type="html" xml:base="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/udaRecycle.gif&quot; /&gt;
+&lt;figcaption&gt;RecyclerView shunshine udacity&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#adapter&quot; id=&quot;markdown-toc-adapter&quot;&gt;Adapter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#layoutmanager&quot; id=&quot;markdown-toc-layoutmanager&quot;&gt;LayoutManager&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Mei tahun 2017 begitu membara cukup terseok seok hanya untuk sekedar istiqomah dan waktunya untuk mengupas habis beberapa ketertinggalan diving in biar gak makin tertinggal okey RecyclerView di perkenalkan pada saat android L adalah sebuah ViewGroup baru yang di persiapkan untuk render view adapter menurut mentor di udacity RecyclerView menjadi inti dari banyak aplikasi dengan alesan untuk hal hal yang compleks penangannya daripada ListView isu utama dari RecylcerView adalah mengenai garbage collection memory yang terpakai saat menampilkan data dengan banyak nan kompleks&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Modular hampir di setiap bagian dari RecyclerView dan untuk mendalaminya saya harus merasa nyaman dengan element elementnya kayak &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView.Adapter&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutManager&lt;/code&gt; , &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemAnimator&lt;/code&gt;  dll berangkat dari sana mencoba untuk menelaah satu persatu&lt;/p&gt;
+&lt;h2 id=&quot;adapter&quot;&gt;Adapter&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Adapter dipanggil RecyclerView untuk membuat item baru dalam bentuk ViewHolder,adapter jugak mengumpulkan atau menggabungkan item dengan data dan return informasi mengenai tentang data seperti banyaknya item di dalam source data, Adapter meminta kita untuk meng override tida method yaitu:&lt;/p&gt;
+&lt;ul style=&quot;text-align: justify;&quot;&gt;
+  &lt;li&gt;onCreateViewHolder yang dipanggil ketika RecyclerView menginstanisasi intance ViewHolder&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li&gt;onBindViewHolder method ini dipanggil ketika RecyclerView ingin mengisi view dengan data&lt;/li&gt;
+  &lt;li&gt;getItemCount yang return jumlah dari item ke dalam data source&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure style=&quot;text-align: justify;&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/methodAdapter.gif&quot; /&gt;
+&lt;figcaption&gt;ilustrasi override method Adapter&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;layoutmanager&quot;&gt;LayoutManager&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;LayoutManager yang menentukan colletion item ditampilkan dan LayoutManager menjadi bagian terpenting cara mendaur ulang bekerja di RecyclerView karena LayoutManager yang menentukan kapan mendaur ulang tampilan item yang tidak lagi terlihat saat pengguna menggulirkan layar&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/GreenRecyclerView.gif&quot; /&gt;
+&lt;figcaption&gt;app RecyclerView&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Memang betul dalam prakteknya konsep ViewGroup RecyclerView sulit tapi setidaknya dengan pemaparan di udacity hasilnya seperti gambar diatas saya jadi sedikit banyak terbantu karena fungsinya sangat penting dari sekedar ListView jadi makin tak sabar untuk explore lebih jau lagi dan lagi&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">RecyclerView shunshine udacity Contents Mei tahun 2017 begitu membara cukup terseok seok hanya untuk sekedar istiqomah dan waktunya untuk mengupas habis beberapa ketertinggalan diving in biar gak makin tertinggal okey RecyclerView di perkenalkan pada saat android L adalah sebuah ViewGroup baru yang di persiapkan untuk render view adapter menurut mentor di udacity RecyclerView menjadi inti dari banyak aplikasi dengan alesan untuk hal hal yang compleks penangannya daripada ListView isu utama dari RecylcerView adalah mengenai garbage collection memory yang terpakai saat menampilkan data dengan banyak nan kompleks</summary></entry><entry><title type="html">Fragment di WarPlos</title><link href="http://localhost:4000/Fragment-di-Warplos/" rel="alternate" type="text/html" title="Fragment di WarPlos" /><published>2017-02-07T00:00:00+07:00</published><updated>2017-02-07T00:00:00+07:00</updated><id>http://localhost:4000/Fragment-di-Warplos</id><content type="html" xml:base="http://localhost:4000/Fragment-di-Warplos/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#structur-app-warplos&quot; id=&quot;markdown-toc-structur-app-warplos&quot;&gt;Structur app warplos&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#langkah-langkah-pengerjaan-warplosapp&quot; id=&quot;markdown-toc-langkah-langkah-pengerjaan-warplosapp&quot;&gt;langkah langkah pengerjaan WarplosApp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Studi kasus kali ini adalah tentang Fragment dengan app sederhana warplos yaitu app yang menampilkan profil usaha kecil menengah di daerah Bangkingan RW2 surabaya dimana pokok pembahasannya adalah nantik warplos bisa menyesuaikan tampilan saat di run di phone atau tablet,&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Ketika di run di phone dia akan menampilkan terpisah antara Listview dengan FragmentDetail class maksudnya dengan 2screen yang berbeda, sebaliknya untuk tablet karena memiliki screen yang large dia ListView dan DetailFragment akan ditampilkan dalam satu screen (salah satu keunggulan Fragment).&lt;/p&gt;
+
+&lt;h2 id=&quot;structur-app-warplos&quot;&gt;Structur app warplos&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;jadi di app Warplos nantinya ada 2activity yaitu MainActivity dan WarPlosDetailActivity dimana untuk MainActivity akan berfungsi menampilkan list jika FragmentContainer tidak sama dengan null yang berarti akan menampilkan layour-large untuk tablet maka DetailFragment akan ditampilkan dalam satu screen dan jika sebalikna Fragment container null maka layout akan merujuk pada standart layout yang berart jika list di klik maka akan memanggil class WarPlosDetailActivity, kemudian app Warplos memiliki 2 class Fragment yaitu WarPlosListFragment dan WarPlosDetailFragment dimana untuk class WarPlosListFragment berisi list beberapa nama umkm dan untuk class WarPlosDetailFragment menampilkan data detail dari nama umkm yang clik di layar dan jugak di app Warplos terdapat class WarplosData dimana class tersebut berisi tentang array yang diperlukan oleh class WarPlosDetailFragment dan WarPlosListFragment.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/backsack.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan warplos di tablet&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/waplosanim.gif&quot; /&gt;
+&lt;figcaption&gt;tampilan warplos di di phone&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;langkah-langkah-pengerjaan-warplosapp&quot;&gt;langkah langkah pengerjaan WarplosApp&lt;/h2&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Langkah awal yang saya buat adalah membuat class WarplosData berisi data array nama dan descripsi dari umkm di bangkingan rw2 begini umlnya&lt;/p&gt;
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/WarplosData.png&quot; /&gt;
+&lt;figcaption&gt;uml class WarplosData&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;yang nantinya data data dari class ini dipanggil oleh class WarPlosDetailFragment dan WarPlosListFragment.&lt;/p&gt;
+
+&lt;p&gt;lalu saya membuat class WarPlosDetailFragment untuk mencoba menampilkan Data detail random yang diambil dari class WarplosData berikut umlnya:&lt;/p&gt;
+
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/warplosdetailFragment.png&quot; /&gt;
+&lt;figcaption&gt;uml class WarPlosDetailFragment&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;setelah update layout DetailFragment dan memanggilnya di MainActivity percobaan pertama hasinya seperti gambar dibawah ini&lt;/p&gt;
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/testdrivedetailwarplos.png&quot; /&gt;
+&lt;figcaption&gt;test data deskripsi&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;selanjutnya adalah mencoba menampilkan satu layar dengan dua Fragment untuk tampilan yang akan peruntukkan table untuk itu saya membuat class WarPlosListFragment seperti ini umlnya:&lt;/p&gt;
+
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/warploslistfragment.png&quot; /&gt;
+&lt;figcaption&gt;uml class WarPlosListFragment&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;lalu update layoutnya dan memanggilnya di dalam method onCreate class MainActivity tampilannya sebagai berikut&lt;/p&gt;
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/separateScreenWarplos.png&quot; /&gt;
+&lt;figcaption&gt;tampilan 2fragment satu screen&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;alhamdulillah semua data bisa ditampilkan di screen baik untuk list nama dan deskripsi selanjutnya adalah membuat bagaimana tampilan saat WarPlos berjalan di phone dan tablet menjadi berbeda maka saya buat folder layout lagi di directory res dengan nama layout-large dimana ini akan berisi layout activity_main.xml yang berbeda isi dengan yang terdapat di directory layout kali ini saya jugak akan membuat class WarPlosDetailActivity untuk mengontrol class WarPlosDetailFragment dan sebagai tujuan intent dari class MainActivity saat WarPlos berjalan di phone berikut umlnya&lt;/p&gt;
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/waplosdetailactivity.png&quot; /&gt;
+&lt;figcaption&gt;uml clas WarPlosDetailActivity&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;dan langkah terkahir adalah update class MainActivity seperti ini umlnya&lt;/p&gt;
+
+&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/mainactivityWarplos.png&quot; /&gt;
+&lt;figcaption&gt;uml clas MainActivity&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;ada beberapa catatan misal backstack transaction di fragment gimana fungsinya adalah ketika user klik tombol kembali waprlos akan menuju list yang sebelumnya di klik , dan untuk issues ketika app berjalan tiba tiba kita ganti rotasi device itu jugak menjadi tambahan tambahan untuk pembedahan Fragment kali ini dan saya sempet jugak mengamali deadlock saat menuliskan di blog ini ….. done!&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">Contents Studi kasus kali ini adalah tentang Fragment dengan app sederhana warplos yaitu app yang menampilkan profil usaha kecil menengah di daerah Bangkingan RW2 surabaya dimana pokok pembahasannya adalah nantik warplos bisa menyesuaikan tampilan saat di run di phone atau tablet,</summary></entry><entry><title type="html">Mendalami Activity Lifecyle</title><link href="http://localhost:4000/Mendalami-LifeCycle-Activity/" rel="alternate" type="text/html" title="Mendalami Activity Lifecyle" /><published>2017-01-13T00:00:00+07:00</published><updated>2017-01-13T00:00:00+07:00</updated><id>http://localhost:4000/Mendalami-LifeCycle-Activity</id><content type="html" xml:base="http://localhost:4000/Mendalami-LifeCycle-Activity/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#launch-running--destroy&quot; id=&quot;markdown-toc-launch-running--destroy&quot;&gt;Launch, Running , Destroy&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#onsaveinstancestate&quot; id=&quot;markdown-toc-onsaveinstancestate&quot;&gt;onSaveInstanceState()&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#start-stop-restart&quot; id=&quot;markdown-toc-start-stop-restart&quot;&gt;Start, Stop, Restart&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#kenapa-onrestart-bukan-onrestart&quot; id=&quot;markdown-toc-kenapa-onrestart-bukan-onrestart&quot;&gt;kenapa onRestart() bukan onRestart()?&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#onpaused&quot; id=&quot;markdown-toc-onpaused&quot;&gt;onPaused()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#apa-yg-terjadi-ketika-onpaused-device-diubah-rotasinya&quot; id=&quot;markdown-toc-apa-yg-terjadi-ketika-onpaused-device-diubah-rotasinya&quot;&gt;apa yg terjadi ketika onPaused device diubah rotasinya?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single  class Activity dan single layout yaitu &lt;code class=&quot;highlighter-rouge&quot;&gt;stopWatchActivity&lt;/code&gt; dan &lt;code class=&quot;highlighter-rouge&quot;&gt;activity_stop_watch.xml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure style=&quot;width:400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/stopwatch.gif&quot; /&gt;
+&lt;figcaption&gt;penampakan app&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Sama seperti stopwatch pada umumnya fungsinya untuk menghitung waktu perdetik ada 3 button disana start, stop, dan reset dengan uml seperti dibawah ini.&lt;/p&gt;
+
+&lt;figure style=&quot;width:400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/StopWatchActiviy.png&quot; /&gt;
+&lt;figcaption&gt;uml class StopWatchActivity&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;issue pertama muncul ketika app berjalan setelah kita touch start button trus device kita ganti rotasi jadi horizontal ditengah tengah app berjalan seketika aplikasi langsung muncul seperti awal lagi alias di destroy.&lt;/p&gt;
+&lt;figure style=&quot;width:400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/rotationStp.gif&quot; /&gt;
+&lt;figcaption&gt;rotation&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;apa yang terjadi adalah rotasi layar android dan ukuran layar berubah, dan itu destroy Activity, termasuk semua variabel yang digunakan method runTimer(). setelah itu method onCreate() berjalan lagi dan method runTimer() dipanggil karena Activity di re-create, variabel mSecond dan mRunning bernilai default.&lt;/p&gt;
+
+&lt;h2 id=&quot;launch-running--destroy&quot;&gt;Launch, Running , Destroy&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Main state dari activity adalah ketika dia running atau aktif. activity berjalan di foreground dari screen dan user berinteraksi dengannya, activity running setelah ter launch dan berakhir setelah di destroy. ketika activity berubah dari launched dan akan di destroy dia mentrigger method kunci Lifecyle activity yaitu onCreate() dan onDestroy(). itu adalah method Lifecyle yang kita inherit di Activity dan bisa kita override.&lt;/p&gt;
+&lt;figure style=&quot;width:200px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/activitylaunchstp.png&quot; /&gt;
+&lt;figcaption&gt;alur activity born to death&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;Method onCreate() akan dipanggil setelah Activity di launch. dan method onDestroy() adalah method terakhir yang di panggil sebelum activity di destroy.&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/inheritstp.png&quot; /&gt;
+&lt;figcaption&gt;turunan class activity&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;karena issue rotasi terjadi karena destroy maka sebelum destroy terjadi saya mau simpan state yang sedang berjalan dengan method onSaveInstanceState() method ini bisa dipanggil sebelum method onDestroy() berjalan. method onSaveInstanceState() mempunyai satu parameter yaitu Bundle dan Bundle
+membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam single object.&lt;/p&gt;
+
+&lt;h3 id=&quot;onsaveinstancestate&quot;&gt;onSaveInstanceState()&lt;/h3&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;method onCreate akan melewati Bundle sebagai parameter. ini berarti jika saya menambah value mRunning dan mSecond ke Bundle, method onCreate() akan mengambil mereka ketika Activity dimuat ulang. aturan memakai method Bundle :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle.put*(&quot;name&quot;, value)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;dimana &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle&lt;/code&gt; adalan nama Bundle, &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; untuk type value yang ingin disimpan, seperti ini jadinya&lt;/p&gt;
+
+&lt;figure style=&quot;width:400px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/bundleput.png&quot; /&gt;
+&lt;figcaption&gt;bundle.put&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;akhirnya saya simpan variabel values di Bundle dan dapat menggunakan mereka berdua method di onCreate(). setelah disimpan ketika nantinya activity di destroy dan di muat ulang onCreate() jugak yang telah kita tahu memliki parameter Bundle jugak tapi dalam posisi kali ini parameter menjadi bernilai null namun bisa dibuat pengecualian jika dan simpanan di Bundle kita bisa get value yang sudah disimpan ke Activity seperti dengan method &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle.get*(&quot;name&quot;);&lt;/code&gt;&lt;/p&gt;
+&lt;figure style=&quot;width:500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/bundleget.png&quot; /&gt;
+&lt;figcaption&gt;bundle.get&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;alhamdulillah pecah misterinya&lt;/p&gt;
+&lt;figure style=&quot;width:500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/rotatestop.gif&quot; /&gt;
+&lt;figcaption&gt;isuue rotate solve&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;uml setelah penambahan method onSaveInstanceState()&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/stopwatchactivity2.png&quot; /&gt;
+&lt;figcaption&gt;isuue rotate solve&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;start-stop-restart&quot;&gt;Start, Stop, Restart&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;issue selanjutnya adalah ketika app berjalan user klik start button tiba tiba ada telpon atau notifikasi lain misal aplikasi chat terus kita liat/buka app chat itu aplikasi stopwatch otomatis tidak terlihat dan mungkin stopwatch akan terus berjalan menghitung tiap detik tapi bagaimana kalau aku pengen ketika app stopwatch tidak terlihat dia otomatis stop alias tidak berjalan? ternyata di Lifecyle ada method onStart(), onStop(),  onRestart() ketiganya sama seperti onCreate() dan onDestroy() sama sama mewarisi dari Activity clas.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;onStart() akan dipanggil bila acitivity kita menjadi visible ke user.&lt;/li&gt;
+  &lt;li&gt;onStop() dipanggil ketika activity kita berhenti nampak ke user,ini berarti Activity akan di destroy tapi sebelum method onDestroy() dipanggil method onSaveInstanceState() akan dipanggil sebelum method onStop().&lt;/li&gt;
+  &lt;li&gt;onRestart() dipanggil setelah activity kita tak terliat atau invisible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/lifecycleVisible.png&quot; /&gt;
+&lt;figcaption&gt;visible lifetime&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;okey saatnya override method onStop di coding kita setelah itu buatnya berhenti dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;mRunning = false&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@override&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;proctected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+ &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+ &lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;sekarang stopwatch berhenti ketika acitivity tidak lagi terlihat . lalu yang saya perlu lakukan adalah meminta stopwatch start lagi ketika activity kembali terlihat. pertama tama saya menambah variabel boolean mWasRunning untuk di digunakan method onSaveInstanceState(), dan onRestart().&lt;/p&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mSecond&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mWasRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;lalu menambahkannya di method onSaveInstanceState()&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onSaveInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;outState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putInt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;second&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mSecond&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;outState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putBoolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;running&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;outState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;putBoolean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wasRunning&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mWasRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onSaveInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;outState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;waktunya override method onStop()&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mWasRunning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onStart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onStart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mWasRunning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mRunning&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/visiblestp.gif&quot; /&gt;
+&lt;figcaption&gt;stop visible&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;skenarionya adalah pertama app stopwatch berjalan variabel mRunning = true ; di pertengahan saya pindah ke app todo task menjadikan app stopwatch invisible dalam posisi ini variabel mRunning menjadi false karena method onStop() dan variabel mWasRunning menjadi berniali true. selanjutnya saya kembalikan ke app stopwatch method onStart menerima variabel mWasRunning dan activity mengambil simpana data dari method onSaveInstanceState() akhinya kembali berjalan.&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/stpwasrun.png&quot; /&gt;
+&lt;figcaption&gt;uml setelah mWasRunning&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h3 id=&quot;kenapa-onrestart-bukan-onrestart&quot;&gt;kenapa onRestart() bukan onRestart()?&lt;/h3&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;ada pertanyaan kenapa tidak memaki method onRestart()? method itu digunakan bila kita hanya ingin code berjalan ketika app dari visible yang mana sebelumnya invisible. dia tidak berjalan ketika activity visible untuk pertamakalinya. dalam kasus stopwatch ini kan saya ingin app tetap berjalan ketika app di rotasi jugak. trus perbedaane apa onRestart dan onStart? okey saat kita merubah rotasi device acitivity ter destroy dan membuat satu lagi yang baru. jika kita masukan code di method onRestart, dia tidak akan berjalan ketika activity re-created. kalau method onStart() terpanggil saat terjadi rotasi dan terjadi invisible ke visible.&lt;/p&gt;
+&lt;h2 id=&quot;onpaused&quot;&gt;onPaused()&lt;/h2&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;setelah mempelajari alur activity di buat dan di destroy lalu telah melihat jugak ketika activity saat visible menjadi invisible ada beberapa method yang bisa di warisi dari superclass yang bisa dimanfaatkan tapi satu lagi yang saya harus pelajari yaitu masalah activity posisi visible tapi tidak fokus ini berarti activity menjadi paused. ini akan terjadi jika app stopwatch berjalan ada activity app lain berada ditas activity app stopwath tapi tidak keluar full screen tampilannya&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/onpauestp.png&quot; /&gt;
+&lt;figcaption&gt;posisi onpaused&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;ada 2method Lifecyle activity yang bisa dimanfaatkan terkait issue ini yaitu method onPaused() dan onResume(). onPause() dipanggil ketika activity kita visible tapi ada activity lain fokus. onResume() dipanggil ketika activity kita belum berinteraksi dengan user&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/onpausedstpw.png&quot; /&gt;
+&lt;figcaption&gt;alur Lifecyle&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;penjelasan dari gambar:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;1.&lt;/em&gt; Activity di launch dan method onCreate() dan onStart() berjalan.lalu ketika Activity visible tidak focus&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;2.&lt;/em&gt; onResume () berjalan setelah onStart(). dia dipanggil ketika activity untuk pindah ke foreground setelah onResume jalan activity visible dan fokus lagi bisa interaksi dengan user&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;3.&lt;/em&gt; onPause() berjalan ketika acitivity berhenti menjadi foreground. setelah onPause() berjalan activity tetap visible tapi tidak fokus&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;4.&lt;/em&gt; jika activity berpindah menjadi foreground lagi , onResume() akan dipanggil lagi.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;5.&lt;/em&gt; jika activity berhenti visible terhadap user, method onStop() akan dipanggil. setelah onStop() berjalan activity tidak lagi visible&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;6.&lt;/em&gt; jika activity menjadi visible ke user lagi, onRestart() dipanggil, diikuti onStart() dan onResume().&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;7.&lt;/em&gt; akhinya activity di destroy&lt;/p&gt;
+&lt;h2 id=&quot;apa-yg-terjadi-ketika-onpaused-device-diubah-rotasinya&quot;&gt;apa yg terjadi ketika onPaused device diubah rotasinya?&lt;/h2&gt;
+&lt;p&gt;muncul pertanyaan selanjutnya bagaimana saat activity paused karena tidak fokus terus device kita ubah rotasinya? aslinya Lifecyle berjalan melalui  semua method dari onCreate() ke onDestroy(). activity baru dibuat ketika yang asli terdestroy karena activity baru tidak berada di foreground hanya method lifecylce onCreate() dan onStart() yang dapt dipanggil.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;jika kita memliki sebuah activity visible tapi tidak di foreground dan tidak akan punya fokus maka method onPause() dan onResume() tidak akan pernah dipanggil maka activity akan langsung pergi dari onStart() ke onStop()&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/oncreatestp.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;setelah memerhati dengan seksama ternyata kita bisa mereplace method onStop() dan onStart() dengan method onPause() dan onResume() heuheuheu namanya jugak mendalami materi jadine ada hal hal baru&lt;/p&gt;
+&lt;figure style=&quot;width:300px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/onresumestp.png&quot; /&gt;
+&lt;figcaption&gt;uml akhir&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Beres sudah mendalami samudra LifeCycle Activity&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">Contents Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single class Activity dan single layout yaitu stopWatchActivity dan activity_stop_watch.xml.</summary></entry><entry><title type="html">Error Android Virtual Device kubuntu 64 bit</title><link href="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/" rel="alternate" type="text/html" title="Error Android Virtual Device kubuntu 64 bit" /><published>2016-12-04T00:00:00+07:00</published><updated>2016-12-04T00:00:00+07:00</updated><id>http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit</id><content type="html" xml:base="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/kinfo.png&quot; /&gt;
+&lt;figcaption&gt;kinfo&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Tibalah saatnya untuk upgrade Ram ddr3l thinkpad e145 dari 4GB ke 8GB di iringi penuh drama semenjak pertama kali upgrade ke 4GB dan 8GB adalah upgrade terakhir karena thinkpad ini hanya bisa up to 8GB menurut website resminya tapi menurut kabar beredar dari mas mas di VGEN service center ini thinkpad bisa sampek 16GB tapi rasanya saya tidak sebegitu tertarik untuk coba coba pasalnya upgrade ke 8GB hanya untuk memenuhi rekomendasi system untuk &lt;a href=&quot;https://developer.android.com/studio/index.html&quot;&gt;android studio di operating system linux&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/rekomAndro.png&quot; /&gt;
+&lt;figcaption&gt;system requirement&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;setelah upgrade dan langsung saya coba untuk menjalankan android studio dan run code untuk dijalankan di android virtual device untuk mengetahui bagaimana performa thinkpad saat setelah upgrade ram 8GB akhirnya ketemu error &lt;code class=&quot;highlighter-rouge&quot;&gt;EmptyThrowable: Failed to create the SD card&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/empty.png&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;saya baru inget kalau kubuntu ini baru saya install ulang gara gara percobaan install guitarix beta akhirnya banyak error dedepency yang mengakibatkan harus install ulang (ini cara terjitu hemat waktu agar gak ribet aja heuheuheu) dan jawaban dari error di atas adalah &lt;a href=&quot;http://www.glamvian.com/erorr-android-studio/&quot;&gt;di postingan saya bulan bulan lalu&lt;/a&gt;
+okey problem &lt;code class=&quot;highlighter-rouge&quot;&gt;EmptyThrowable: Failed to create the SD card&lt;/code&gt; terselesaikan.&lt;/p&gt;
+
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/erorRunEmulator.jpg&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;saat run emulator muncul error baru libGL error setelah baca baca di bug reportnya google jawabanya adalah libstdc++6 yang barusan di install belom terload di sdk kita&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Android/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mv&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bak&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/usr/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Android/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;figure style=&quot;width: 200px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/solved.jpg&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p style=&quot;text-align: justify;&quot;&gt;akhirnya emulator bisa mengudara dan setelah compile dan run code app terinstall sempurna di emulator dan berjalan sangat smooth pengaruh ram 8GB alhamdulilah jadi tambah semangat bekarya ya&lt;/p&gt;
+
+&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
+&lt;img src=&quot;/images/emudone.gif&quot; /&gt;
+&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">kinfo Tibalah saatnya untuk upgrade Ram ddr3l thinkpad e145 dari 4GB ke 8GB di iringi penuh drama semenjak pertama kali upgrade ke 4GB dan 8GB adalah upgrade terakhir karena thinkpad ini hanya bisa up to 8GB menurut website resminya tapi menurut kabar beredar dari mas mas di VGEN service center ini thinkpad bisa sampek 16GB tapi rasanya saya tidak sebegitu tertarik untuk coba coba pasalnya upgrade ke 8GB hanya untuk memenuhi rekomendasi system untuk android studio di operating system linux</summary></entry></feed>
