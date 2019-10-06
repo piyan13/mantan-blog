@@ -1,4 +1,4 @@
-I"Õ<p style="text-align: justify;">selamat datang di bulan ramadhan akhirnya satu tahun mengudara blog minimalis ini.Beberapa hari ini saya terlibat praktek terlalu dalam dengan LifeCycle android termasuk mengenai dasar Thread seperti diketahui android support multitasking dimana setiap aplikasi android dibagi menjadi multiple thread semuanya dapat berjalan bersamaan dalam satu kali eksekusi,eksekusi multiple thread ini di jadwalkan oleh operating system untuk berjalan di core CPU yang berbeda, untuk mempermudah developer android apps di android memiliki satu thread user interface yang mana bertanggung jawab untuk getting event dari berbagai macam sensor dan selanjutnya mengatur frame untuk menggambarnya agar berjalan pada 60 frame per detik karena itulah belajar thread LifeCycle ini sangat fundamental sekali dalam kasus yang saya temui sebisa mungkin meminimkan proses di thread utama karena akan membuat aplikasi menjadi force close.</p>
+I"¯<p style="text-align: justify;">selamat datang di bulan ramadhan akhirnya satu tahun mengudara blog minimalis ini.Beberapa hari ini saya terlibat praktek terlalu dalam dengan LifeCycle android termasuk mengenai dasar Thread seperti diketahui android support multitasking dimana setiap aplikasi android dibagi menjadi multiple thread semuanya dapat berjalan bersamaan dalam satu kali eksekusi,eksekusi multiple thread ini di jadwalkan oleh operating system untuk berjalan di core CPU yang berbeda, untuk mempermudah developer android apps di android memiliki satu thread user interface yang mana bertanggung jawab untuk getting event dari berbagai macam sensor dan selanjutnya mengatur frame untuk menggambarnya agar berjalan pada 60 frame per detik karena itulah belajar thread LifeCycle ini sangat fundamental sekali dalam kasus yang saya temui sebisa mungkin meminimkan proses di thread utama karena akan membuat aplikasi menjadi force close.</p>
 <aside class="sidebar__right">
 <nav class="toc">
     <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
@@ -9,16 +9,14 @@
 
   </nav>
 </aside>
-<figure style="width: 600px" class="align-center">
-<img src="/images/Fetchweater.png" />
-<figcaption></figcaption>
-</figure>
+
+<p><img src="http://localhost:4000/assets/images/Fetchweater.png" alt="asynctask fetch" class="full" /></p>
+
 <h2 id="asynctask">AsyncTask</h2>
 <p style="text-align: justify;">Dan class AsyncTask adalah jawaban bagaimana cara meminimalisir proses Thread utama terlebih di aplikasi yang saya bangun memuat atau mengambil data dari internet, dengan method doInBackground() proses pengambilan data Json dari server tidak membuat lama Thread utama memproses yang berakibat di destroynya activiy secara default sesuai LifeCycle android setelah 5 detik mengabaikan input pengguna android akan menganjurkan pengguna untuk menutup aplikasi.</p>
-<figure style="width: 400px" class="align-center">
-<img src="/images/explainAsynctask.gif" />
-<figcaption></figcaption>
-</figure>
+
+<p><img src="http://localhost:4000/assets/images/explainAsynctask.gif" alt="asynctask explainasyntask" class="full" /></p>
+
 <p>AsyncTask adalah generic class berarti membutuhkan type berparameter di constructornya, setiap generic parameter adalah untuk menemukan argument variable java secara teknis di passing sebagai array karena mempunya 3 titik, ada tiga type generic AsyncTask :</p>
 
 <p><strong>1.</strong> <code class="highlighter-rouge">params</code>, type yang dikirim ke task setelah eksekusi</p>
@@ -41,15 +39,12 @@
 
 <p style="text-align: justify;">okey untuk membuat asynchronous dari thread background dan thread user interface memang berhasil dan membuat thread utama tidak sampai force close jugak awal yang baik untuk coding dengan thread yang banyak akan tetapi masalah baru muncul ketika device di putar atau di rotate diwaktu transaksi jaringan sedang berlangsung dalam hal ini parse json dari server maka activity dimulai ulang, activity yang baru akan membuat asynctask lain untuk melakukan task dibackground dan akan ada penggunaan jaringan tambahan karena kedua thread berjalan secara paralel juga memerlukan waktu yang lebih lama lagi untuk user agar bisa melihat hasil pemuatan parahnya lagi akan menambah tekanan di memory itulah kenapa AsyncTask tidak slalu benar dalam semua kondisi</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/asyncproblem.gif" />
-<figcaption></figcaption>
-</figure>
+<p><img src="http://localhost:4000/assets/images/asyncproblem.gif" alt="asynctask asyncproblem" class="full" /></p>
+
 <h2 id="asynctaskloader">AsyncTaskLoader</h2>
 <p style="text-align: justify;">Untuk permasalahan diatas terjawab dengan <code class="highlighter-rouge">Loader</code> yang menyediakan Framework untuk asynchronous loading data didaftarkan oleh id dengan komponen yang disebut <code class="highlighter-rouge">LoadManager</code> yang memungkinkan mereka hidup diluar LifeCycle activity yang terkait mencegah pemuatan duplikat yang terjadi secara paralel jika ingin load data di thread background kita dapat mengimplentasikan Loader yang disebut <code class="highlighter-rouge">AsyncTaskLoader</code>yang jugak mengimplementasikan fungsi yang sama dengan <code class="highlighter-rouge">AsyncTask</code> tapi dengan siklus yang berbeda.</p>
-<figure style="width: 600px" class="align-center">
-<img src="/images/asyncloader.gif" />
-<figcaption></figcaption>
-</figure>
+
+<p><img src="http://localhost:4000/assets/images/asyncloader.gif" alt="asynctask asyncLoader" class="full" /></p>
+
 <p><code class="highlighter-rouge">Loader</code> terikat LifeCycle app secara otomatis menangani perubahan seperti rotasi, loader di desain untu memuat ulang jika user keluar dari activity kita dapat menghindari beban tambahan jika tida suka dengan mencache dan mengirimkan kembali hasil yang ada.</p>
 :ET
