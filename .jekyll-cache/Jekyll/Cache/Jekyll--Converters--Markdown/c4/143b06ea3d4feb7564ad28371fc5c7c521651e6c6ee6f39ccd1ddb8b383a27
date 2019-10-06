@@ -1,4 +1,4 @@
-I"G)<p><img src="http://localhost:4000/assets/images/Codemagic.jpg" alt="codemagic image" /></p>
+I")<p><img src="http://localhost:4000/assets/images/Codemagic.jpg" alt="codemagic image" /></p>
 
 <aside class="sidebar__right">
 <nav class="toc">
@@ -29,30 +29,24 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 
 <h2 id="setting-repository-project">Setting Repository Project</h2>
 <p style="text-align: justify;">setelah login dengan git version control dimana codemagic mengakomodir github, gitlab dan bitbucket secara otomatis semua repository kita di load dihalaman codemagic.</p>
-<figure style="width: 450px" class="align-center">
-<img src="/images/home.png" />
-<figcaption></figcaption>
-</figure>
-<p><img src="http://localhost:4000/assets/images/home.jpg" alt="codemagic home" class="full" /></p>
+<p><img src="http://localhost:4000/assets/images/home.png" alt="codemagic home" class="full" /></p>
 
 <p>pilih setting project yang akan kita setup untuk CI/CD di codemagic.</p>
 
 <h2 id="setup-triggers-branch">Setup Triggers Branch</h2>
 <p style="text-align: justify;">build triggers disini adalah branch repository project yang di jadikan pemicu untuk codemagic melakukan build normalnya adalah branch master tapi tergantung kita jugak.</p>
-<figure style="width: 450px" class="align-center">
-<img src="/images/build_triggers.png" />
-<figcaption>build triggers</figcaption>
-</figure>
+<p><img src="http://localhost:4000/assets/images/build_triggers.png" alt="codemagic build trigger" class="full" /></p>
+
 <p style="text-align: justify;">disana ada pilihan pattern yang bisa di gunakan misal * menunjuk ke semua branch menjadi trigger untuk keterangan lengkapnya bisa klik show pattern examples jugak ada opsi dibawahnya untuk automatic triggering buildnya otomatis setiap waktu ada push ke branch atau setiap ada pull request ke branch.</p>
-<figure style="width: 450px" class="align-center">
-<img src="/images/build_master.png" />
-<figcaption>show pattern</figcaption>
+
+<figure>
+	
+<img src="/assets/images/build_master.png" alt="Foo" />
+
+	<figcaption>show pattern</figcaption>
 </figure>
 
-<figure style="width: 450px" class="align-center">
-<img src="/images/buil_everypush.png" />
-<figcaption></figcaption>
-</figure>
+<p><img src="http://localhost:4000/assets/images/buil_everypush.png" alt="codemagic build trigger" class="full" /></p>
 
 <h2 id="test">Test</h2>
 <p>test disini adalah mengarah ke package test di project flutter karena di project saya tidak memakai unit test jadi disini tidak saya centang untuk enable flutter test dan stop build if test fail yang berarti flow test ini saya lewati</p>
@@ -60,6 +54,7 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 <img src="/images/test.png" />
 <figcaption></figcaption>
 </figure>
+<p><img src="http://localhost:4000/assets/images/test.png" alt="codemagic build trigger" class="full" /></p>
 
 <h2 id="build">Build</h2>
 <p>di flow build ini kita bisa memilih bakal di build versi flutter berapa repository kita :</p>

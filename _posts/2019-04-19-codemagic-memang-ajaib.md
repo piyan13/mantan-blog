@@ -1,7 +1,9 @@
 ---
 title: "CodeMagic memang ajaib"
 tags:
- Android
+ - Android
+ - Flutter
+ - CodeMagic
 layout: single
 author_profile: true
 read_time: true
@@ -29,45 +31,45 @@ pilih setting project yang akan kita setup untuk CI/CD di codemagic.
 ## Setup Triggers Branch
 build triggers disini adalah branch repository project yang di jadikan pemicu untuk codemagic melakukan build normalnya adalah branch master tapi tergantung kita jugak.
 {:style="text-align: justify;"}
-<figure style="width: 450px" class="align-center">
-<img src="/images/build_triggers.png">
-<figcaption>build triggers</figcaption>
-</figure>
+![codemagic build trigger]({{site.url}}{{site.baseurl}}/assets/images/build_triggers.png){: .full}
+
 disana ada pilihan pattern yang bisa di gunakan misal * menunjuk ke semua branch menjadi trigger untuk keterangan lengkapnya bisa klik show pattern examples jugak ada opsi dibawahnya untuk automatic triggering buildnya otomatis setiap waktu ada push ke branch atau setiap ada pull request ke branch.
 {:style="text-align: justify;"}
-<figure style="width: 450px" class="align-center">
-<img src="/images/build_master.png">
-<figcaption>show pattern</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/build_master.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>show pattern</figcaption>
 </figure>
 
-<figure style="width: 450px" class="align-center">
-<img src="/images/buil_everypush.png">
-<figcaption></figcaption>
-</figure>
+![codemagic build every push]({{site.url}}{{site.baseurl}}/assets/images/buil_everypush.png){: .full}
 
 ## Test 
 test disini adalah mengarah ke package test di project flutter karena di project saya tidak memakai unit test jadi disini tidak saya centang untuk enable flutter test dan stop build if test fail yang berarti flow test ini saya lewati
-<figure style="width: 450px" class="align-center">
-<img src="/images/test.png">
-<figcaption></figcaption>
-</figure>
+![codemagic test]({{site.url}}{{site.baseurl}}/assets/images/test.png){: .full}
 
 ## Build
 di flow build ini kita bisa memilih bakal di build versi flutter berapa repository kita :
-<figure style="width: 450px" class="align-center">
-<img src="/images/flowbuild_version.png">
-<figcaption>pilihan build flutter version</figcaption>
+{:style="text-align: justify;"}
+{% capture code_img %}
+![Foo]({{"/assets/images/flowbuild_version.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>pilihan build flutter version</figcaption>
 </figure>
 sesuai goal dari riset saya yang mau jadikan dua mobile platform sekaligus yaitu ios dan android maka dibawah ini adalah setup flow build saya
-<figure style="width: 450px" class="align-center">
-<img src="/images/build_an_ios.gif">
-<figcaption></figcaption>
-</figure>
+
+![codemagic build ios]({{site.url}}{{site.baseurl}}/assets/images/build_an_ios.gif){: .full}
 
 ## Publish
-<figure style="width: 450px" class="align-center">
-<img src="/images/flowPublish.png">
-<figcaption>tampilan flow publish</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/flowPublish.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>tampilan flow publish</figcaption>
 </figure>
 di dalam flow publish ini  ada beberapa setting yang harus di setup saran saya adalah pastikan dulu apakah CI bekerja dengan lancar setelah itu baru setting untuk CD, setting apa saja yang untuk CI ?:
 
@@ -75,40 +77,43 @@ di dalam flow publish ini  ada beberapa setting yang harus di setup saran saya a
 
 1.android code signing untuk menghasilkan apk.release apa saja yang diperlukan kunjungi [link ini](https://developer.android.com/studio/publish/app-signing?hl=id)
 {:style="text-align: justify;"}
-<figure style="width: 450px" class="align-center">
-<img src="/images/android_code_signing.png">
-<figcaption></figcaption>
-</figure>
+
+![codemagic setting flow]({{site.url}}{{site.baseurl}}/assets/images/android_code_signing.png){: .full}
+
 2.ios code signing kalau ingin menghasilkan file .ipa disana ada pilihan automatic dan manual, saya sarankan untuk manual karena automatic percobaan saya beberapa kali masih menemui error. di manual cukup isi dengan code signing certificate dalam format .p12 dan isi provsioning profiles (disarankan yang distribution) dengan format .mobileprovision, kalau belom tahu cara untuk mendapatkan certificate .p12 bisa kunjungi [link ini](https://support.magplus.com/hc/en-us/articles/203808748-iOS-Creating-a-Distribution-Certificate-and-p12-File), jika ios code signing ini tidak di isi maka artifactnya dalam bentum runner.
 {:style="text-align: justify;"}
-<figure style="width: 450px" class="align-center">
-<img src="/images/ios_signing.png">
-<figcaption></figcaption>
-</figure>
+
+![codemagic ios signing]({{site.url}}{{site.baseurl}}/assets/images/ios_signing.png){: .full}
+
 3.setup email yang akan dijadikan archive artifact dan jugak untuk notifikasi baik ketika build failed ataupun sukses, ada opsi jugak untuk slack selain email
-<figure style="width: 450px" class="align-center">
-<img src="/images/flowPublish_email.png">
-<figcaption></figcaption>
-</figure>
+
+![codemagic email]({{site.url}}{{site.baseurl}}/assets/images/flowPublish_email.png){: .full}
 
 ### Test CI (Continous Integration) 
-<figure style="width: 450px" class="align-center">
-<img src="/images/startNewBuild.png">
-<figcaption>start new build</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/startNewBuild.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>start new build</figcaption>
 </figure>
 
 pilih start new build pojok kanan atas
-
-<figure style="width: 450px" class="align-center">
-<img src="/images/testCi_succes.gif">
-<figcaption>tampilan ketika berhasil test CI</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/testCi_succes.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>tampilan ketika berhasil test CI</figcaption>
 </figure>
 
 jika berhasil check email/slack yang sudah di setup seperti dibawah ini:
-
-<figure style="width: 450px" class="align-center">
-<img src="/images/email_ios_android.gif">
-<figcaption>tampilan email</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/email_ios_android.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>tampilan email</figcaption>
 </figure>
 setelah memastikan CI berjalan dengan semestinya selanjutnya adalah setup CD
 
@@ -118,43 +123,43 @@ ketika settingan CI kita sudah tidak menemui kendala berikutnya tinggal setup fl
 #### google play
 yang dibutuhkan untuk menyinkronkan codemagic ke google play adalah credential api google play file format dalam bentuk .json bagaimana cara untuk mendapatkan file ini bisa di sima [artikel ini](https://support.appinstitute.com/hc/en-us/articles/115002827469-How-to-Get-Your-Google-Play-JSON-Key),
 setelah itu centang publish even if test fail.
-<figure style="width: 450px" class="align-center">
-<img src="/images/googleplay.png">
-<figcaption></figcaption>
-</figure>
+
+![codemagic googleplay]({{site.url}}{{site.baseurl}}/assets/images/googleplay.png){: .full}
 
 #### apple store connect
 isi dengan apple id yang sudah terdaftar di apple development untuk password saya sarankan memakai application-spesific password bagaimana cara membuatnya? kunjungi appleid.apple.com --> security --> authentiiasi two factor . sertakan app id lalu uncentang publish even if test fail
-<figure style="width: 450px" class="align-center">
-<img src="/images/iosstore_connect.png">
-<figcaption></figcaption>
-</figure>
+
+![codemagic iostore]({{site.url}}{{site.baseurl}}/assets/images/iosstore_connect.png){: .full}
 
 ## Test CI/CD
 bisa kembali ke ide repository local untuk push ke git atau tombol start new build di pojok kanan atas di codemagic
-
-<figure style="width: 450px" class="align-center">
-<img src="/images/testCD_prosess.gif">
-<figcaption>proses build </figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/testCD_prosess.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>proses build</figcaption>
 </figure>
 
 kalau sudah sukses akan seperti dibawah ini
 
-<figure style="width: 450px" class="align-center">
-<img src="/images/succes_CD.gif">
-<figcaption></figcaption>
-</figure>
+![codemagic build succes]({{site.url}}{{site.baseurl}}/assets/images/succes_CD.gif){: .full}
 
 untuk memastikan bisa di check di google play console dan ios store
-
-<figure style="width: 450px" class="align-center">
-<img src="/images/succes_andro_delivery.gif">
-<figcaption>tampilan di google play</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/succes_andro_delivery.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>tampilan di google play</figcaption>
 </figure>
 
-<figure style="width: 450px" class="align-center">
-<img src="/images/succes_ios_delivery.gif">
-<figcaption>tampilan di apple store</figcaption>
+{% capture code_img %}
+![Foo]({{"/assets/images/succes_ios_delivery.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{code_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>tampilan di apple store</figcaption>
 </figure>
 
 seperti itulah setup codemagic yang telah saya riset masih banyak keluwesan yang ada di codemagic yang belom aku explore, mungkin tulisan berikutnya akan lebih dalem lagi semoga tentang codemagic, disini saya belom sempet membandingkan dengan tool sejenis apakah perfomance, security dll. mungkin di kemudian hari bakal bisa kasih testi kalau sudah cobain tool selain codemagic, okey terimakasih semoga bermanfaat.
