@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-06T22:07:28+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T05:24:12+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
 
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -168,10 +168,13 @@ setelah itu centang publish even if test fail.&lt;/p&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment&quot;&gt;continous integration vs delivery vs deployment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://medium.com/@nirespire/what-is-cicd-concepts-in-continuous-integration-and-deployment-4fe3f6625007&quot;&gt;what is cicd concept in continous integration and deployment&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=GsQ5MHHVNqQ&quot;&gt;Flutter: CI CD With Codemagic Automate Your Workflow&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><category term="Flutter" /><category term="CodeMagic" /><summary type="html"></summary></entry><entry><title type="html">Install ReactNative dengan banyak ERORR</title><link href="http://localhost:4000/Install-ReactNative/" rel="alternate" type="text/html" title="Install ReactNative dengan banyak ERORR" /><published>2018-05-28T00:00:00+07:00</published><updated>2018-05-28T00:00:00+07:00</updated><id>http://localhost:4000/Install-ReactNative</id><content type="html" xml:base="http://localhost:4000/Install-ReactNative/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react6.png&quot; /&gt;
-&lt;figcaption&gt;credit: codeburst&lt;/figcaption&gt;
+&lt;/ul&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><category term="Flutter" /><category term="CodeMagic" /><summary type="html"></summary></entry><entry><title type="html">Install ReactNative dengan banyak ERORR</title><link href="http://localhost:4000/Install-ReactNative/" rel="alternate" type="text/html" title="Install ReactNative dengan banyak ERORR" /><published>2018-05-28T00:00:00+07:00</published><updated>2018-05-28T00:00:00+07:00</updated><id>http://localhost:4000/Install-ReactNative</id><content type="html" xml:base="http://localhost:4000/Install-ReactNative/">&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react6.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;credit: codeburst&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
     &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
@@ -202,10 +205,14 @@ setelah itu centang publish even if test fail.&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install libtool
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react1.png&quot; /&gt;
-&lt;figcaption&gt;./autogen.sh&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react1.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;./autogen.sh&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;p&gt;kiraen output begitu pertanda semua ok maka saya teruskan dengan langkah selanjutnya yaitu &lt;code class=&quot;highlighter-rouge&quot;&gt;$./configure&lt;/code&gt; karena dengan tidak adanya pesan peringatan yang berarti saya lanjutkan dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;$ make&lt;/code&gt; langsung keluar pesan error&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ContentHash.cpp:13:25: fatal error: openssl/sha.h: No such file or directory
 compilation terminated.
@@ -281,10 +288,13 @@ make[1]: Leaving directory '/home/glmvn/react_native/watchman'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;tidak aku temukan pesan erorr yang berarti maka langsung tanpa basa basi &lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo make install&lt;/code&gt;&lt;/p&gt;
 
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react2.png&quot; /&gt;
-&lt;figcaption&gt; versi watchman&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react2.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;versi watchman&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;h2 id=&quot;install-flow&quot;&gt;install flow&lt;/h2&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;beres jugak install watchman lanjut boor heuheuheu lanjutnya adalah install flow cukup download di 
 &lt;a href=&quot;https://github.com/facebook/flow/releases/download/v0.62.0/flow-linux64-v0.62.0.zip&quot;&gt;github flow&lt;/a&gt; setelah di unzip move ke &lt;code class=&quot;highlighter-rouge&quot;&gt;usr/local/bin/flow&lt;/code&gt; baru setelah flow tiada halangan yang berarti dilanjutkan dengan install ReactNative&lt;/p&gt;
@@ -293,24 +303,33 @@ make[1]: Leaving directory '/home/glmvn/react_native/watchman'
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;waktunya testing dengan membuat project baru &lt;code class=&quot;highlighter-rouge&quot;&gt;$reactreact-native init TestingApp&lt;/code&gt; langsung deh colok device android dan pastikannya dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;lsusb&lt;/code&gt; setelah pasti terbaca pastikan konek ke adb dengan &lt;code class=&quot;highlighter-rouge&quot;&gt;adb devices&lt;/code&gt;masuk ke folder testingApp dan cuss run &lt;code class=&quot;highlighter-rouge&quot;&gt;react-native run-android&lt;/code&gt;&lt;/p&gt;
-&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react3.png&quot; /&gt;
-&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react3.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;saatnya buka file &lt;code class=&quot;highlighter-rouge&quot;&gt;App.js&lt;/code&gt; di IDE ATOM&lt;/p&gt;
-&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react4.gif&quot; /&gt;
-&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react4.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;react native run android&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;p&gt;kelebihan reactnative edit,save trus teka &lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt; di emulator ajaib&lt;/p&gt;
 
-&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/react5.gif&quot; /&gt;
-&lt;figcaption&gt;react build&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/react5.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;react build&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p style=&quot;text-align: justify;&quot;&gt;okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: codeburst Contents</summary></entry><entry><title type="html">Kangen Flazx dan learnr.pro Terobati</title><link href="http://localhost:4000/kangen-Flazx-dan-learnr-pro/" rel="alternate" type="text/html" title="Kangen Flazx dan learnr.pro Terobati" /><published>2018-03-27T00:00:00+07:00</published><updated>2018-03-27T00:00:00+07:00</updated><id>http://localhost:4000/kangen-Flazx-dan-learnr-pro</id><content type="html" xml:base="http://localhost:4000/kangen-Flazx-dan-learnr-pro/">&lt;p style=&quot;text-align: justify;&quot;&gt;Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro&lt;/p&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: codeburst</summary></entry><entry><title type="html">Kangen Flazx dan learnr.pro Terobati</title><link href="http://localhost:4000/kangen-Flazx-dan-learnr-pro/" rel="alternate" type="text/html" title="Kangen Flazx dan learnr.pro Terobati" /><published>2018-03-27T00:00:00+07:00</published><updated>2018-03-27T00:00:00+07:00</updated><id>http://localhost:4000/kangen-Flazx-dan-learnr-pro</id><content type="html" xml:base="http://localhost:4000/kangen-Flazx-dan-learnr-pro/">&lt;p style=&quot;text-align: justify;&quot;&gt;Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro&lt;/p&gt;
 
 &lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/flazx.jpg&quot; /&gt;

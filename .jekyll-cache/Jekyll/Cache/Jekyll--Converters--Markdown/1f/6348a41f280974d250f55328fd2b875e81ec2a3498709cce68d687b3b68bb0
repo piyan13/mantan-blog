@@ -1,0 +1,164 @@
+I")
+<figure>
+	
+<img src="/assets/images/react6.png" alt="Foo" />
+
+	<figcaption>credit: codeburst</figcaption>
+</figure>
+
+<aside class="sidebar__right">
+<nav class="toc">
+    <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
+<ul class="toc__menu" id="markdown-toc">
+  <li><a href="#install-wathcman" id="markdown-toc-install-wathcman">install wathcman</a>    <ul>
+      <li><a href="#install-libtool" id="markdown-toc-install-libtool">install libtool</a></li>
+      <li><a href="#install-libssl" id="markdown-toc-install-libssl">install libssl</a></li>
+      <li><a href="#install-python-dev" id="markdown-toc-install-python-dev">install python-dev</a></li>
+    </ul>
+  </li>
+  <li><a href="#install-flow" id="markdown-toc-install-flow">install flow</a></li>
+  <li><a href="#install-react-native-cli" id="markdown-toc-install-react-native-cli">install react native cli</a></li>
+</ul>
+
+  </nav>
+</aside>
+
+<p style="text-align: justify;">Bulan puasa tahun ini di awali dengan suka cita diberi kesempatan kembali untuk berkreasi di dunia progamming baru beberapa hari dan terkesan sangat cepat updatenya mulai takjub dengan Contraints layout, project kompleks dengan usia 2tahun dan si boss yang lagi seru serunya dengan ReactNative beberapa minggu sebelumnya tanpa sengaja saya install flutter walaupun belum sempet cobak cobak kecepatan build antara ReactNative dan fluuter kalau diliat dari video video yutub sama sama cepatnya kali ini karena di sela sela beradaptasi dengan pekerjaan baru yang gak baru baru banget sudah idola sejak masih duduk di bangku perkuliahan saya install ReactNative di mesin linux andalan saya terkejutnya banyak menemui ERORR, apa saja erorrnya mari kita uraikan sebelumnya saya telah install android studio tentunya java dan nodeJs( lupa install ini buat apa sebelumnya ) untuk kali jelas buat mesin utama ReactNative, saya secara langsung mengikuti panduan langkah demi langkah install ReactNative dari <a href="https://www.moveoapps.com/blog/how-to-install-react-native-on-ubuntu-17-10/">blog ini</a> mulailah menemui error ketika install watchman dimana watchman diperlukan untuk melihat file system</p>
+
+<h2 id="install-wathcman">install wathcman</h2>
+<p>peringatan awal ketika melalui langkah autogen.sh</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ~/watchman $ ./autogen.sh
+ your system lacks libtoolize
+
+</code></pre></div></div>
+<h3 id="install-libtool">install libtool</h3>
+<p>yang berarti harus install dulu <code class="highlighter-rouge">libtool</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install libtool
+
+</code></pre></div></div>
+
+<figure>
+	
+<img src="/assets/images/react1.png" alt="Foo" />
+
+	<figcaption>./autogen.sh</figcaption>
+</figure>
+
+<p>kiraen output begitu pertanda semua ok maka saya teruskan dengan langkah selanjutnya yaitu <code class="highlighter-rouge">$./configure</code> karena dengan tidak adanya pesan peringatan yang berarti saya lanjutkan dengan <code class="highlighter-rouge">$ make</code> langsung keluar pesan error</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ContentHash.cpp:13:25: fatal error: openssl/sha.h: No such file or directory
+compilation terminated.
+Makefile:3143: recipe for target 'watchman-ContentHash.o' failed
+make[1]: *** [watchman-ContentHash.o] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+
+</code></pre></div></div>
+<h3 id="install-libssl">install libssl</h3>
+<p>itu yang berarti tidak ditemukannya library ssl langsung saja install <code class="highlighter-rouge">$ sudo apt-get install libssl-dev</code> dan dicoba <code class="highlighter-rouge">make</code> ulang dan muncul pesan error baru</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>watchman-ContentHash.o: In function `watchman::ContentHashCache::computeHashImmediate(watchman::ContentHashCacheKey const&amp;) const':
+/home/glmvn/react_native/watchman/ContentHash.cpp:65: undefined reference to `SHA1_Init'
+/home/glmvn/react_native/watchman/ContentHash.cpp:78: undefined reference to `SHA1_Update'
+/home/glmvn/react_native/watchman/ContentHash.cpp:81: undefined reference to `SHA1_Final'
+collect2: error: ld returned 1 exit status
+Makefile:1566: recipe for target 'watchman' failed
+make[1]: *** [watchman] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+
+</code></pre></div></div>
+<p>setelah mencari clue di github tempat repository watchman berada saya menemukan jawaban <a href="https://github.com/facebook/watchman/issues/514">setelah install libssl untuk melakukan ./autogen.sh dan ./configure ulang sebelum make</a> setelah saya ikuti emang bener siih tapi muncul pesan erorr baru</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd python &amp;&amp; /usr/bin/python ./setup.py clean build_py -c -d . build_ext -i
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'zip_safe'
+  warnings.warn(msg)
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'test_suite'
+  warnings.warn(msg)
+running clean
+running build_py
+byte-compiling ./pywatchman/compat.py to compat.pyc
+byte-compiling ./pywatchman/capabilities.py to capabilities.pyc
+byte-compiling ./pywatchman/__init__.py to __init__.pyc
+byte-compiling ./pywatchman/encoding.py to encoding.pyc
+byte-compiling ./pywatchman/load.py to load.pyc
+byte-compiling ./pywatchman/pybser.py to pybser.pyc
+running build_ext
+building 'pywatchman.bser' extension
+creating build
+creating build/temp.linux-x86_64-2.7
+creating build/temp.linux-x86_64-2.7/pywatchman
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c pywatchman/bser.c -o build/temp.linux-x86_64-2.7/pywatchman/bser.o
+pywatchman/bser.c:31:20: fatal error: Python.h: No such file or directory
+compilation terminated.
+error: command 'x86_64-linux-gnu-gcc' failed with exit status 1
+Makefile:5060: recipe for target 'py-build' failed
+make[1]: *** [py-build] Error 1
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+Makefile:1101: recipe for target 'all' failed
+make: *** [all] Error 2
+</code></pre></div></div>
+<h3 id="install-python-dev">install python-dev</h3>
+<p>ternyata package build pythonnya belom ada langsung saja saya install <code class="highlighter-rouge">$ sudo apt-get install python-dev</code> terus ulangi lagi ./autogen.sh , ./configure dan akhirnya</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd python &amp;&amp; /usr/bin/python ./setup.py clean build_py -c -d . build_ext -i
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'zip_safe'
+  warnings.warn(msg)
+/usr/lib/python2.7/distutils/dist.py:267: UserWarning: Unknown distribution option: 'test_suite'
+  warnings.warn(msg)
+running clean
+removing 'build/temp.linux-x86_64-2.7' (and everything under it)
+removing 'build'
+running build_py
+running build_ext
+building 'pywatchman.bser' extension
+creating build
+creating build/temp.linux-x86_64-2.7
+creating build/temp.linux-x86_64-2.7/pywatchman
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fno-strict-aliasing -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -fPIC -I/usr/include/python2.7 -c pywatchman/bser.c -o build/temp.linux-x86_64-2.7/pywatchman/bser.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wl,-Bsymbolic-functions -Wl,-z,relro -Wdate-time -D_FORTIFY_SOURCE=2 -g -fstack-protector-strong -Wformat -Werror=format-security build/temp.linux-x86_64-2.7/pywatchman/bser.o -o /home/glmvn/react_native/watchman/python/pywatchman/bser.so
+make[1]: Leaving directory '/home/glmvn/react_native/watchman'
+</code></pre></div></div>
+<p>tidak aku temukan pesan erorr yang berarti maka langsung tanpa basa basi <code class="highlighter-rouge">$ sudo make install</code></p>
+
+<figure>
+	
+<img src="/assets/images/react2.png" alt="Foo" />
+
+	<figcaption>versi watchman</figcaption>
+</figure>
+
+<h2 id="install-flow">install flow</h2>
+<p style="text-align: justify;">beres jugak install watchman lanjut boor heuheuheu lanjutnya adalah install flow cukup download di 
+<a href="https://github.com/facebook/flow/releases/download/v0.62.0/flow-linux64-v0.62.0.zip">github flow</a> setelah di unzip move ke <code class="highlighter-rouge">usr/local/bin/flow</code> baru setelah flow tiada halangan yang berarti dilanjutkan dengan install ReactNative</p>
+<h2 id="install-react-native-cli">install react native cli</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$npm install -g react-native-cli
+
+</code></pre></div></div>
+<p>waktunya testing dengan membuat project baru <code class="highlighter-rouge">$reactreact-native init TestingApp</code> langsung deh colok device android dan pastikannya dengan <code class="highlighter-rouge">lsusb</code> setelah pasti terbaca pastikan konek ke adb dengan <code class="highlighter-rouge">adb devices</code>masuk ke folder testingApp dan cuss run <code class="highlighter-rouge">react-native run-android</code></p>
+
+<figure>
+	
+<img src="/assets/images/react3.png" alt="Foo" />
+
+	<figcaption>react native run android</figcaption>
+</figure>
+
+<p>saatnya buka file <code class="highlighter-rouge">App.js</code> di IDE ATOM</p>
+
+<figure>
+	
+<img src="/assets/images/react4.gif" alt="Foo" />
+
+	<figcaption>react native run android</figcaption>
+</figure>
+
+<p>kelebihan reactnative edit,save trus teka <code class="highlighter-rouge">RR</code> di emulator ajaib</p>
+
+<figure>
+	
+<img src="/assets/images/react5.gif" alt="Foo" />
+
+	<figcaption>react build</figcaption>
+</figure>
+
+<p style="text-align: justify;">okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor</p>
+:ET

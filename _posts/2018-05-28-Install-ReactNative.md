@@ -9,10 +9,14 @@ comments: true
 share: true
 related: true
 ---
-<figure style="width: 700px" class="align-center">
-<img src="/images/react6.png">
-<figcaption>credit: codeburst</figcaption>
-</figure> 
+{% capture rn_img %}
+![Foo]({{"/assets/images/react6.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>credit: codeburst</figcaption>
+</figure>
+
 {% include toc title="Contents" icon="file-text" %}
 
 Bulan puasa tahun ini di awali dengan suka cita diberi kesempatan kembali untuk berkreasi di dunia progamming baru beberapa hari dan terkesan sangat cepat updatenya mulai takjub dengan Contraints layout, project kompleks dengan usia 2tahun dan si boss yang lagi seru serunya dengan ReactNative beberapa minggu sebelumnya tanpa sengaja saya install flutter walaupun belum sempet cobak cobak kecepatan build antara ReactNative dan fluuter kalau diliat dari video video yutub sama sama cepatnya kali ini karena di sela sela beradaptasi dengan pekerjaan baru yang gak baru baru banget sudah idola sejak masih duduk di bangku perkuliahan saya install ReactNative di mesin linux andalan saya terkejutnya banyak menemui ERORR, apa saja erorrnya mari kita uraikan sebelumnya saya telah install android studio tentunya java dan nodeJs( lupa install ini buat apa sebelumnya ) untuk kali jelas buat mesin utama ReactNative, saya secara langsung mengikuti panduan langkah demi langkah install ReactNative dari [blog ini](https://www.moveoapps.com/blog/how-to-install-react-native-on-ubuntu-17-10/) mulailah menemui error ketika install watchman dimana watchman diperlukan untuk melihat file system
@@ -31,10 +35,14 @@ yang berarti harus install dulu `libtool`
 $ sudo apt-get install libtool
 
 ```
-<figure style="width: 500px" class="align-center">
-<img src="/images/react1.png">
-<figcaption>./autogen.sh</figcaption>
-</figure> 
+{% capture rn_img %}
+![Foo]({{"/assets/images/react1.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>./autogen.sh</figcaption>
+</figure>
+
 kiraen output begitu pertanda semua ok maka saya teruskan dengan langkah selanjutnya yaitu `$./configure` karena dengan tidak adanya pesan peringatan yang berarti saya lanjutkan dengan `$ make` langsung keluar pesan error 
 ```
 ContentHash.cpp:13:25: fatal error: openssl/sha.h: No such file or directory
@@ -114,10 +122,14 @@ make[1]: Leaving directory '/home/glmvn/react_native/watchman'
 ```
 tidak aku temukan pesan erorr yang berarti maka langsung tanpa basa basi `$ sudo make install`
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/react2.png">
-<figcaption> versi watchman</figcaption>
-</figure> 
+{% capture rn_img %}
+![Foo]({{"/assets/images/react2.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>versi watchman</figcaption>
+</figure>
+
 ## install flow
 beres jugak install watchman lanjut boor heuheuheu lanjutnya adalah install flow cukup download di 
 [github flow]( https://github.com/facebook/flow/releases/download/v0.62.0/flow-linux64-v0.62.0.zip) setelah di unzip move ke `usr/local/bin/flow` baru setelah flow tiada halangan yang berarti dilanjutkan dengan install ReactNative
@@ -128,22 +140,35 @@ $npm install -g react-native-cli
 
 ```
 waktunya testing dengan membuat project baru `$reactreact-native init TestingApp` langsung deh colok device android dan pastikannya dengan `lsusb` setelah pasti terbaca pastikan konek ke adb dengan `adb devices`masuk ke folder testingApp dan cuss run `react-native run-android`
-<figure style="width: 600px" class="align-center">
-<img src="/images/react3.png">
-<figcaption>react native run android</figcaption>
-</figure> 
+
+{% capture rn_img %}
+![Foo]({{"/assets/images/react3.png" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>react native run android</figcaption>
+</figure>
 
 saatnya buka file `App.js` di IDE ATOM 
-<figure style="width: 800px" class="align-center">
-<img src="/images/react4.gif">
-<figcaption>react native run android</figcaption>
-</figure> 
+
+{% capture rn_img %}
+![Foo]({{"/assets/images/react4.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>react native run android</figcaption>
+</figure>
+
 kelebihan reactnative edit,save trus teka `RR` di emulator ajaib
 
-<figure style="width: 800px" class="align-center">
-<img src="/images/react5.gif">
-<figcaption>react build</figcaption>
+{% capture rn_img %}
+![Foo]({{"/assets/images/react5.gif" | relative_url}})
+{% endcapture%}
+<figure>
+	{{rn_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>react build</figcaption>
 </figure>
+
 
 okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor 
 {:style="text-align: justify;"}
