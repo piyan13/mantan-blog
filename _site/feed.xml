@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T05:24:12+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T05:55:25+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
 
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -331,26 +331,32 @@ make[1]: Leaving directory '/home/glmvn/react_native/watchman'
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;okey sekian dulu erorr dan percobaan reactnative kemungkinan besar kesempatan untuk build app mobile dengan react native sangat besar mengingat banyak sekali keuntungannya semangat boor&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">credit: codeburst</summary></entry><entry><title type="html">Kangen Flazx dan learnr.pro Terobati</title><link href="http://localhost:4000/kangen-Flazx-dan-learnr-pro/" rel="alternate" type="text/html" title="Kangen Flazx dan learnr.pro Terobati" /><published>2018-03-27T00:00:00+07:00</published><updated>2018-03-27T00:00:00+07:00</updated><id>http://localhost:4000/kangen-Flazx-dan-learnr-pro</id><content type="html" xml:base="http://localhost:4000/kangen-Flazx-dan-learnr-pro/">&lt;p style=&quot;text-align: justify;&quot;&gt;Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro&lt;/p&gt;
 
-&lt;figure style=&quot;width: 450px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/flazx.jpg&quot; /&gt;
-&lt;figcaption&gt;penampakan Flazx&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/flazx.jpg&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;penampakan Flazx&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;kenapa harus kangen akan situs seperti flazx karena di situ itulah banyak banget saya memperoleh bacaan bacaan bermutu tentunya gratis heuheuheu dengan begitu ilmunya jadi upgrade dan sialnya lagi saya sangat suka membaca pas lagi kangen cari cari lagi sering beberapa kali dulu awal 2009an situs flazx sering down under maintenance atau di serang sama administrator publisher buku beberapa judul bisa saya dapetin di kickastorrent terus akhir mati suri situs flazx untuk beberapa bulan.&lt;/p&gt;
 
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/learnr.png&quot; /&gt;
-&lt;figcaption&gt;logo situs learnr.pro&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/learnr.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;logo situs learnr.pro&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;setelah sekian lama saya mencari mencari dengan googling dan bertanya pada acitivis di forum forum ternyata flazx bertranpormasi menjadi situs learnr.pro saya pikir banyak banget musuh darsi situs itu untuk jaga jaga akhirnya saya banyak banget dunlut berbagai macam buku yang ada disana takut sewaktu waktu situ akan down lagi , kekhawatiran itu terbukti sekitar tahun 2016 saya akses situs itu sudah menjadi web parkir domain, kebanyakan di google searh dengan keyword learnr.pro flazx alternative tidak bisa memuaskan saya karena kebanyakan situs yang dimaksut berisi kontent kontent jadul yang kurang sekali mutunya&lt;/p&gt;
 
-&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/kumpulanbuku.png&quot; /&gt;
-&lt;figcaption&gt;my directory&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/kumpulanbuku.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;my directory&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;p style=&quot;text-align: justify;&quot;&gt;dan hari ini saya sudah bisa menambah koleksi buku buku favorit untuk dibaca dan di praktekan bagi yang pengen tahu alamat situs flazx dan learnr.pro yang baru bisa email saya dan suatu hari saya jugak akan membeli buku buku tersebut heuheuheu insyallah kalau ada rezeki berlebih&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Books" /><summary type="html">Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro</summary></entry><entry><title type="html">Bedah MVP pattern di Android</title><link href="http://localhost:4000/Bedah-Arsitektur-MVP/" rel="alternate" type="text/html" title="Bedah MVP pattern di Android" /><published>2018-01-20T00:00:00+07:00</published><updated>2018-01-20T00:00:00+07:00</updated><id>http://localhost:4000/Bedah-Arsitektur-MVP</id><content type="html" xml:base="http://localhost:4000/Bedah-Arsitektur-MVP/">&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;dan hari ini saya sudah bisa menambah koleksi buku buku favorit untuk dibaca dan di praktekan bagi yang pengen tahu alamat situs flazx dan learnr.pro yang baru bisa email saya dan suatu hari saya jugak akan membeli buku buku tersebut heuheuheu insyallah kalau ada rezeki berlebih&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Books" /><summary type="html">Hari ini merasa beruntung sekali karena akhirnya terobati rasa kangen saya akan situs Flazx dan Learnr.pro terobati dan saya yakin situs yang mengobati ini samapersis mungkin kalau tidak developernya atau orang dibalik situs tersebut visi dan isi kontent darinya samapersis kayak Flazx atau learnr.pro penampakan Flazx</summary></entry><entry><title type="html">Bedah MVP pattern di Android</title><link href="http://localhost:4000/Bedah-Arsitektur-MVP/" rel="alternate" type="text/html" title="Bedah MVP pattern di Android" /><published>2018-01-20T00:00:00+07:00</published><updated>2018-01-20T00:00:00+07:00</updated><id>http://localhost:4000/Bedah-Arsitektur-MVP</id><content type="html" xml:base="http://localhost:4000/Bedah-Arsitektur-MVP/">&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
 &lt;img src=&quot;/images/mvp.png&quot; /&gt;
 &lt;figcaption&gt;credit: androidpub&lt;/figcaption&gt;
 &lt;/figure&gt;
