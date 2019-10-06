@@ -9,10 +9,12 @@ comments: true
 share: true
 related: true
 ---
-<figure style="width: 450px" class="align-center">
+<!-- <figure style="width: 450px" class="align-center">
 <img src="/images/Codemagic.jpg">
 <figcaption>credit: nevercode</figcaption>
-</figure> 
+</figure>  -->
+![codemagic image]({{site.url}}{{site.baseurl}}/assets/images/Codemagic.jpg)
+
 {% include toc title="Contents" icon="file-text" %}
 
 Akhirnya menulis lagi! kali ini aku ingin menulis tentang CI/CD (continous integration dan develivery) risetnya demi kebutuhan di kerjaan, tujuannya adalah efisiensi waktu development product product forca mobile , kebetulan di team RnD forcaErp pt sisi (sinergi informatika semen indonesia) mobile developer belom menerapkan tools CI/CD berbeda dengan ForcaErp devnya yang sudah memakai jenkins. monggo check [erpForca](http://forca.id/) , riset kali ini menggunakan tools [CodeMagic](https://codemagic.io/) tools yang benar benar fokus CI/CD untuk [Flutter](https://flutter.dev/).

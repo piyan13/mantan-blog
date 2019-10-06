@@ -110,7 +110,7 @@ var store = [{
         "url": "http://localhost:4000/Install-ReactNative/",
         "teaser":"http://localhost:4000/images/glmvn1.jpg"},{
         "title": "CodeMagic memang ajaib",
-        "excerpt":"credit: nevercode Contents Setting Repository Project Setup Triggers Branch Test Build Publish settingan flow publish untuk CI Test CI (Continous Integration) settingan flow publish untuk CD google play apple store connect Test CI/CD Akhirnya menulis lagi! kali ini aku ingin menulis tentang CI/CD (continous integration dan develivery) risetnya demi kebutuhan...","categories": [],
+        "excerpt":"Contents Setting Repository Project Setup Triggers Branch Test Build Publish settingan flow publish untuk CI Test CI (Continous Integration) settingan flow publish untuk CD google play apple store connect Test CI/CD Akhirnya menulis lagi! kali ini aku ingin menulis tentang CI/CD (continous integration dan develivery) risetnya demi kebutuhan di kerjaan,...","categories": [],
         "tags": ["Android"],
         "url": "http://localhost:4000/codemagic-memang-ajaib/",
         "teaser":"http://localhost:4000/images/glmvn1.jpg"}]
