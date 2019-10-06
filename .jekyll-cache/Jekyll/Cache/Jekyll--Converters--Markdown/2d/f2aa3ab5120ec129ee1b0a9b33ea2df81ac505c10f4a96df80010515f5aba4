@@ -1,8 +1,4 @@
-I"v)<!-- <figure style="width: 450px" class="align-center">
-<img src="/images/Codemagic.jpg">
-<figcaption>credit: nevercode</figcaption>
-</figure>  -->
-<p><img src="http://localhost:4000/assets/images/Codemagic.jpg" alt="codemagic image" /></p>
+I"G)<p><img src="http://localhost:4000/assets/images/Codemagic.jpg" alt="codemagic image" /></p>
 
 <aside class="sidebar__right">
 <nav class="toc">
@@ -37,6 +33,8 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 <img src="/images/home.png" />
 <figcaption></figcaption>
 </figure>
+<p><img src="http://localhost:4000/assets/images/home.jpg" alt="codemagic home" class="full" /></p>
+
 <p>pilih setting project yang akan kita setup untuk CI/CD di codemagic.</p>
 
 <h2 id="setup-triggers-branch">Setup Triggers Branch</h2>

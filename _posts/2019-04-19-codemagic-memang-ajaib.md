@@ -9,10 +9,6 @@ comments: true
 share: true
 related: true
 ---
-<!-- <figure style="width: 450px" class="align-center">
-<img src="/images/Codemagic.jpg">
-<figcaption>credit: nevercode</figcaption>
-</figure>  -->
 ![codemagic image]({{site.url}}{{site.baseurl}}/assets/images/Codemagic.jpg)
 
 {% include toc title="Contents" icon="file-text" %}
@@ -25,10 +21,9 @@ Tl;dr dibawah ini adalah setup di workflow default dari codemagic dengan tujuan 
 ## Setting Repository Project
 setelah login dengan git version control dimana codemagic mengakomodir github, gitlab dan bitbucket secara otomatis semua repository kita di load dihalaman codemagic.
 {:style="text-align: justify;"}
-<figure style="width: 450px" class="align-center">
-<img src="/images/home.png">
-<figcaption></figcaption>
-</figure>
+![codemagic home]({{site.url}}{{site.baseurl}}/assets/images/home.png){: .full}
+
+
 pilih setting project yang akan kita setup untuk CI/CD di codemagic.
 
 ## Setup Triggers Branch
