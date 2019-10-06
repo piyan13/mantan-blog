@@ -10,10 +10,14 @@ share: true
 related: true
 ---
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/mvp.png">
-<figcaption>credit: androidpub</figcaption>
-</figure> 
+{% capture arch_img %}
+![Foo]({{"/assets/images/mvp.png" | relative_url}})
+{% endcapture %}
+<figure>
+	{{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+	<figcaption>credit: androidpub</figcaption>
+</figure>
+
 {% include toc title="Contents" icon="file-text" %}
 Akhirnya tiba di tahun 2018 jugak, berarti  blog minimalis ini menginjak tahun ke-2 masih kurang produktif dalam menulis kebanyakan membaca.. semoga awal tahun ini lebih produktif lagi dalam tulis menulis dan bongkar membongkar tiba-tiba saja kepikiran untuk mempelajari Arsitektur android lebih jauh biar gak makin boring terinspirasi dari tulisan tulisan para developer pro di belahan dunia sana,karena begitu fleksibel dan kebebasan dalam dalam menentukan arsitektur sebuah app ini pada akhirnya memunculkan masalah masalah yang umum seperti class besar, skema penamaan yg tidak konsisten, itu membuat pengujian, pemeliharaan dan perluasan aplikasi menjadi sulit.
 {:style="text-align: justify;"}
