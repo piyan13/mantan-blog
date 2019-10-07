@@ -331,64 +331,84 @@
 <h2 id="structur-app-warplos">Structur app warplos</h2>
 <p style="text-align: justify;">jadi di app Warplos nantinya ada 2activity yaitu MainActivity dan WarPlosDetailActivity dimana untuk MainActivity akan berfungsi menampilkan list jika FragmentContainer tidak sama dengan null yang berarti akan menampilkan layour-large untuk tablet maka DetailFragment akan ditampilkan dalam satu screen dan jika sebalikna Fragment container null maka layout akan merujuk pada standart layout yang berart jika list di klik maka akan memanggil class WarPlosDetailActivity, kemudian app Warplos memiliki 2 class Fragment yaitu WarPlosListFragment dan WarPlosDetailFragment dimana untuk class WarPlosListFragment berisi list beberapa nama umkm dan untuk class WarPlosDetailFragment menampilkan data detail dari nama umkm yang clik di layar dan jugak di app Warplos terdapat class WarplosData dimana class tersebut berisi tentang array yang diperlukan oleh class WarPlosDetailFragment dan WarPlosListFragment.</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/backsack.gif" />
-<figcaption>tampilan warplos di tablet</figcaption>
+<figure>
+	
+<img src="/assets/images/backsack.gif" alt="Foo" />
+
+	<figcaption>tampilan warplos di tablet</figcaption>
 </figure>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/waplosanim.gif" />
-<figcaption>tampilan warplos di di phone</figcaption>
+<figure>
+	
+<img src="/assets/images/waplosanim.gif" alt="Foo" />
+
+	<figcaption>tampilan warplos di di phone</figcaption>
 </figure>
 
 <h2 id="langkah-langkah-pengerjaan-warplosapp">langkah langkah pengerjaan WarplosApp</h2>
 
 <p style="text-align: justify;">Langkah awal yang saya buat adalah membuat class WarplosData berisi data array nama dan descripsi dari umkm di bangkingan rw2 begini umlnya</p>
-<figure style="width: 400px" class="align-center">
-<img src="/images/WarplosData.png" />
-<figcaption>uml class WarplosData</figcaption>
+
+<figure>
+	
+<img src="/assets/images/WarplosData.png" alt="Foo" />
+
+	<figcaption>uml class WarplosData</figcaption>
 </figure>
+
 <p>yang nantinya data data dari class ini dipanggil oleh class WarPlosDetailFragment dan WarPlosListFragment.</p>
 
 <p>lalu saya membuat class WarPlosDetailFragment untuk mencoba menampilkan Data detail random yang diambil dari class WarplosData berikut umlnya:</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/warplosdetailFragment.png" />
-<figcaption>uml class WarPlosDetailFragment</figcaption>
+<figure>
+	
+<img src="/assets/images/warplosdetailFragment.png" alt="Foo" />
+
+	<figcaption>uml class WarPlosDetailFragment</figcaption>
 </figure>
 
 <p>setelah update layout DetailFragment dan memanggilnya di MainActivity percobaan pertama hasinya seperti gambar dibawah ini</p>
-<figure style="width: 400px" class="align-center">
-<img src="/images/testdrivedetailwarplos.png" />
-<figcaption>test data deskripsi</figcaption>
+
+<figure>
+	
+<img src="/assets/images/testdrivedetailwarplos.png" alt="Foo" />
+
+	<figcaption>test data deskripsi</figcaption>
 </figure>
 
 <p>selanjutnya adalah mencoba menampilkan satu layar dengan dua Fragment untuk tampilan yang akan peruntukkan table untuk itu saya membuat class WarPlosListFragment seperti ini umlnya:</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/warploslistfragment.png" />
-<figcaption>uml class WarPlosListFragment</figcaption>
-</figure>
+<figure>
+	
+<img src="/assets/images/warploslistfragment.png" alt="Foo" />
 
+	<figcaption>uml class WarPlosListFragment</figcaption>
+</figure>
 <p>lalu update layoutnya dan memanggilnya di dalam method onCreate class MainActivity tampilannya sebagai berikut</p>
-<figure style="width: 400px" class="align-center">
-<img src="/images/separateScreenWarplos.png" />
-<figcaption>tampilan 2fragment satu screen</figcaption>
-</figure>
 
+<figure>
+	
+<img src="/assets/images/separateScreenWarplos.png" alt="Foo" />
+
+	<figcaption>tampilan 2fragment satu screen</figcaption>
+</figure>
 <p style="text-align: justify;">alhamdulillah semua data bisa ditampilkan di screen baik untuk list nama dan deskripsi selanjutnya adalah membuat bagaimana tampilan saat WarPlos berjalan di phone dan tablet menjadi berbeda maka saya buat folder layout lagi di directory res dengan nama layout-large dimana ini akan berisi layout activity_main.xml yang berbeda isi dengan yang terdapat di directory layout kali ini saya jugak akan membuat class WarPlosDetailActivity untuk mengontrol class WarPlosDetailFragment dan sebagai tujuan intent dari class MainActivity saat WarPlos berjalan di phone berikut umlnya</p>
-<figure style="width: 400px" class="align-center">
-<img src="/images/waplosdetailactivity.png" />
-<figcaption>uml clas WarPlosDetailActivity</figcaption>
+
+<figure>
+	
+<img src="/assets/images/waplosdetailactivity.png" alt="Foo" />
+
+	<figcaption>uml clas WarPlosDetailActivity</figcaption>
 </figure>
 
 <p>dan langkah terkahir adalah update class MainActivity seperti ini umlnya</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/mainactivityWarplos.png" />
-<figcaption>uml clas MainActivity</figcaption>
-</figure>
+<figure>
+	
+<img src="/assets/images/mainactivityWarplos.png" alt="Foo" />
 
+	<figcaption>uml clas MainActivity</figcaption>
+</figure>
 <p style="text-align: justify;">ada beberapa catatan misal backstack transaction di fragment gimana fungsinya adalah ketika user klik tombol kembali waprlos akan menuju list yang sebelumnya di klik , dan untuk issues ketika app berjalan tiba tiba kita ganti rotasi device itu jugak menjadi tambahan tambahan untuk pembedahan Fragment kali ini dan saya sempet jugak mengamali deadlock saat menuliskan di blog ini ….. done!</p>
 
         
