@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T19:40:32+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T21:24:43+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
 
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -542,64 +542,84 @@ akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi
 &lt;h2 id=&quot;structur-app-warplos&quot;&gt;Structur app warplos&lt;/h2&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;jadi di app Warplos nantinya ada 2activity yaitu MainActivity dan WarPlosDetailActivity dimana untuk MainActivity akan berfungsi menampilkan list jika FragmentContainer tidak sama dengan null yang berarti akan menampilkan layour-large untuk tablet maka DetailFragment akan ditampilkan dalam satu screen dan jika sebalikna Fragment container null maka layout akan merujuk pada standart layout yang berart jika list di klik maka akan memanggil class WarPlosDetailActivity, kemudian app Warplos memiliki 2 class Fragment yaitu WarPlosListFragment dan WarPlosDetailFragment dimana untuk class WarPlosListFragment berisi list beberapa nama umkm dan untuk class WarPlosDetailFragment menampilkan data detail dari nama umkm yang clik di layar dan jugak di app Warplos terdapat class WarplosData dimana class tersebut berisi tentang array yang diperlukan oleh class WarPlosDetailFragment dan WarPlosListFragment.&lt;/p&gt;
 
-&lt;figure style=&quot;width: 600px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/backsack.gif&quot; /&gt;
-&lt;figcaption&gt;tampilan warplos di tablet&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/backsack.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;tampilan warplos di tablet&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/waplosanim.gif&quot; /&gt;
-&lt;figcaption&gt;tampilan warplos di di phone&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/waplosanim.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;tampilan warplos di di phone&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;langkah-langkah-pengerjaan-warplosapp&quot;&gt;langkah langkah pengerjaan WarplosApp&lt;/h2&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;Langkah awal yang saya buat adalah membuat class WarplosData berisi data array nama dan descripsi dari umkm di bangkingan rw2 begini umlnya&lt;/p&gt;
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/WarplosData.png&quot; /&gt;
-&lt;figcaption&gt;uml class WarplosData&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/WarplosData.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;uml class WarplosData&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;p&gt;yang nantinya data data dari class ini dipanggil oleh class WarPlosDetailFragment dan WarPlosListFragment.&lt;/p&gt;
 
 &lt;p&gt;lalu saya membuat class WarPlosDetailFragment untuk mencoba menampilkan Data detail random yang diambil dari class WarplosData berikut umlnya:&lt;/p&gt;
 
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/warplosdetailFragment.png&quot; /&gt;
-&lt;figcaption&gt;uml class WarPlosDetailFragment&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/warplosdetailFragment.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;uml class WarPlosDetailFragment&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;setelah update layout DetailFragment dan memanggilnya di MainActivity percobaan pertama hasinya seperti gambar dibawah ini&lt;/p&gt;
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/testdrivedetailwarplos.png&quot; /&gt;
-&lt;figcaption&gt;test data deskripsi&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/testdrivedetailwarplos.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;test data deskripsi&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;selanjutnya adalah mencoba menampilkan satu layar dengan dua Fragment untuk tampilan yang akan peruntukkan table untuk itu saya membuat class WarPlosListFragment seperti ini umlnya:&lt;/p&gt;
 
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/warploslistfragment.png&quot; /&gt;
-&lt;figcaption&gt;uml class WarPlosListFragment&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/warploslistfragment.png&quot; alt=&quot;Foo&quot; /&gt;
 
+	&lt;figcaption&gt;uml class WarPlosListFragment&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;lalu update layoutnya dan memanggilnya di dalam method onCreate class MainActivity tampilannya sebagai berikut&lt;/p&gt;
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/separateScreenWarplos.png&quot; /&gt;
-&lt;figcaption&gt;tampilan 2fragment satu screen&lt;/figcaption&gt;
-&lt;/figure&gt;
 
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/separateScreenWarplos.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;tampilan 2fragment satu screen&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;alhamdulillah semua data bisa ditampilkan di screen baik untuk list nama dan deskripsi selanjutnya adalah membuat bagaimana tampilan saat WarPlos berjalan di phone dan tablet menjadi berbeda maka saya buat folder layout lagi di directory res dengan nama layout-large dimana ini akan berisi layout activity_main.xml yang berbeda isi dengan yang terdapat di directory layout kali ini saya jugak akan membuat class WarPlosDetailActivity untuk mengontrol class WarPlosDetailFragment dan sebagai tujuan intent dari class MainActivity saat WarPlos berjalan di phone berikut umlnya&lt;/p&gt;
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/waplosdetailactivity.png&quot; /&gt;
-&lt;figcaption&gt;uml clas WarPlosDetailActivity&lt;/figcaption&gt;
+
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/waplosdetailactivity.png&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;uml clas WarPlosDetailActivity&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;dan langkah terkahir adalah update class MainActivity seperti ini umlnya&lt;/p&gt;
 
-&lt;figure style=&quot;width: 400px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/mainactivityWarplos.png&quot; /&gt;
-&lt;figcaption&gt;uml clas MainActivity&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/mainactivityWarplos.png&quot; alt=&quot;Foo&quot; /&gt;
 
+	&lt;figcaption&gt;uml clas MainActivity&lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;ada beberapa catatan misal backstack transaction di fragment gimana fungsinya adalah ketika user klik tombol kembali waprlos akan menuju list yang sebelumnya di klik , dan untuk issues ketika app berjalan tiba tiba kita ganti rotasi device itu jugak menjadi tambahan tambahan untuk pembedahan Fragment kali ini dan saya sempet jugak mengamali deadlock saat menuliskan di blog ini ….. done!&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">Contents Studi kasus kali ini adalah tentang Fragment dengan app sederhana warplos yaitu app yang menampilkan profil usaha kecil menengah di daerah Bangkingan RW2 surabaya dimana pokok pembahasannya adalah nantik warplos bisa menyesuaikan tampilan saat di run di phone atau tablet,</summary></entry><entry><title type="html">Mendalami Activity Lifecyle</title><link href="http://localhost:4000/Mendalami-LifeCycle-Activity/" rel="alternate" type="text/html" title="Mendalami Activity Lifecyle" /><published>2017-01-13T00:00:00+07:00</published><updated>2017-01-13T00:00:00+07:00</updated><id>http://localhost:4000/Mendalami-LifeCycle-Activity</id><content type="html" xml:base="http://localhost:4000/Mendalami-LifeCycle-Activity/">&lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
     &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fas fa-file-text&quot;&gt;&lt;/i&gt; Contents&lt;/h4&gt;&lt;/header&gt;
