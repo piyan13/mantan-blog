@@ -1,18 +1,30 @@
-I"�<figure style="width: 500px" class="align-center">
-<img src="/images/tools.JPG" />
-<figcaption>peralatan perang</figcaption>
+I"f
+<figure>
+	
+<img src="/assets/images/tools.JPG" alt="Foo" />
+
+	<figcaption>peralatan perang</figcaption>
 </figure>
+
 <p style="text-align: justify;">Semenjak memegang laptop thinkpad dan kembalinya laptop legenda mengudara membuat saya tergiur untuk banyak experiment menggali lagi ‘taste’ distro operating system linux diluar keluarga debian ini tanpa alesan ketika dulu cuman hardware acer yang hanya bisa maen ‘aman’ dikeluarga debian realitas setelah thinkpad semua distro bisa saya install tidak hanya sekedar mode liveusb walaupun ada beberapa sedikit ketakutan karena thinkpad ini makek amd besar kemungkinan kernel dan driver beberapa yang paling update belom bisa menjangkaunya ‘karena memang fakta umumnya hardware intel yang smooth’ tapi dari sana beberapa eroor masih bisa atasi alhamdulilah.</p>
-<figure style="width: 300px" class="align-center">
-<img src="/images/kdenlive.png" />
-<figcaption>kdenlive</figcaption>
+
+<figure>
+	
+<img src="/assets/images/kdenlive.png" alt="Foo" />
+
+	<figcaption>kdenlive</figcaption>
 </figure>
+
 <p style="text-align: justify;">Dan di awal tahun ini saya mencoba menghibur diri membuat vlog tentang pekerjaan saya yang begitu menyesatkan berbekal kamera pinjaman gus hajir tujuan utama saya adalah dokumentasi suatu hari nanti ketika saya sudah benar benar independent dalam bekarya vlog tadi sebagai ajang mengenang berangkat darisana masuklah ke editing video dengan software <a href="https://kdenlive.org/">KdenLive</a> seneng rasanya memadukan video dengan musik tapi waktu pakek distro <a href="http://www.kubuntu.org/">kubuntu</a> driver manager yang disetting secara default membuat saya kurang puas dengan peforma kdenlive yang beberapa kali crash
 akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi yang memakan waktu jugak lagian si acer sudah terinstall archlinux thinkpad bukan untuk kegiatan oprek thinkpad untuk stable harian akhirnya menemukan alternatif lain turunan dari archlinux yaitu <a href="https://manjaro.org/">manjaro</a> dan saya rasa distro ini ‘the next big thing’ benar saja ranking di situs <a href="http://distrowatch.com/">DistroWatch</a> masuk kedalam 3 besar.</p>
-<figure style="width: 300px" class="align-center">
-<img src="/images/watch.png" />
-<figcaption>ranking distrowatch</figcaption>
+
+<figure>
+	
+<img src="/assets/images/watch.png" alt="Foo" />
+
+	<figcaption>ranking distrowatch</figcaption>
 </figure>
+
 <p style="text-align: justify;">Dengan serta merta saya langsung install manjaro di thinkpad benar saja sangat powerfull fitur terupdate paling utama pemilihan driver bebas untuk ini kdenlive berjalan sangat hampir sempurna saya pakek sampai bulan mei ketika sudah tidak lagi maenan vlog dan editing video kdenlive saya kembali fokus mengejar ketertinggalan di coding android entah ada apa dibenak saya setelah update network applet kde manjaro saya tidak bisa membaca ssid wi-fi dan tidak jugak bisa wired seketika sedikit panik karena lagi panas panasnya coding android beberapa kali mancari clue di wikipedia dan beberapa komunitas tidak ditemukan jawaban yang memuaskan semua farian distro lain yang pakek dekstop kde saya coba via liveusb sama saja network applet gak bisa membaca ssid (dikemudian hari ternyata untuk manjaro terbaru/update harus manual install driver broadcom tidak seperti versi 16.04 yg sudah default) akhirnya saya install manjaro dengan dekstop gnome shell beberapa minggu work fine dan setelah saya update lagi lagi eroor dan stuck di playmouth setelah 3hari experiment sendiri karena di internet tidak menemukan clue akhirnya ketemu ini lebih ketidak sabaran saya untuk urai satu satu diakibatkan karena emang lagi fokusnya ke coding android tibalah bingung untuk tetap makek manjaro kde (sampai hari ini dekstop kde masih menjadi favorit saya karena sesuai selera dan kebutuhan) atau makek kubuntu (ubuntu with kde desktop) dan <a href="https://www.linuxmint.com/">linuxmint kde 18.1</a> dengan pertimbangan sebagai berikut :</p>
 
 <h2 id="manjaro">Manjaro</h2>

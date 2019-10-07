@@ -1,12 +1,20 @@
-I"�<figure style="width: 500px" class="align-center">
-<img src="/images/tools.JPG" />
-<figcaption>peralatan perang</figcaption>
+I"y
+<figure>
+	
+<img src="/assets/images/tools.JPG" alt="Foo" />
+
+	<figcaption>peralatan perang</figcaption>
 </figure>
+
 <p style="text-align: justify;">Semenjak memegang laptop thinkpad dan kembalinya laptop legenda mengudara membuat saya tergiur untuk banyak experiment menggali lagi ‘taste’ distro operating system linux diluar keluarga debian ini tanpa alesan ketika dulu cuman hardware acer yang hanya bisa maen ‘aman’ dikeluarga debian realitas setelah thinkpad semua distro bisa saya install tidak hanya sekedar mode liveusb walaupun ada beberapa sedikit ketakutan karena thinkpad ini makek amd besar kemungkinan kernel dan driver beberapa yang paling update belom bisa menjangkaunya ‘karena memang fakta umumnya hardware intel yang smooth’ tapi dari sana beberapa eroor masih bisa atasi alhamdulilah.</p>
-<figure style="width: 300px" class="align-center">
-<img src="/images/kdenlive.png" />
-<figcaption>kdenlive</figcaption>
+
+<figure>
+	
+<img src="/assets/images/kdenlive.png" alt="Foo" />
+
+	<figcaption>kdenlive</figcaption>
 </figure>
+
 <p style="text-align: justify;">Dan di awal tahun ini saya mencoba menghibur diri membuat vlog tentang pekerjaan saya yang begitu menyesatkan berbekal kamera pinjaman gus hajir tujuan utama saya adalah dokumentasi suatu hari nanti ketika saya sudah benar benar independent dalam bekarya vlog tadi sebagai ajang mengenang berangkat darisana masuklah ke editing video dengan software <a href="https://kdenlive.org/">KdenLive</a> seneng rasanya memadukan video dengan musik tapi waktu pakek distro <a href="http://www.kubuntu.org/">kubuntu</a> driver manager yang disetting secara default membuat saya kurang puas dengan peforma kdenlive yang beberapa kali crash
 akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi yang memakan waktu jugak lagian si acer sudah terinstall archlinux thinkpad bukan untuk kegiatan oprek thinkpad untuk stable harian akhirnya menemukan alternatif lain turunan dari archlinux yaitu <a href="https://manjaro.org/">manjaro</a> dan saya rasa distro ini ‘the next big thing’ benar saja ranking di situs <a href="http://distrowatch.com/">DistroWatch</a> masuk kedalam 3 besar.</p>
 <figure style="width: 300px" class="align-center">
@@ -14,4 +22,26 @@ akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi
 <figcaption>ranking distrowatch</figcaption>
 </figure>
 <p style="text-align: justify;">Dengan serta merta saya langsung install manjaro di thinkpad benar saja sangat powerfull fitur terupdate paling utama pemilihan driver bebas untuk ini kdenlive berjalan sangat hampir sempurna saya pakek sampai bulan mei ketika sudah tidak lagi maenan vlog dan editing video kdenlive saya kembali fokus mengejar ketertinggalan di coding android entah ada apa dibenak saya setelah update network applet kde manjaro saya tidak bisa membaca ssid wi-fi dan tidak jugak bisa wired seketika sedikit panik karena lagi panas panasnya coding android beberapa kali mancari clue di wikipedia dan beberapa komunitas tidak ditemukan jawaban yang memuaskan semua farian distro lain yang pakek dekstop kde saya coba via liveusb sama saja network applet gak bisa membaca ssid (dikemudian hari ternyata untuk manjaro terbaru/update harus manual install driver broadcom tidak seperti versi 16.04 yg sudah default) akhirnya saya install manjaro dengan dekstop gnome shell beberapa minggu work fine dan setelah saya update lagi lagi eroor dan stuck di playmouth setelah 3hari experiment sendiri karena di internet tidak menemukan clue akhirnya ketemu ini lebih ketidak sabaran saya untuk urai satu satu diakibatkan karena emang lagi fokusnya ke coding android tibalah bingung untuk tetap makek manjaro kde (sampai hari ini dekstop kde masih menjadi favorit saya karena sesuai selera dan kebutuhan) atau makek kubuntu (ubuntu with kde desktop) dan <a href="https://www.linuxmint.com/">linuxmint kde 18.1</a> dengan pertimbangan sebagai berikut :</p>
+
+<h2 id="manjaro">Manjaro</h2>
+<ul>
+  <li>Rolling release keunggulan bisa terdepan mencoba terbaru teknologi linux tapi jugak banyak bug dan eroor</li>
+  <li>Rolling release berarti sekali install untuk selamanya dengan catatan ketika update bisa segera menemukan bug dan memperbaikinya</li>
+  <li>untuk thinkpad amd belom ditemukan masalah driver yang berarti.</li>
+</ul>
+
+<h2 id="kubuntu">Kubuntu</h2>
+<ul>
+  <li>Driver defaultnya membuat kurang leluasa dalam mengekspresikan diri</li>
+  <li>untuk support yang lama bisa memakai versi Long Time Support tapi update tidak radikal serperti manjaro yang rolling release menjadikan bakal ketinggalan teknologi terbaru dari linux</li>
+</ul>
+
+<h2 id="linuxmint-kde">linuxMint Kde</h2>
+<ul>
+  <li>Drivernya bisa di configurasi sesuai selera daripada Kubuntu</li>
+  <li>untuk support yang lama bisa memakai versi Long Time Support tapi update tidak radikal serperti manjaro yang rolling release menjadikan bakal ketinggalan teknologi terbaru dari linux</li>
+  <li>ketakutan masalah security masih menghatui dimana perlu di ingat beberapa waktu yang lalu saya beralih ke kubuntu karena repository linuxmint di susupi oleh cracker</li>
+</ul>
+
+<p style="text-align: justify;">Finally saya memilih Linuxmint sebenarnya masih tergiur dengan manjaro yang rolling release dikarenan saya butuh distro yang benar benar stable untuk harian dengan kecil kemungkinan eroor yang menyita waktu untuk memperbaikinya dan alasan produktifitas jugak LTS mint support sampek 2021 untuk explore dan oprek teknologi linux terbarukan bisa di dayakan laptop legenda acer yang makek hardware intel impas deh imbang heuheuheu rolling release (stable jugak)  buat opreker dan stable release untuk produktifitas</p>
 :ET
