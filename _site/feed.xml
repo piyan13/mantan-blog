@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T19:21:50+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-07T19:40:32+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
 
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -479,9 +479,11 @@ akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi
   &lt;li&gt;ketakutan masalah security masih menghatui dimana perlu di ingat beberapa waktu yang lalu saya beralih ke kubuntu karena repository linuxmint di susupi oleh cracker&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p style=&quot;text-align: justify;&quot;&gt;Finally saya memilih Linuxmint sebenarnya masih tergiur dengan manjaro yang rolling release dikarenan saya butuh distro yang benar benar stable untuk harian dengan kecil kemungkinan eroor yang menyita waktu untuk memperbaikinya dan alasan produktifitas jugak LTS mint support sampek 2021 untuk explore dan oprek teknologi linux terbarukan bisa di dayakan laptop legenda acer yang makek hardware intel impas deh imbang heuheuheu rolling release (stable jugak)  buat opreker dan stable release untuk produktifitas&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">peralatan perang</summary></entry><entry><title type="html">Lebih dalam tentang RecyclerView</title><link href="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/" rel="alternate" type="text/html" title="Lebih dalam tentang RecyclerView" /><published>2017-05-08T00:00:00+07:00</published><updated>2017-05-08T00:00:00+07:00</updated><id>http://localhost:4000/Lebih-dalam-tentang-RecyclerView</id><content type="html" xml:base="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/udaRecycle.gif&quot; /&gt;
-&lt;figcaption&gt;RecyclerView shunshine udacity&lt;/figcaption&gt;
+&lt;p style=&quot;text-align: justify;&quot;&gt;Finally saya memilih Linuxmint sebenarnya masih tergiur dengan manjaro yang rolling release dikarenan saya butuh distro yang benar benar stable untuk harian dengan kecil kemungkinan eroor yang menyita waktu untuk memperbaikinya dan alasan produktifitas jugak LTS mint support sampek 2021 untuk explore dan oprek teknologi linux terbarukan bisa di dayakan laptop legenda acer yang makek hardware intel impas deh imbang heuheuheu rolling release (stable jugak)  buat opreker dan stable release untuk produktifitas&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">peralatan perang</summary></entry><entry><title type="html">Lebih dalam tentang RecyclerView</title><link href="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/" rel="alternate" type="text/html" title="Lebih dalam tentang RecyclerView" /><published>2017-05-08T00:00:00+07:00</published><updated>2017-05-08T00:00:00+07:00</updated><id>http://localhost:4000/Lebih-dalam-tentang-RecyclerView</id><content type="html" xml:base="http://localhost:4000/Lebih-dalam-tentang-RecyclerView/">&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/udaRecycle.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;RecyclerView shunshine udacity&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -506,17 +508,21 @@ akhirnya kepikiran untuk install thinkpad archlinux muncul ketakutan konfigurasi
   &lt;li&gt;getItemCount yang return jumlah dari item ke dalam data source&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure style=&quot;text-align: justify;&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/methodAdapter.gif&quot; /&gt;
-&lt;figcaption&gt;ilustrasi override method Adapter&lt;/figcaption&gt;
+&lt;figure style=&quot;text-align: justify;&quot;&gt;
+	
+&lt;img src=&quot;/assets/images/methodAdapter.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;ilustrasi override method Adapter&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;layoutmanager&quot;&gt;LayoutManager&lt;/h2&gt;
 &lt;p style=&quot;text-align: justify;&quot;&gt;LayoutManager yang menentukan colletion item ditampilkan dan LayoutManager menjadi bagian terpenting cara mendaur ulang bekerja di RecyclerView karena LayoutManager yang menentukan kapan mendaur ulang tampilan item yang tidak lagi terlihat saat pengguna menggulirkan layar&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/GreenRecyclerView.gif&quot; /&gt;
-&lt;figcaption&gt;app RecyclerView&lt;/figcaption&gt;
+&lt;figure&gt;
+	
+&lt;img src=&quot;/assets/images/GreenRecyclerView.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+	&lt;figcaption&gt;app RecyclerView&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Memang betul dalam prakteknya konsep ViewGroup RecyclerView sulit tapi setidaknya dengan pemaparan di udacity hasilnya seperti gambar diatas saya jadi sedikit banyak terbantu karena fungsinya sangat penting dari sekedar ListView jadi makin tak sabar untuk explore lebih jau lagi dan lagi&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">RecyclerView shunshine udacity Contents Mei tahun 2017 begitu membara cukup terseok seok hanya untuk sekedar istiqomah dan waktunya untuk mengupas habis beberapa ketertinggalan diving in biar gak makin tertinggal okey RecyclerView di perkenalkan pada saat android L adalah sebuah ViewGroup baru yang di persiapkan untuk render view adapter menurut mentor di udacity RecyclerView menjadi inti dari banyak aplikasi dengan alesan untuk hal hal yang compleks penangannya daripada ListView isu utama dari RecylcerView adalah mengenai garbage collection memory yang terpakai saat menampilkan data dengan banyak nan kompleks</summary></entry><entry><title type="html">Fragment di WarPlos</title><link href="http://localhost:4000/Fragment-di-Warplos/" rel="alternate" type="text/html" title="Fragment di WarPlos" /><published>2017-02-07T00:00:00+07:00</published><updated>2017-02-07T00:00:00+07:00</updated><id>http://localhost:4000/Fragment-di-Warplos</id><content type="html" xml:base="http://localhost:4000/Fragment-di-Warplos/">&lt;aside class=&quot;sidebar__right&quot;&gt;

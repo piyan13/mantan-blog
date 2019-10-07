@@ -1,6 +1,9 @@
-I"Ÿ<figure style="width: 700px" class="align-center">
-<img src="/images/udaRecycle.gif" />
-<figcaption>RecyclerView shunshine udacity</figcaption>
+I"‹
+<figure>
+	
+<img src="/assets/images/udaRecycle.gif" alt="Foo" />
+
+	<figcaption>RecyclerView shunshine udacity</figcaption>
 </figure>
 <aside class="sidebar__right">
 <nav class="toc">
