@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-23T13:28:19+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-23T14:06:25+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">./SO</title><subtitle>Personal Blog.</subtitle><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><entry><title type="html">CodeMagic memang ajaib</title><link href="http://localhost:4000/codemagic-memang-ajaib/" rel="alternate" type="text/html" title="CodeMagic memang ajaib" /><published>2019-04-19T00:00:00+07:00</published><updated>2019-04-19T00:00:00+07:00</updated><id>http://localhost:4000/codemagic-memang-ajaib</id><content type="html" xml:base="http://localhost:4000/codemagic-memang-ajaib/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/Codemagic.jpg&quot; alt=&quot;codemagic image&quot; /&gt;&lt;/p&gt;
 
 &lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
@@ -860,30 +860,39 @@ membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam
 
     &lt;figcaption&gt;uml akhir&lt;/figcaption&gt;
 &lt;/figure&gt;
-&lt;p&gt;Beres sudah mendalami samudra LifeCycle Activity&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">Contents Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single class Activity dan single layout yaitu stopWatchActivity dan activity_stop_watch.xml.</summary></entry><entry><title type="html">Error Android Virtual Device kubuntu 64 bit</title><link href="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/" rel="alternate" type="text/html" title="Error Android Virtual Device kubuntu 64 bit" /><published>2016-12-04T00:00:00+07:00</published><updated>2016-12-04T00:00:00+07:00</updated><id>http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit</id><content type="html" xml:base="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/">&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/kinfo.png&quot; /&gt;
-&lt;figcaption&gt;kinfo&lt;/figcaption&gt;
+&lt;p&gt;Beres sudah mendalami samudra LifeCycle Activity&lt;/p&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Android" /><summary type="html">Contents Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single class Activity dan single layout yaitu stopWatchActivity dan activity_stop_watch.xml.</summary></entry><entry><title type="html">Error Android Virtual Device kubuntu 64 bit</title><link href="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/" rel="alternate" type="text/html" title="Error Android Virtual Device kubuntu 64 bit" /><published>2016-12-04T00:00:00+07:00</published><updated>2016-12-04T00:00:00+07:00</updated><id>http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit</id><content type="html" xml:base="http://localhost:4000/Error-Android-Virtual-Device-Kubuntu-64bit/">&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/kinfo.png&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;kinfo&lt;/figcaption&gt;
 &lt;/figure&gt;
+
 &lt;p style=&quot;text-align: justify;&quot;&gt;Tibalah saatnya untuk upgrade Ram ddr3l thinkpad e145 dari 4GB ke 8GB di iringi penuh drama semenjak pertama kali upgrade ke 4GB dan 8GB adalah upgrade terakhir karena thinkpad ini hanya bisa up to 8GB menurut website resminya tapi menurut kabar beredar dari mas mas di VGEN service center ini thinkpad bisa sampek 16GB tapi rasanya saya tidak sebegitu tertarik untuk coba coba pasalnya upgrade ke 8GB hanya untuk memenuhi rekomendasi system untuk &lt;a href=&quot;https://developer.android.com/studio/index.html&quot;&gt;android studio di operating system linux&lt;/a&gt;&lt;/p&gt;
 
-&lt;figure style=&quot;width: 700px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/rekomAndro.png&quot; /&gt;
-&lt;figcaption&gt;system requirement&lt;/figcaption&gt;
+&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/rekomAndro.png&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;system requirement&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;setelah upgrade dan langsung saya coba untuk menjalankan android studio dan run code untuk dijalankan di android virtual device untuk mengetahui bagaimana performa thinkpad saat setelah upgrade ram 8GB akhirnya ketemu error &lt;code class=&quot;highlighter-rouge&quot;&gt;EmptyThrowable: Failed to create the SD card&lt;/code&gt;.&lt;/p&gt;
 
-&lt;figure style=&quot;width: 800px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/empty.png&quot; /&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/empty.png&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;saya baru inget kalau kubuntu ini baru saya install ulang gara gara percobaan install guitarix beta akhirnya banyak error dedepency yang mengakibatkan harus install ulang (ini cara terjitu hemat waktu agar gak ribet aja heuheuheu) dan jawaban dari error di atas adalah &lt;a href=&quot;http://www.glamvian.com/erorr-android-studio/&quot;&gt;di postingan saya bulan bulan lalu&lt;/a&gt;
 okey problem &lt;code class=&quot;highlighter-rouge&quot;&gt;EmptyThrowable: Failed to create the SD card&lt;/code&gt; terselesaikan.&lt;/p&gt;
 
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/erorRunEmulator.jpg&quot; /&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/erorRunEmulator.jpg&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;saat run emulator muncul error baru libGL error setelah baca baca di bug reportnya google jawabanya adalah libstdc++6 yang barusan di install belom terload di sdk kita&lt;/p&gt;
@@ -893,14 +902,18 @@ okey problem &lt;code class=&quot;highlighter-rouge&quot;&gt;EmptyThrowable: Fai
  &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/usr/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/Android/&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Sdk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lib64&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;libstdc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;figure style=&quot;width: 200px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/solved.jpg&quot; /&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/solved.jpg&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p style=&quot;text-align: justify;&quot;&gt;akhirnya emulator bisa mengudara dan setelah compile dan run code app terinstall sempurna di emulator dan berjalan sangat smooth pengaruh ram 8GB alhamdulilah jadi tambah semangat bekarya ya&lt;/p&gt;
 
-&lt;figure style=&quot;width: 500px&quot; class=&quot;align-center&quot;&gt;
-&lt;img src=&quot;/images/emudone.gif&quot; /&gt;
-&lt;figcaption&gt;&lt;/figcaption&gt;
-&lt;/figure&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">kinfo Tibalah saatnya untuk upgrade Ram ddr3l thinkpad e145 dari 4GB ke 8GB di iringi penuh drama semenjak pertama kali upgrade ke 4GB dan 8GB adalah upgrade terakhir karena thinkpad ini hanya bisa up to 8GB menurut website resminya tapi menurut kabar beredar dari mas mas di VGEN service center ini thinkpad bisa sampek 16GB tapi rasanya saya tidak sebegitu tertarik untuk coba coba pasalnya upgrade ke 8GB hanya untuk memenuhi rekomendasi system untuk android studio di operating system linux</summary></entry></feed>
+&lt;figure&gt;
+    
+&lt;img src=&quot;/assets/images/emudone.gif&quot; alt=&quot;Foo&quot; /&gt;
+
+    &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;</content><author><name>Glamvian</name><email>glmvn.composer@gmail.com</email></author><category term="Linux" /><summary type="html">kinfo</summary></entry></feed>

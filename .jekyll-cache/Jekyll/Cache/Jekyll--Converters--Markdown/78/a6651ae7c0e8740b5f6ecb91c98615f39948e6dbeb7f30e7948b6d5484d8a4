@@ -1,27 +1,37 @@
-I"›<figure style="width: 700px" class="align-center">
-<img src="/images/kinfo.png" />
-<figcaption>kinfo</figcaption>
+I"R
+<figure>
+    
+<img src="/assets/images/kinfo.png" alt="Foo" />
+
+    <figcaption>kinfo</figcaption>
 </figure>
+
 <p style="text-align: justify;">Tibalah saatnya untuk upgrade Ram ddr3l thinkpad e145 dari 4GB ke 8GB di iringi penuh drama semenjak pertama kali upgrade ke 4GB dan 8GB adalah upgrade terakhir karena thinkpad ini hanya bisa up to 8GB menurut website resminya tapi menurut kabar beredar dari mas mas di VGEN service center ini thinkpad bisa sampek 16GB tapi rasanya saya tidak sebegitu tertarik untuk coba coba pasalnya upgrade ke 8GB hanya untuk memenuhi rekomendasi system untuk <a href="https://developer.android.com/studio/index.html">android studio di operating system linux</a></p>
 
-<figure style="width: 700px" class="align-center">
-<img src="/images/rekomAndro.png" />
-<figcaption>system requirement</figcaption>
+<figure>
+    
+<img src="/assets/images/rekomAndro.png" alt="Foo" />
+
+    <figcaption>system requirement</figcaption>
 </figure>
 
 <p style="text-align: justify;">setelah upgrade dan langsung saya coba untuk menjalankan android studio dan run code untuk dijalankan di android virtual device untuk mengetahui bagaimana performa thinkpad saat setelah upgrade ram 8GB akhirnya ketemu error <code class="highlighter-rouge">EmptyThrowable: Failed to create the SD card</code>.</p>
 
-<figure style="width: 800px" class="align-center">
-<img src="/images/empty.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/empty.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p style="text-align: justify;">saya baru inget kalau kubuntu ini baru saya install ulang gara gara percobaan install guitarix beta akhirnya banyak error dedepency yang mengakibatkan harus install ulang (ini cara terjitu hemat waktu agar gak ribet aja heuheuheu) dan jawaban dari error di atas adalah <a href="http://www.glamvian.com/erorr-android-studio/">di postingan saya bulan bulan lalu</a>
 okey problem <code class="highlighter-rouge">EmptyThrowable: Failed to create the SD card</code> terselesaikan.</p>
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/erorRunEmulator.jpg" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/erorRunEmulator.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p style="text-align: justify;">saat run emulator muncul error baru libGL error setelah baca baca di bug reportnya google jawabanya adalah libstdc++6 yang barusan di install belom terload di sdk kita</p>
@@ -31,9 +41,11 @@ okey problem <code class="highlighter-rouge">EmptyThrowable: Failed to create th
  <span class="o">~</span><span class="p">:</span><span class="err">$</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="sr">/usr/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libstdc</span><span class="o">++</span><span class="p">.</span><span class="nf">so</span><span class="o">.</span><span class="mi">6</span> <span class="o">~</span><span class="sr">/Android/</span><span class="no">Sdk</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libstdc</span><span class="o">++</span>
 </code></pre></div></div>
 
-<figure style="width: 200px" class="align-center">
-<img src="/images/solved.jpg" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/solved.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p style="text-align: justify;">akhirnya emulator bisa mengudara dan setelah compile dan run code app terinstall sempurna di emulator dan berjalan sangat smooth pengaruh ram 8GB alhamdulilah jadi tambah semangat bekarya ya</p>
