@@ -13,24 +13,34 @@ related: true
 Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single  class Activity dan single layout yaitu `stopWatchActivity` dan `activity_stop_watch.xml`.
 {: style="text-align: justify;"}
 
-<figure style="width:400px" class="align-center">
-<img src="/images/stopwatch.gif">
-<figcaption>penampakan app</figcaption>
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/stopwatch.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>penampakan app</figcaption>
 </figure>
 
 Sama seperti stopwatch pada umumnya fungsinya untuk menghitung waktu perdetik ada 3 button disana start, stop, dan reset dengan uml seperti dibawah ini.
 {: style="text-align: justify;"}
 
-<figure style="width:400px" class="align-center">
-<img src="/images/StopWatchActiviy.png">
-<figcaption>uml class StopWatchActivity</figcaption>
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/StopWatchActiviy.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>uml class StopWatchActivity</figcaption>
 </figure>
 
 issue pertama muncul ketika app berjalan setelah kita touch start button trus device kita ganti rotasi jadi horizontal ditengah tengah app berjalan seketika aplikasi langsung muncul seperti awal lagi alias di destroy.
 {: style="text-align: justify;"}
-<figure style="width:400px" class="align-center">
-<img src="/images/rotationStp.gif">
-<figcaption>rotation</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/rotationStp.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>rotation</figcaption>
 </figure>
 
 apa yang terjadi adalah rotasi layar android dan ukuran layar berubah, dan itu destroy Activity, termasuk semua variabel yang digunakan method runTimer(). setelah itu method onCreate() berjalan lagi dan method runTimer() dipanggil karena Activity di re-create, variabel mSecond dan mRunning bernilai default.
@@ -39,17 +49,24 @@ apa yang terjadi adalah rotasi layar android dan ukuran layar berubah, dan itu d
 ## Launch, Running , Destroy
 Main state dari activity adalah ketika dia running atau aktif. activity berjalan di foreground dari screen dan user berinteraksi dengannya, activity running setelah ter launch dan berakhir setelah di destroy. ketika activity berubah dari launched dan akan di destroy dia mentrigger method kunci Lifecyle activity yaitu onCreate() dan onDestroy(). itu adalah method Lifecyle yang kita inherit di Activity dan bisa kita override.
 {: style="text-align: justify;"}
-<figure style="width:200px" class="align-center">
-<img src="/images/activitylaunchstp.png">
-<figcaption>alur activity born to death</figcaption>
-</figure>
 
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/activitylaunchstp.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>alur activity born to death</figcaption>
+</figure>
 
 Method onCreate() akan dipanggil setelah Activity di launch. dan method onDestroy() adalah method terakhir yang di panggil sebelum activity di destroy.
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/inheritstp.png">
-<figcaption>turunan class activity</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/inheritstp.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>turunan class activity</figcaption>
 </figure>
 
 karena issue rotasi terjadi karena destroy maka sebelum destroy terjadi saya mau simpan state yang sedang berjalan dengan method onSaveInstanceState() method ini bisa dipanggil sebelum method onDestroy() berjalan. method onSaveInstanceState() mempunyai satu parameter yaitu Bundle dan Bundle
@@ -65,28 +82,43 @@ method onCreate akan melewati Bundle sebagai parameter. ini berarti jika saya me
 dimana `bundle` adalan nama Bundle, `*` untuk type value yang ingin disimpan, seperti ini jadinya
 {: style="text-align: justify;"}
 
-<figure style="width:400px" class="align-center">
-<img src="/images/bundleput.png">
-<figcaption>bundle.put</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/bundleput.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 akhirnya saya simpan variabel values di Bundle dan dapat menggunakan mereka berdua method di onCreate(). setelah disimpan ketika nantinya activity di destroy dan di muat ulang onCreate() jugak yang telah kita tahu memliki parameter Bundle jugak tapi dalam posisi kali ini parameter menjadi bernilai null namun bisa dibuat pengecualian jika dan simpanan di Bundle kita bisa get value yang sudah disimpan ke Activity seperti dengan method `bundle.get*("name");` 
 {: style="text-align: justify;"}
-<figure style="width:500px" class="align-center">
-<img src="/images/bundleget.png">
-<figcaption>bundle.get</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/bundleget.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>bundle. get</figcaption>
 </figure>
 
 alhamdulillah pecah misterinya 
-<figure style="width:500px" class="align-center">
-<img src="/images/rotatestop.gif">
-<figcaption>isuue rotate solve</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/rotatestop.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>isuue rotate solve</figcaption>
 </figure>
 
 uml setelah penambahan method onSaveInstanceState()
-<figure style="width:300px" class="align-center">
-<img src="/images/stopwatchactivity2.png">
-<figcaption>isuue rotate solve</figcaption>
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/stopwatchactivity2.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>isuue rotate solve</figcaption>
 </figure>
 
 ## Start, Stop, Restart
@@ -97,9 +129,13 @@ issue selanjutnya adalah ketika app berjalan user klik start button tiba tiba ad
 * onStop() dipanggil ketika activity kita berhenti nampak ke user,ini berarti Activity akan di destroy tapi sebelum method onDestroy() dipanggil method onSaveInstanceState() akan dipanggil sebelum method onStop().
 * onRestart() dipanggil setelah activity kita tak terliat atau invisible.
 
-<figure style="width:300px" class="align-center">
-<img src="/images/lifecycleVisible.png">
-<figcaption>visible lifetime</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/lifecycleVisible.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>visible lifetime</figcaption>
 </figure>
 
 okey saatnya override method onStop di coding kita setelah itu buatnya berhenti dengan `mRunning = false`
@@ -151,33 +187,50 @@ waktunya override method onStop()
     }
 ```
 
-<figure style="width:300px" class="align-center">
-<img src="/images/visiblestp.gif">
-<figcaption>stop visible</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/visiblestp.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>stop visible</figcaption>
 </figure>
 
 skenarionya adalah pertama app stopwatch berjalan variabel mRunning = true ; di pertengahan saya pindah ke app todo task menjadikan app stopwatch invisible dalam posisi ini variabel mRunning menjadi false karena method onStop() dan variabel mWasRunning menjadi berniali true. selanjutnya saya kembalikan ke app stopwatch method onStart menerima variabel mWasRunning dan activity mengambil simpana data dari method onSaveInstanceState() akhinya kembali berjalan.
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/stpwasrun.png">
-<figcaption>uml setelah mWasRunning</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/stpwasrun.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>uml setelah mWasRunning</figcaption>
 </figure>
+
 ### kenapa onRestart() bukan onRestart()?
 ada pertanyaan kenapa tidak memaki method onRestart()? method itu digunakan bila kita hanya ingin code berjalan ketika app dari visible yang mana sebelumnya invisible. dia tidak berjalan ketika activity visible untuk pertamakalinya. dalam kasus stopwatch ini kan saya ingin app tetap berjalan ketika app di rotasi jugak. trus perbedaane apa onRestart dan onStart? okey saat kita merubah rotasi device acitivity ter destroy dan membuat satu lagi yang baru. jika kita masukan code di method onRestart, dia tidak akan berjalan ketika activity re-created. kalau method onStart() terpanggil saat terjadi rotasi dan terjadi invisible ke visible. 
 {: style="text-align: justify;"}
 ## onPaused()
 setelah mempelajari alur activity di buat dan di destroy lalu telah melihat jugak ketika activity saat visible menjadi invisible ada beberapa method yang bisa di warisi dari superclass yang bisa dimanfaatkan tapi satu lagi yang saya harus pelajari yaitu masalah activity posisi visible tapi tidak fokus ini berarti activity menjadi paused. ini akan terjadi jika app stopwatch berjalan ada activity app lain berada ditas activity app stopwath tapi tidak keluar full screen tampilannya
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/onpauestp.png">
-<figcaption>posisi onpaused</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/onpauestp.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>posisi onpaused</figcaption>
 </figure>
 
 ada 2method Lifecyle activity yang bisa dimanfaatkan terkait issue ini yaitu method onPaused() dan onResume(). onPause() dipanggil ketika activity kita visible tapi ada activity lain fokus. onResume() dipanggil ketika activity kita belum berinteraksi dengan user
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/onpausedstpw.png">
-<figcaption>alur Lifecyle</figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/onpausedstpw.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>alur Lifecyle</figcaption>
 </figure>
 
 penjelasan dari gambar:
@@ -200,16 +253,23 @@ muncul pertanyaan selanjutnya bagaimana saat activity paused karena tidak fokus 
 
 jika kita memliki sebuah activity visible tapi tidak di foreground dan tidak akan punya fokus maka method onPause() dan onResume() tidak akan pernah dipanggil maka activity akan langsung pergi dari onStart() ke onStop()
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/oncreatestp.png">
-<figcaption></figcaption>
+
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/oncreatestp.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 setelah memerhati dengan seksama ternyata kita bisa mereplace method onStop() dan onStart() dengan method onPause() dan onResume() heuheuheu namanya jugak mendalami materi jadine ada hal hal baru 
 {: style="text-align: justify;"}
-<figure style="width:300px" class="align-center">
-<img src="/images/onresumestp.png">
-<figcaption>uml akhir</figcaption>
-</figure>
 
+{% capture lifecycle_img %}
+![Foo]({{"/assets/images/onresumestp.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{lifecycle_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>uml akhir</figcaption>
+</figure>
 Beres sudah mendalami samudra LifeCycle Activity

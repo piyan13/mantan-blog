@@ -1,4 +1,4 @@
-I"ü?<aside class="sidebar__right">
+I",?<aside class="sidebar__right">
 <nav class="toc">
     <header><h4 class="nav__title"><i class="fas fa-file-text"></i> Contents</h4></header>
 <ul class="toc__menu" id="markdown-toc">
@@ -18,37 +18,50 @@
 </aside>
 <p style="text-align: justify;">Mengulang membaca buku materi tentang Lifecyle Activity semakin diulang semaki seru tentu saja merawat ingatan biar fondasi android tak terlupakan kali ini dengan App stopwatch simpel hanya dengan single  class Activity dan single layout yaitu <code class="highlighter-rouge">stopWatchActivity</code> dan <code class="highlighter-rouge">activity_stop_watch.xml</code>.</p>
 
-<figure style="width:400px" class="align-center">
-<img src="/images/stopwatch.gif" />
-<figcaption>penampakan app</figcaption>
+<figure>
+    
+<img src="/assets/images/stopwatch.gif" alt="Foo" />
+
+    <figcaption>penampakan app</figcaption>
 </figure>
 
 <p style="text-align: justify;">Sama seperti stopwatch pada umumnya fungsinya untuk menghitung waktu perdetik ada 3 button disana start, stop, dan reset dengan uml seperti dibawah ini.</p>
 
-<figure style="width:400px" class="align-center">
-<img src="/images/StopWatchActiviy.png" />
-<figcaption>uml class StopWatchActivity</figcaption>
+<figure>
+    
+<img src="/assets/images/StopWatchActiviy.png" alt="Foo" />
+
+    <figcaption>uml class StopWatchActivity</figcaption>
 </figure>
 
 <p style="text-align: justify;">issue pertama muncul ketika app berjalan setelah kita touch start button trus device kita ganti rotasi jadi horizontal ditengah tengah app berjalan seketika aplikasi langsung muncul seperti awal lagi alias di destroy.</p>
-<figure style="width:400px" class="align-center">
-<img src="/images/rotationStp.gif" />
-<figcaption>rotation</figcaption>
+
+<figure>
+    
+<img src="/assets/images/rotationStp.gif" alt="Foo" />
+
+    <figcaption>rotation</figcaption>
 </figure>
 
 <p style="text-align: justify;">apa yang terjadi adalah rotasi layar android dan ukuran layar berubah, dan itu destroy Activity, termasuk semua variabel yang digunakan method runTimer(). setelah itu method onCreate() berjalan lagi dan method runTimer() dipanggil karena Activity di re-create, variabel mSecond dan mRunning bernilai default.</p>
 
 <h2 id="launch-running--destroy">Launch, Running , Destroy</h2>
 <p style="text-align: justify;">Main state dari activity adalah ketika dia running atau aktif. activity berjalan di foreground dari screen dan user berinteraksi dengannya, activity running setelah ter launch dan berakhir setelah di destroy. ketika activity berubah dari launched dan akan di destroy dia mentrigger method kunci Lifecyle activity yaitu onCreate() dan onDestroy(). itu adalah method Lifecyle yang kita inherit di Activity dan bisa kita override.</p>
-<figure style="width:200px" class="align-center">
-<img src="/images/activitylaunchstp.png" />
-<figcaption>alur activity born to death</figcaption>
+
+<figure>
+    
+<img src="/assets/images/activitylaunchstp.png" alt="Foo" />
+
+    <figcaption>alur activity born to death</figcaption>
 </figure>
 
 <p style="text-align: justify;">Method onCreate() akan dipanggil setelah Activity di launch. dan method onDestroy() adalah method terakhir yang di panggil sebelum activity di destroy.</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/inheritstp.png" />
-<figcaption>turunan class activity</figcaption>
+
+<figure>
+    
+<img src="/assets/images/inheritstp.png" alt="Foo" />
+
+    <figcaption>turunan class activity</figcaption>
 </figure>
 
 <p style="text-align: justify;">karena issue rotasi terjadi karena destroy maka sebelum destroy terjadi saya mau simpan state yang sedang berjalan dengan method onSaveInstanceState() method ini bisa dipanggil sebelum method onDestroy() berjalan. method onSaveInstanceState() mempunyai satu parameter yaitu Bundle dan Bundle
@@ -61,27 +74,38 @@ membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam
 
 <p style="text-align: justify;">dimana <code class="highlighter-rouge">bundle</code> adalan nama Bundle, <code class="highlighter-rouge">*</code> untuk type value yang ingin disimpan, seperti ini jadinya</p>
 
-<figure style="width:400px" class="align-center">
-<img src="/images/bundleput.png" />
-<figcaption>bundle.put</figcaption>
+<figure>
+    
+<img src="/assets/images/bundleput.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p style="text-align: justify;">akhirnya saya simpan variabel values di Bundle dan dapat menggunakan mereka berdua method di onCreate(). setelah disimpan ketika nantinya activity di destroy dan di muat ulang onCreate() jugak yang telah kita tahu memliki parameter Bundle jugak tapi dalam posisi kali ini parameter menjadi bernilai null namun bisa dibuat pengecualian jika dan simpanan di Bundle kita bisa get value yang sudah disimpan ke Activity seperti dengan method <code class="highlighter-rouge">bundle.get*("name");</code></p>
-<figure style="width:500px" class="align-center">
-<img src="/images/bundleget.png" />
-<figcaption>bundle.get</figcaption>
+
+<figure>
+    
+<img src="/assets/images/bundleget.png" alt="Foo" />
+
+    <figcaption>bundle. get</figcaption>
 </figure>
 
 <p>alhamdulillah pecah misterinya</p>
-<figure style="width:500px" class="align-center">
-<img src="/images/rotatestop.gif" />
-<figcaption>isuue rotate solve</figcaption>
+
+<figure>
+    
+<img src="/assets/images/rotatestop.gif" alt="Foo" />
+
+    <figcaption>isuue rotate solve</figcaption>
 </figure>
 
 <p>uml setelah penambahan method onSaveInstanceState()</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/stopwatchactivity2.png" />
-<figcaption>isuue rotate solve</figcaption>
+
+<figure>
+    
+<img src="/assets/images/stopwatchactivity2.png" alt="Foo" />
+
+    <figcaption>isuue rotate solve</figcaption>
 </figure>
 
 <h2 id="start-stop-restart">Start, Stop, Restart</h2>
@@ -93,9 +117,11 @@ membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam
   <li>onRestart() dipanggil setelah activity kita tak terliat atau invisible.</li>
 </ul>
 
-<figure style="width:300px" class="align-center">
-<img src="/images/lifecycleVisible.png" />
-<figcaption>visible lifetime</figcaption>
+<figure>
+    
+<img src="/assets/images/lifecycleVisible.png" alt="Foo" />
+
+    <figcaption>visible lifetime</figcaption>
 </figure>
 
 <p style="text-align: justify;">okey saatnya override method onStop di coding kita setelah itu buatnya berhenti dengan <code class="highlighter-rouge">mRunning = false</code></p>
@@ -140,29 +166,41 @@ membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam
     <span class="o">}</span>
 </code></pre></div></div>
 
-<figure style="width:300px" class="align-center">
-<img src="/images/visiblestp.gif" />
-<figcaption>stop visible</figcaption>
+<figure>
+    
+<img src="/assets/images/visiblestp.gif" alt="Foo" />
+
+    <figcaption>stop visible</figcaption>
 </figure>
 
 <p style="text-align: justify;">skenarionya adalah pertama app stopwatch berjalan variabel mRunning = true ; di pertengahan saya pindah ke app todo task menjadikan app stopwatch invisible dalam posisi ini variabel mRunning menjadi false karena method onStop() dan variabel mWasRunning menjadi berniali true. selanjutnya saya kembalikan ke app stopwatch method onStart menerima variabel mWasRunning dan activity mengambil simpana data dari method onSaveInstanceState() akhinya kembali berjalan.</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/stpwasrun.png" />
-<figcaption>uml setelah mWasRunning</figcaption>
+
+<figure>
+    
+<img src="/assets/images/stpwasrun.png" alt="Foo" />
+
+    <figcaption>uml setelah mWasRunning</figcaption>
 </figure>
+
 <h3 id="kenapa-onrestart-bukan-onrestart">kenapa onRestart() bukan onRestart()?</h3>
 <p style="text-align: justify;">ada pertanyaan kenapa tidak memaki method onRestart()? method itu digunakan bila kita hanya ingin code berjalan ketika app dari visible yang mana sebelumnya invisible. dia tidak berjalan ketika activity visible untuk pertamakalinya. dalam kasus stopwatch ini kan saya ingin app tetap berjalan ketika app di rotasi jugak. trus perbedaane apa onRestart dan onStart? okey saat kita merubah rotasi device acitivity ter destroy dan membuat satu lagi yang baru. jika kita masukan code di method onRestart, dia tidak akan berjalan ketika activity re-created. kalau method onStart() terpanggil saat terjadi rotasi dan terjadi invisible ke visible.</p>
 <h2 id="onpaused">onPaused()</h2>
 <p style="text-align: justify;">setelah mempelajari alur activity di buat dan di destroy lalu telah melihat jugak ketika activity saat visible menjadi invisible ada beberapa method yang bisa di warisi dari superclass yang bisa dimanfaatkan tapi satu lagi yang saya harus pelajari yaitu masalah activity posisi visible tapi tidak fokus ini berarti activity menjadi paused. ini akan terjadi jika app stopwatch berjalan ada activity app lain berada ditas activity app stopwath tapi tidak keluar full screen tampilannya</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/onpauestp.png" />
-<figcaption>posisi onpaused</figcaption>
+
+<figure>
+    
+<img src="/assets/images/onpauestp.png" alt="Foo" />
+
+    <figcaption>posisi onpaused</figcaption>
 </figure>
 
 <p style="text-align: justify;">ada 2method Lifecyle activity yang bisa dimanfaatkan terkait issue ini yaitu method onPaused() dan onResume(). onPause() dipanggil ketika activity kita visible tapi ada activity lain fokus. onResume() dipanggil ketika activity kita belum berinteraksi dengan user</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/onpausedstpw.png" />
-<figcaption>alur Lifecyle</figcaption>
+
+<figure>
+    
+<img src="/assets/images/onpausedstpw.png" alt="Foo" />
+
+    <figcaption>alur Lifecyle</figcaption>
 </figure>
 
 <p>penjelasan dari gambar:</p>
@@ -184,9 +222,12 @@ membolehkan kita untuk mengumpulkan data bersama walaupun beda type data kedalam
 <p>muncul pertanyaan selanjutnya bagaimana saat activity paused karena tidak fokus terus device kita ubah rotasinya? aslinya Lifecyle berjalan melalui  semua method dari onCreate() ke onDestroy(). activity baru dibuat ketika yang asli terdestroy karena activity baru tidak berada di foreground hanya method lifecylce onCreate() dan onStart() yang dapt dipanggil.</p>
 
 <p style="text-align: justify;">jika kita memliki sebuah activity visible tapi tidak di foreground dan tidak akan punya fokus maka method onPause() dan onResume() tidak akan pernah dipanggil maka activity akan langsung pergi dari onStart() ke onStop()</p>
-<figure style="width:300px" class="align-center">
-<img src="/images/oncreatestp.png" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/oncreatestp.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p style="text-align: justify;">setelah memerhati dengan seksama ternyata kita bisa mereplace method onStop() dan onStart() dengan method onPause() dan onResume() heuheuheu namanya jugak mendalami materi jadine ada hal hal baru</p>
