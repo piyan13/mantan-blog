@@ -24,10 +24,14 @@ sisi dokumentasinya yang sangat lengkap keuntungan opensource dengan komunitas t
 
 ## Mode Partisi
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/booting.gif">
-<figcaption>booting liveusb</figcaption>
-</figure> 
+{% capture arch_img %}
+![Foo]({{"/assets/images/booting.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>booting liveusb</figcaption>
+</figure>
+
 **Note:** untuk persiapan booting mode liveusb dan mentahan .iso arch bisa kunjungi [download](https://www.archlinux.org/download/)
 {: .notice--info}
 setelah booting dengan liveusb barulah install mode command line dimulai dengan
@@ -36,10 +40,15 @@ partisi menggunakan applikasi `cfdisk`
 ```ruby
  root@archiso~# cfdisk
 ```
-<figure style="width: 400px" class="align-center">
-<img src="/images/cfdisk.png">
-<figcaption>credit google</figcaption>
+
+{% capture arch_img %}
+![Foo]({{"/assets/images/cfdisk.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>Credit google</figcaption>
 </figure>
+
 
 saya cuman butuh 2 partisi yaitu partisi linux filesystem dan swap tinggal sesuain sama kebutuhan saja, kalau hardisknya sudah ada partisinya dan ragu bagian mana yang akan digunakan format atau delete bisa menggunakan `cfdisk -l` untuk melihat ada berapa partisi di hardisk
 
@@ -70,11 +79,13 @@ filesystem telah siap tinggal kita format partisi swap , apa itu swap ? silahkan
 
 ## Waktunya download dan install package base
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/pacstrap.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/pacstrap.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
-
 
 ```ruby
  root@archiso~# pacstrap -i /mnt base
@@ -91,19 +102,26 @@ setelah terinstall dengan sempurna paket base di /mnt selanjutnya adalah configu
 ```ruby
  root@archiso~# genfstab -U /mnt >> /mnt/etc/fstab
 ```
-<figure style="width: 600px" class="align-center">
-<img src="/images/fstab.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/fstab.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 ## Membuat password root dan user
 
 akun root atau superuser digunakan system adminitration misal untuk melakukan kegiatan install dan akses folder folder yang ada di system, maka selain kegiatan sifatnya biasa di sarankan untuk membuat akun lagi selain root . karena arch mode liveusb menggunakan auto login maka untuk kepentingan keamanan maka kita harus memasukkan password root
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/chroot.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/chroot.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
+
 
 ```ruby
  root@archiso~# arch-chroot /mnt /bin/bash
@@ -111,17 +129,22 @@ akun root atau superuser digunakan system adminitration misal untuk melakukan ke
 
 setelah masuk ke mode root langsung deh `passwd` 
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/passwd.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/passwd.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 oke beres password superuser root saatnya membuat user lain untuk tugas tugas sederhana dan untuk keamanan jugak, sebelum itu install dulu paket sudo fungsinya untuk memberikan beberapa ijin akses ke system akun user
 
-
-<figure style="width: 600px" class="align-center">
-<img src="/images/sudopac.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/sudopac.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 ```ruby
@@ -133,9 +156,12 @@ setelah terinstall baru kita menambah user dan memberikannya password
  sh-4.3# useradd -m -g users -G wheel,storage,power -s /bin/bash <namauser>
  passwd <namauser>
 ```
-<figure style="width: 600px" class="align-center">
-<img src="/images/useradd.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/useradd.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 nah setelah itu baru kita konfigurasi user yang baru ditambahkan untuk berada dalam grup wheel agar bisa menjalankan tugas tugas yang membutuhkan akses ke system dengan sudo
@@ -145,10 +171,14 @@ nah setelah itu baru kita konfigurasi user yang baru ditambahkan untuk berada da
 ```
 setelah masuk ke teks editor nano hapus tanda # `%whell ALL=(ALL) ALL` seperti pada gambar dibawah ini 
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/sudoers.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/sudoers.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
+
 
 beres dah masalah useradd langsung memasukkan nama hostname komputer berguna saat koneksi antar komputer
 
@@ -167,9 +197,12 @@ saya menggunakan bahasa inggris saja karena sudah terbiasa bor
 ```
 hapus tanda # di lokasi dan bahasa yang dipilih setelah itu klik `locale-gen` untuk mengenerate
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/locale.gif">
-<figcaption></figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/locale.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 selanjutanya menentukan zona waktu
@@ -178,9 +211,14 @@ selanjutanya menentukan zona waktu
  sh-4.3#ls /usr/share/zoneinfo/
 ```
 maka akan muncul gambar dibawah ini karena saya menggunakan jakarta dia berada di directory Asia
-<figure style="width: 600px" class="align-center">
-<img src="/images/zoneinfo.png">
-<figcaption></figcaption>
+
+
+{% capture arch_img %}
+![Foo]({{"/assets/images/zoneinfo.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 ```ruby
@@ -201,10 +239,15 @@ setelah itu download dan install grub
  sh-4.3#pacman -S grub_bios
  sh-4.3#grub install /dev/sda
 ```
-<figure style="width: 600px" class="align-center">
-<img src="/images/grubpac.gif">
-<figcaption></figcaption>
+
+{% capture arch_img %}
+![Foo]({{"/assets/images/grubpac.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
+
 konfigurasi boot di grub
 
 ```ruby
@@ -214,9 +257,12 @@ konfigurasi boot di grub
 fiuuuuuh akhirnya saat saat terakhir telah tiba dalam daya dan upaya membangkitkan sang legenda 5315 tinggal unmount dan reboot jurus pamungkasnya
 check this out bor
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/fiuh.gif">
-<figcaption>finally</figcaption>
+{% capture arch_img %}
+![Foo]({{"/assets/images/fiuh.gif" | relative_url}})
+{% endcapture %}
+<figure>
+    {{arch_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>Finally</figcaption>
 </figure>
 
 Alhamdulilah sang legenda kini menampaki ruang baru dan menjadi alat tempur andalan saya lagi ini bener bener masih permulaan, ya awal yang baru sejarah baru buat aspire karena ternyata tidak hanya distro debian tapi arch jugak bisa keep badass lah pokoke
