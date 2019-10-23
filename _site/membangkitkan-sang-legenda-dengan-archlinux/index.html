@@ -340,19 +340,25 @@ sisi dokumentasinya yang sangat lengkap keuntungan opensource dengan komunitas t
 
 <h2 id="mode-partisi">Mode Partisi</h2>
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/booting.gif" />
-<figcaption>booting liveusb</figcaption>
+<figure>
+    
+<img src="/assets/images/booting.gif" alt="Foo" />
+
+    <figcaption>booting liveusb</figcaption>
 </figure>
+
 <p class="notice--info"><strong>Note:</strong> untuk persiapan booting mode liveusb dan mentahan .iso arch bisa kunjungi <a href="https://www.archlinux.org/download/">download</a></p>
 <p>setelah booting dengan liveusb barulah install mode command line dimulai dengan
 partisi menggunakan applikasi <code class="highlighter-rouge">cfdisk</code></p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># cfdisk</span>
 </code></pre></div></div>
-<figure style="width: 400px" class="align-center">
-<img src="/images/cfdisk.png" />
-<figcaption>credit google</figcaption>
+
+<figure>
+    
+<img src="/assets/images/cfdisk.png" alt="Foo" />
+
+    <figcaption>Credit google</figcaption>
 </figure>
 
 <p>saya cuman butuh 2 partisi yaitu partisi linux filesystem dan swap tinggal sesuain sama kebutuhan saja, kalau hardisknya sudah ada partisinya dan ragu bagian mana yang akan digunakan format atau delete bisa menggunakan <code class="highlighter-rouge">cfdisk -l</code> untuk melihat ada berapa partisi di hardisk</p>
@@ -379,9 +385,11 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 
 <h2 id="waktunya-download-dan-install-package-base">Waktunya download dan install package base</h2>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/pacstrap.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/pacstrap.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># pacstrap -i /mnt base</span>
@@ -394,18 +402,23 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</span>
 </code></pre></div></div>
-<figure style="width: 600px" class="align-center">
-<img src="/images/fstab.gif" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/fstab.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <h2 id="membuat-password-root-dan-user">Membuat password root dan user</h2>
 
 <p>akun root atau superuser digunakan system adminitration misal untuk melakukan kegiatan install dan akses folder folder yang ada di system, maka selain kegiatan sifatnya biasa di sarankan untuk membuat akun lagi selain root . karena arch mode liveusb menggunakan auto login maka untuk kepentingan keamanan maka kita harus memasukkan password root</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/chroot.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/chroot.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">root</span><span class="vi">@archiso</span><span class="o">~</span><span class="c1"># arch-chroot /mnt /bin/bash</span>
@@ -413,16 +426,20 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 
 <p>setelah masuk ke mode root langsung deh <code class="highlighter-rouge">passwd</code></p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/passwd.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/passwd.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>oke beres password superuser root saatnya membuat user lain untuk tugas tugas sederhana dan untuk keamanan jugak, sebelum itu install dulu paket sudo fungsinya untuk memberikan beberapa ijin akses ke system akun user</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/sudopac.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/sudopac.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S sudo bash-completion</span>
@@ -432,9 +449,12 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1"># useradd -m -g users -G wheel,storage,power -s /bin/bash &lt;namauser&gt;</span>
  <span class="n">passwd</span> <span class="o">&lt;</span><span class="n">namauser</span><span class="o">&gt;</span>
 </code></pre></div></div>
-<figure style="width: 600px" class="align-center">
-<img src="/images/useradd.gif" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/useradd.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>nah setelah itu baru kita konfigurasi user yang baru ditambahkan untuk berada dalam grup wheel agar bisa menjalankan tugas tugas yang membutuhkan akses ke system dengan sudo</p>
@@ -443,9 +463,11 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 </code></pre></div></div>
 <p>setelah masuk ke teks editor nano hapus tanda # <code class="highlighter-rouge">%whell ALL=(ALL) ALL</code> seperti pada gambar dibawah ini</p>
 
-<figure style="width: 500px" class="align-center">
-<img src="/images/sudoers.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/sudoers.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>beres dah masalah useradd langsung memasukkan nama hostname komputer berguna saat koneksi antar komputer</p>
@@ -462,9 +484,11 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 </code></pre></div></div>
 <p>hapus tanda # di lokasi dan bahasa yang dipilih setelah itu klik <code class="highlighter-rouge">locale-gen</code> untuk mengenerate</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/locale.gif" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/locale.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>selanjutanya menentukan zona waktu</p>
@@ -472,9 +496,12 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ls /usr/share/zoneinfo/</span>
 </code></pre></div></div>
 <p>maka akan muncul gambar dibawah ini karena saya menggunakan jakarta dia berada di directory Asia</p>
-<figure style="width: 600px" class="align-center">
-<img src="/images/zoneinfo.png" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/zoneinfo.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#ln -s /usr/share/zoneinfo/Asia/Jakarta</span>
@@ -492,10 +519,14 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#pacman -S grub_bios</span>
  <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub install /dev/sda</span>
 </code></pre></div></div>
-<figure style="width: 600px" class="align-center">
-<img src="/images/grubpac.gif" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/grubpac.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p>konfigurasi boot di grub</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">sh</span><span class="o">-</span><span class="mf">4.3</span><span class="c1">#grub-mkconfig -o /boot/grub/grub.cfg</span>
@@ -504,9 +535,11 @@ atau bisa jugak ingin mengetahui perbedaan ext2 ext3 dan ext4 bisa kunjungi arti
 <p>fiuuuuuh akhirnya saat saat terakhir telah tiba dalam daya dan upaya membangkitkan sang legenda 5315 tinggal unmount dan reboot jurus pamungkasnya
 check this out bor</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/fiuh.gif" />
-<figcaption>finally</figcaption>
+<figure>
+    
+<img src="/assets/images/fiuh.gif" alt="Foo" />
+
+    <figcaption>Finally</figcaption>
 </figure>
 
 <p>Alhamdulilah sang legenda kini menampaki ruang baru dan menjadi alat tempur andalan saya lagi ini bener bener masih permulaan, ya awal yang baru sejarah baru buat aspire karena ternyata tidak hanya distro debian tapi arch jugak bisa keep badass lah pokoke</p>
