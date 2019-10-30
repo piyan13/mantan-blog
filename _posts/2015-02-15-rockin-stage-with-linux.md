@@ -10,10 +10,13 @@ share: true
 related: true
 ---
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/mlete.jpg">
-<figcaption></figcaption>
-</figure> 
+{% capture linux_img %}
+![Foo]({{"/assets/images/mlete.jpg" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
+</figure>
 
 tu poto saya di atas stage bukan lagi nyari wifi loh ya? jangan salah terka apalagi salah sangka
 okey pagi yang cerah di februari yang penuh propagandis ini saya mau share betapa selama ini 
@@ -22,27 +25,38 @@ sebagai musisi dan sebagai software developer di kesempatan kali ini manfaat bag
 itu buat apa sih ?? jadi saya memakai laptop (berisi linux dan beberapa sofwtare opensource) sebagai
 pengganti pedalboard/efek gitar
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/pedals.jpg">
-<figcaption></figcaption>
+{% capture linux_img %}
+![Foo]({{"/assets/images/pedals.jpg" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
 
 buat yang gaktau pedalboard poto diatas adalah gambaran dari pedalboard konvensional
 nah saya gantikan dengan sofwate opensource bernama guitarix...
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/guitarrix.png">
-<figcaption></figcaption>
+{% capture linux_img %}
+![Foo]({{"/assets/images/guitarrix.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
+
 ini penampakan interface sofware guitarix mantabkan? untuk peforma gimana mas?gak usah
 diragukan lagi dah tau sendirikan linux bisa berjalan dengan speck laptop yg low end ,
 menggunakan linux sejak awal kuliah dulu(gini gini pernah kuliah) 2008an kalau makek 
 untuk aktivitas band [SkepticMemory](https://www.facebook.com/pages/skepticmemory/90933298506) sejak akhir 2009an baik latihan, recording hingga live perfomance belum pernahmengalami luck atau stuck laptop saya acer aspire 5315 ram 1Gb processor celeron 1,73GHz 
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/gitari.jpg">
-<figcaption></figcaption>
+{% capture linux_img %}
+![Foo]({{"/assets/images/gitari.jpg" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
 </figure>
+
 ini penampakan sosok indah yang selalu menemani saya dalam berkarir di permusikan heuheuheu
 penggunakan teknologi itu gak harus seragam banyak alternatif lain diluar sana kalau kita mau
 memanfaatkannya terpenting lagi adalah dalam bekarya kita dibiasakan menghormati hak intelektual
