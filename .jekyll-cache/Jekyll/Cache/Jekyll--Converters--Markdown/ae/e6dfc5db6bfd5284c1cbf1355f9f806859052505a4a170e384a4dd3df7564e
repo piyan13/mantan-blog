@@ -1,6 +1,9 @@
-I"Ò	<figure style="width: 400px" class="align-center">
-<img src="/images/mlete.jpg" />
-<figcaption></figcaption>
+I"™	
+<figure>
+    
+<img src="/assets/images/mlete.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>tu poto saya di atas stage bukan lagi nyari wifi loh ya? jangan salah terka apalagi salah sangka
@@ -10,27 +13,35 @@ sebagai musisi dan sebagai software developer di kesempatan kali ini manfaat bag
 itu buat apa sih ?? jadi saya memakai laptop (berisi linux dan beberapa sofwtare opensource) sebagai
 pengganti pedalboard/efek gitar</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/pedals.jpg" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/pedals.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>buat yang gaktau pedalboard poto diatas adalah gambaran dari pedalboard konvensional
 nah saya gantikan dengan sofwate opensource bernama guitarixâ€¦</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/guitarrix.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/guitarrix.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p>ini penampakan interface sofware guitarix mantabkan? untuk peforma gimana mas?gak usah
 diragukan lagi dah tau sendirikan linux bisa berjalan dengan speck laptop yg low end ,
 menggunakan linux sejak awal kuliah dulu(gini gini pernah kuliah) 2008an kalau makek 
 untuk aktivitas band <a href="https://www.facebook.com/pages/skepticmemory/90933298506">SkepticMemory</a> sejak akhir 2009an baik latihan, recording hingga live perfomance belum pernahmengalami luck atau stuck laptop saya acer aspire 5315 ram 1Gb processor celeron 1,73GHz</p>
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/gitari.jpg" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/gitari.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p>ini penampakan sosok indah yang selalu menemani saya dalam berkarir di permusikan heuheuheu
 penggunakan teknologi itu gak harus seragam banyak alternatif lain diluar sana kalau kita mau
 memanfaatkannya terpenting lagi adalah dalam bekarya kita dibiasakan menghormati hak intelektual
