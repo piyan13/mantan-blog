@@ -1,6 +1,9 @@
-I"P<figure style="width: 400px" class="align-center">
-<img src="/images/android-studio.png" />
-<figcaption>android studio</figcaption>
+I"
+<figure>
+    
+<img src="/assets/images/android-studio.png" alt="Foo" />
+
+    <figcaption>android studio</figcaption>
 </figure>
 
 <p>Hal yang menarik dari <a href="http://developer.android.com/sdk/index.html">Android studio 2.0</a> yang terinstall di linux 64bit adalah kutemukan
@@ -8,9 +11,11 @@ error disana sini, mungkin waktu kemarin masih pakek <a href="https://www.linuxm
 
 <h2 id="unable-to-run-mksdcard">Unable to run mksdcard</h2>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/unable.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/unable.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 <p>setelah finish install lalu pilih setting default atau custom dan munculah pesan error ini dikarenakan android studio yang terisntall di linux 64 bit butuh library 38bit,library apa saja yang diperlukan:</p>
 
@@ -24,17 +29,23 @@ error disana sini, mungkin waktu kemarin masih pakek <a href="https://www.linuxm
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">~</span><span class="p">:</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib32stdc</span><span class="o">++</span><span class="mi">6</span>
  <span class="o">~</span><span class="p">:</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib32z1</span>
 </code></pre></div></div>
-<figure style="width: 600px" class="align-center">
-<img src="/images/no-error.gif" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/no-error.gif" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p>problem solved untuk unable to run mksdcard</p>
 
 <h2 id="r-layout-cannot-resolved">R layout cannot resolved</h2>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/eee.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/eee.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 <p>setelah error pertama unable to run mksdcard teratasi kemudian bukak project
 gradle sync dan yooooott error kedua muncul mulai dari gradle build yang prosesnya lama sampai R layout cannot resolved. ada beberapa akibat munculnya error ini diantaranya adalah:</p>
