@@ -10,16 +10,24 @@ share: true
 related: true
 ---
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/hello_world_01.jpg">
-<figcaption></figcaption>
-</figure> 
+{% capture linux_img %}
+![Foo]({{"/assets/images/hello_world_01.jpg" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
+</figure>
+
 hello 2015 heuheuheu waktunya turun gunung beroooo vakum coret blog dari 2012 dimulai dari bercandaan tuhan dengan syntak :
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/eroer.png">
-<figcaption></figcaption>
-</figure> 
+{% capture linux_img %}
+![Foo]({{"/assets/images/eroer.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
+</figure>
+
 dpkg:unrecoverable fatal error dan seterusnya kedengerannya serem gak?
 setelah cari sana sini ternyata itu bug yang sudah ada sejak beberapa varian
 turunan keluarga besar debian. 
@@ -44,10 +52,14 @@ baris code python diatas adalah jawabannya berooo copy paste code diatas ke
 knote,nano,vi dll trus save dengan apapun misal kalau aku dengan `mbuh.py`
 jangan lupa waktu nge run pake sebagai root misal :~> sudo python mbuh.py
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/eroer1.png">
-<figcaption></figcaption>
-</figure> 
+
+{% capture linux_img %}
+![Foo]({{"/assets/images/eroer1.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
+</figure>
 
 beres sudah masalah beroo ayoo lekas update dan upgrade atau install sesuatu yang tadi eroor kayak aku yg gagal install git sekarang sudah lancar..... 
 thanks to pokerbirch for python scripth.. hapy coding everyone

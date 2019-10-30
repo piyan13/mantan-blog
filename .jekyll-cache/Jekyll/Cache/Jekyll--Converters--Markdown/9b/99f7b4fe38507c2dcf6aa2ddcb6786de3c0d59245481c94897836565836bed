@@ -1,13 +1,20 @@
-I"‹<figure style="width: 400px" class="align-center">
-<img src="/images/hello_world_01.jpg" />
-<figcaption></figcaption>
+I"a
+<figure>
+    
+<img src="/assets/images/hello_world_01.jpg" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p>hello 2015 heuheuheu waktunya turun gunung beroooo vakum coret blog dari 2012 dimulai dari bercandaan tuhan dengan syntak :</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/eroer.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/eroer.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
+
 <p style="text-align: justify;">dpkg:unrecoverable fatal error dan seterusnya kedengerannya serem gak?
 setelah cari sana sini ternyata itu bug yang sudah ada sejak beberapa varian
 turunan keluarga besar debian. 
@@ -30,9 +37,11 @@ itu terjadi karena ada corupt file di <code class="highlighter-rouge">/var/lib/d
 knote,nano,vi dll trus save dengan apapun misal kalau aku dengan <code class="highlighter-rouge">mbuh.py</code>
 jangan lupa waktu nge run pake sebagai root misal :~&gt; sudo python mbuh.py</p>
 
-<figure style="width: 600px" class="align-center">
-<img src="/images/eroer1.png" />
-<figcaption></figcaption>
+<figure>
+    
+<img src="/assets/images/eroer1.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <p>beres sudah masalah beroo ayoo lekas update dan upgrade atau install sesuatu yang tadi eroor kayak aku yg gagal install git sekarang sudah lancarâ€¦.. 
