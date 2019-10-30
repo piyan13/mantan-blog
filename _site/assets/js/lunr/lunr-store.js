@@ -14,11 +14,6 @@ var store = [{
         "tags": ["Linux"],
         "url": "http://localhost:4000/Bingung-pilih-distro-linux/",
         "teaser":"http://localhost:4000/images/glmvn1.jpg"},{
-        "title": "Interpreter Python",
-        "excerpt":"credit: google.com lagi pingin nerusin bikin desain logo button app lakok malas datang iseng buka koleksi buku eh tiba tiba menyelinap buku pemrogaman python.Menurutku ini bahasa pemrogaman yang tak kalah fenomena dari bahasa pemrogaman java kenapa? bayangkan hanya beberapa tahun saja bahasa pemrogaman python sudah masuk ranking 5besar bahasa pemrogaman...","categories": [],
-        "tags": ["Pemrogaman"],
-        "url": "http://localhost:4000/interpreter-python/",
-        "teaser":"http://localhost:4000/images/glmvn1.jpg"},{
         "title": "App konversi mata uang for android",
         "excerpt":"hari yang telah larut heuheuehue tapi tak mematahkan semangat untuk menulis. okey sesuai judul saya akan share hasil coba coba barangkali bermanfaat buat sekitar. Sebenarnya ini aplikasi pertama yang saya rangkai di eclipse sebelum aplikasi Tasbih digital ,aplikasi konversi mata uang ini terinspirasi dari sebuah buku pemrogaman yang kebetulan membahas...","categories": [],
         "tags": ["Android"],
