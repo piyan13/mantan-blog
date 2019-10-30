@@ -1,0 +1,72 @@
+I"
+
+<figure>
+    
+<img src="/assets/images/android-studio.png" alt="Foo" />
+
+    <figcaption>android studio</figcaption>
+</figure>
+
+<p>Hal yang menarik dari <a href="http://developer.android.com/sdk/index.html">Android studio 2.0</a> yang terinstall di linux 64bit adalah kutemukan
+error disana sini, mungkin waktu kemarin masih pakek <a href="https://www.linuxmint.com/">linuxmint 17</a> android studio dari versi 1.7 langsung ku update ke versi 2.0 jadi tidak ku temukan error yang berarti setelah migrasi ke <a href="http://www.ubuntu.com/">ubuntu 16.04</a> dan install dari awal android studio 2.0 barulah berjumpa dengan errornya, apa saja errornya? ini dia check this out</p>
+
+<h2 id="unable-to-run-mksdcard">Unable to run mksdcard</h2>
+
+<figure>
+    
+<img src="/assets/images/unable.png" alt="Foo" />
+
+    <figcaption></figcaption>
+</figure>
+<p>setelah finish install lalu pilih setting default atau custom dan munculah pesan error ini dikarenakan android studio yang terisntall di linux 64 bit butuh library 38bit,library apa saja yang diperlukan:</p>
+
+<ul>
+  <li><a href="https://packages.debian.org/sid/libstdc++6">lib32stdc++6</a> adalah library untuk progam C++</li>
+  <li><a href="https://packages.debian.org/jessie/lib32z1">lib32z1</a> adalah library implentasi method kompresi deflate yg terdapat di gzip dan pkzip</li>
+</ul>
+
+<p>langsung buka terminal dan langsung install</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">~</span><span class="p">:</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib32stdc</span><span class="o">++</span><span class="mi">6</span>
+ <span class="o">~</span><span class="p">:</span><span class="err">$</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">lib32z1</span>
+</code></pre></div></div>
+
+<figure>
+    
+<img src="/assets/images/no-error.gif" alt="Foo" />
+
+    <figcaption></figcaption>
+</figure>
+
+<p>problem solved untuk unable to run mksdcard</p>
+
+<h2 id="r-layout-cannot-resolved">R layout cannot resolved</h2>
+
+<figure>
+    
+<img src="/assets/images/eee.png" alt="Foo" />
+
+    <figcaption></figcaption>
+</figure>
+
+<p>setelah error pertama unable to run mksdcard teratasi kemudian bukak project
+gradle sync dan yooooott error kedua muncul mulai dari gradle build yang prosesnya lama sampai R layout cannot resolved. ada beberapa akibat munculnya error ini diantaranya adalah:</p>
+
+<ul>
+  <li><a href="http://gradle.org/">gradle</a> crash akibat tersimpannya beberapa versi gradle</li>
+  <li>tidak singkronya antara sdk build tools project dengan sdk build tools yang dimiliki</li>
+</ul>
+
+<p>solusi untuk point yang pertama dengan menghapus salah satu versi gradle letaknya di /home/.AndroidStudio2.0/ setelah itu restart android studio.</p>
+
+<figure>
+    
+<img src="/assets/images/projectstruct.gif" alt="Foo" />
+
+    <figcaption></figcaption>
+</figure>
+
+<p>dan solusi untuk point yang kedua adalah merubah sdk build tools project dengan cara buka sdk build tools yang telah terisntall (ctrl+alt+shift+s) atau File–project Structure–app–Build Tools Version (seperti gambar diatas)  rubah dengan yang telah di install cara mengetahui build tools yang terisntall liat saja di sdk manager.
+ <br />
+akhirnya teratasi sudah, semua ERROR-nya mungkin kamu kelebihan error dari apa yang saya jumpai monggo ayo kita diskusikan</p>
+:ET
