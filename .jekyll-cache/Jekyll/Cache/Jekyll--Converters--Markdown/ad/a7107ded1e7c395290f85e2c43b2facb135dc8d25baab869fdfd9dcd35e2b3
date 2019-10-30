@@ -1,6 +1,9 @@
-I"Û)<figure style="width: 400px" class="align-center">
-<img src="/images/ubuntu16.jpg" />
-<figcaption>credit: google</figcaption>
+I"¿)
+<figure>
+    
+<img src="/assets/images/ubuntu16.jpg" alt="Foo" />
+
+    <figcaption>credit: google</figcaption>
 </figure>
 
 <aside class="sidebar__right">
@@ -75,9 +78,12 @@
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="ss">:~</span> <span class="n">java</span> <span class="o">-</span><span class="n">version</span>
 </code></pre></div></div>
 <p>kalau berhasil akan muncul seperti gambar</p>
-<figure style="width: 600px" class="align-center">
-<img src="/images/bash.png" />
-<figcaption></figcaption>
+
+<figure>
+    
+<img src="/assets/images/bash.png" alt="Foo" />
+
+    <figcaption></figcaption>
 </figure>
 
 <h2 id="install-jekyll">Install Jekyll</h2>

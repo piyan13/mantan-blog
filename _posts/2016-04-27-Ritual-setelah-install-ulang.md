@@ -10,10 +10,14 @@ share: true
 related: true
 ---
 
-<figure style="width: 400px" class="align-center">
-<img src="/images/ubuntu16.jpg">
-<figcaption>credit: google</figcaption>
-</figure> 
+
+{% capture linux_img %}
+![Foo]({{"/assets/images/ubuntu16.jpg" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>credit: google</figcaption>
+</figure>
 
  {% include toc title="Contents" icon="file-text" %}
 
@@ -81,10 +85,14 @@ untuk memastikan java suda terinstall dengan sempurna
 :~ java -version
 ```
 kalau berhasil akan muncul seperti gambar
-<figure style="width: 600px" class="align-center">
-<img src="/images/bash.png">
-<figcaption></figcaption>
-</figure> 
+
+{% capture linux_img %}
+![Foo]({{"/assets/images/bash.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{linux_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption></figcaption>
+</figure>
 
 ## Install Jekyll
 
