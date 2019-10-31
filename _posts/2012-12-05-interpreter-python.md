@@ -9,10 +9,14 @@ comments: true
 share: true
 related: true
 ---
-<figure style="width: 300px" class="align-center">
-<img src="/images/pytthon.png">
-<figcaption>credit: google.com</figcaption>
-</figure> 
+
+{% capture tasbih_img %}
+![Foo]({{"/assets/images/pytthon.png" | relative_url}})
+{% endcapture %}
+<figure>
+    {{tasbih_img | markdownify | remove: "<p>" | remove: "</p>"}}
+    <figcaption>credit: google.com</figcaption>
+</figure>
 lagi pingin nerusin bikin desain logo button app lakok malas datang iseng buka koleksi buku  eh tiba tiba menyelinap buku pemrogaman python.Menurutku ini bahasa pemrogaman yang tak kalah fenomena dari bahasa pemrogaman java kenapa? bayangkan hanya beberapa tahun saja bahasa pemrogaman python sudah masuk ranking 5besar bahasa pemrogaman yang sering dipakai para progammers heuheuehue tak heran sih karena orientasinya yang OPEN SOURCE membuat komunitasnya tumbuh subur. Diantara kelebihan bahasa pemrogaman obyek dinamis ini adalah :
 
 * Dapat berjalan di banyak platform/sistem operati serperti linux/unix,Macos,palm dll
@@ -73,12 +77,13 @@ Nilai a adalah 1
 tanda ... adalah secondary prompt untuk keluar bisa dengan cara ctrl+D.
 Ini contoh untuk cara interaktif aja dan kelemahannya adalah kita tidak bisa menyimpan di media penyimpanan karena mode interaktif ini hanya untuk mencoba beberapa script yang akan kita pakai. kalau mau ngoding benerannya ya harus pake Text Editor misal kalau di linux pake gedit.
 saya kasih contoh tulis ini di gedit atau texteditor yang anda suka
-
+```python
 a=10
 b=15
 c=a*b
 
 print 'hasil dari axb: ',c
+```
 save degan belajar.py nah panggil deh lewat console(ctrl+alt+t) dengan perintah
 
 `glamvian@glamvian ~ $ python belajar.py`
