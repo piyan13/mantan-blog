@@ -113,9 +113,7 @@ author:
   location         : "Surabaya Barat"
   email            : "glmvn.composer@gmail.com"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "http://www.glamvian.com"
+    
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/glamvian"
@@ -128,6 +126,14 @@ author:
     - label: "Pinterest"
       icon: "fab fa-fw fa-pinterest"
       url: "https://id.pinterest.com/glmvn12/"
+    - label: "paypal"
+      icon: "fab fa-fw fa-paypal"
+      url: "https://www.paypal.me/glmvn"
+    - label: "twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/glmvn12"
+
+
 
 # Site Footer
 footer:
@@ -144,6 +150,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/glmvn"
+    - label: "twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/glmvn12"
 
 
 # Reading Files
