@@ -16,7 +16,7 @@
 
 <figure style="width: 200px">
  <a href="/images/blog.gif"><img src="/images/blog.gif"></a>
-<figcaption>photo credit : appdesignVault.com</figcaption>
+<figcaption></figcaption>
 </figure>
 
 
@@ -26,8 +26,9 @@ Blog Glmvn ini adalah blog personal dari glamvian hermawan (@glmvn12) dimana sem
 
 <figure style="width: 200px">
  <a href="/images/BetterDeveloper.png"><img src="/images/BetterDeveloper.png"></a>
-<figcaption>photo credit : appdesignVault.com</figcaption>
+<figcaption></figcaption>
 </figure>
+
 
 
 
