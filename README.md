@@ -14,7 +14,7 @@
 </p>
 
 
-<figure style="width: 200px">
+<figure style="width: 300px">
  <a href="http://www.glamvian.com"><img src="https://media.giphy.com/media/IbTfDrit2BseI3e3cU/giphy.gif"></a>
 <figcaption></figcaption>
 </figure>
